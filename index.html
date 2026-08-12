@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manoj Meena — Cyber Crime Analyst & AI Cyber Security Innovator</title>
     <meta name="description" content="Manoj Meena | Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator. Founder & CEO, MK Global Nexus." />
-    <meta name="keywords" content="Manoj Meena, Cyber Crime Analyst, Digital Fraud Investigator, AI Cyber Security, Investigative Journalism, Healthcare Professional, MK Global Nexus" />
     
     <!-- Open Graph -->
     <meta property="og:title" content="Manoj Meena — Cyber Crime Analyst & AI Cyber Security Innovator" />
@@ -28,6 +27,22 @@
     <link rel="icon" href="favicon/favicon.ico" />
 </head>
 <body>
+
+<!-- ====== DARK MODE TOGGLE ====== -->
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- ====== WHATSAPP FLOATING BUTTON ====== -->
+<a id="whatsappBtn" class="whatsapp-float" data-phone="919999999999" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Chat on WhatsApp</span>
+</a>
+
+<!-- ====== BACK TO TOP ====== -->
+<button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+</button>
 
 <!-- ====== NAVIGATION ====== -->
 <header class="navbar">
@@ -55,25 +70,59 @@
 
 <!-- ====== HERO ====== -->
 <section class="hero">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    
     <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text animate-on-scroll-left">
             <span class="hero-badge"><i class="fas fa-shield-halved"></i> Cyber Intelligence</span>
+            
+            <!-- Status Indicator -->
+            <div class="status-indicator" style="margin-bottom: 0.8rem;">
+                <span class="status-dot active"></span>
+                Available for Collaboration
+            </div>
+            
             <h1>Manoj Meena</h1>
             <p class="hero-title">Founder & CEO, MK Global Nexus</p>
             <p class="hero-subtitle">Cyber Crime Analyst · Digital Fraud Investigator · AI & Cyber Security Innovator</p>
-            <div class="hero-tags">
-                <span>Investigative Journalism</span>
-                <span>Healthcare Professional</span>
-                <span>Technology Innovator</span>
+            
+            <!-- Language Toggle -->
+            <div class="lang-toggle" style="margin-bottom: 1rem;">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hi">हिंदी</button>
             </div>
-            <p class="hero-desc">
-                Multidisciplinary professional working at the intersection of cyber investigation, 
-                digital fraud, AI, cybersecurity, investigative journalism, and healthcare.
-            </p>
+            
+            <div data-lang="en">
+                <div class="hero-tags">
+                    <span>Investigative Journalism</span>
+                    <span>Healthcare Professional</span>
+                    <span>Technology Innovator</span>
+                </div>
+                <p class="hero-desc">
+                    Multidisciplinary professional working at the intersection of cyber investigation, 
+                    digital fraud, AI, cybersecurity, investigative journalism, and healthcare.
+                </p>
+            </div>
+            
+            <div data-lang="hi" style="display:none;">
+                <div class="hero-tags">
+                    <span>जांच पत्रकारिता</span>
+                    <span>स्वास्थ्य देखभाल</span>
+                    <span>प्रौद्योगिकी नवप्रवर्तक</span>
+                </div>
+                <p class="hero-desc">
+                    साइबर जांच, डिजिटल फ्रॉड, AI, साइबर सुरक्षा, पत्रकारिता और स्वास्थ्य सेवा के 
+                    अंतर्संबंध पर काम करने वाला बहु-विषयक पेशेवर।
+                </p>
+            </div>
+            
             <div class="hero-actions">
                 <a href="projects.html" class="btn btn-primary"><i class="fas fa-code"></i> Explore My Work</a>
                 <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Connect</a>
             </div>
+            
             <div class="hero-social">
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -81,7 +130,8 @@
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        <div class="hero-image">
+        
+        <div class="hero-image animate-on-scroll-right">
             <div class="profile-wrapper">
                 <div class="profile-image">
                     <img src="assets/images/profile.jpg" alt="Manoj Meena — Cyber Crime Analyst" />
@@ -91,39 +141,67 @@
     </div>
 </section>
 
+<!-- ====== SEARCH BAR ====== -->
+<section class="section" style="padding: 1rem 0 0;">
+    <div class="container">
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search website..." />
+        </div>
+    </div>
+</section>
+
 <!-- ====== QUICK LINKS ====== -->
 <section class="quick-links">
     <div class="container">
         <div class="quick-grid">
-            <div class="quick-card">
+            <div class="quick-card animate-on-scroll">
                 <i class="fas fa-user-tie"></i>
                 <h3>About</h3>
                 <p>My professional identity and journey</p>
                 <a href="about.html" class="card-link">Learn More →</a>
             </div>
-            <div class="quick-card">
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.1s;">
                 <i class="fas fa-microscope"></i>
                 <h3>Expertise</h3>
                 <p>8 professional areas of knowledge</p>
                 <a href="expertise.html" class="card-link">Explore →</a>
             </div>
-            <div class="quick-card">
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.2s;">
                 <i class="fas fa-code"></i>
                 <h3>Projects</h3>
                 <p>Technology & investigation tools</p>
                 <a href="projects.html" class="card-link">View All →</a>
             </div>
-            <div class="quick-card">
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.3s;">
                 <i class="fas fa-building"></i>
                 <h3>MK Global Nexus</h3>
                 <p>My business ecosystem</p>
                 <a href="nexus.html" class="card-link">Discover →</a>
             </div>
-            <div class="quick-card">
-                <i class="fas fa-link"></i>
-                <h3>Channels</h3>
-                <p>Find me across the web</p>
-                <a href="channels.html" class="card-link">Connect →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== STATS SECTION ====== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <span class="stat-number" data-target="12" data-suffix="+">0</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.1s;">
+                <span class="stat-number" data-target="50" data-suffix="+">0</span>
+                <span class="stat-label">Investigations</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.2s;">
+                <span class="stat-number" data-target="15" data-suffix="+">0</span>
+                <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.3s;">
+                <span class="stat-number" data-target="8" data-suffix="">0</span>
+                <span class="stat-label">Publications</span>
             </div>
         </div>
     </div>
@@ -132,30 +210,30 @@
 <!-- ====== PROFESSIONAL AREAS ====== -->
 <section class="section">
     <div class="container">
-        <h2>Professional Areas</h2>
-        <p class="section-subtitle">Multidisciplinary expertise across interconnected domains</p>
+        <h2 class="animate-on-scroll">Professional Areas</h2>
+        <p class="section-subtitle animate-on-scroll">Multidisciplinary expertise across interconnected domains</p>
         <div class="areas-grid">
-            <div class="area-card">
+            <div class="area-card animate-on-scroll">
                 <div class="area-icon"><i class="fas fa-shield-halved"></i></div>
                 <h4>Cyber Crime Analysis</h4>
                 <p>Understanding cyber threats and digital crime patterns</p>
             </div>
-            <div class="area-card">
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.1s;">
                 <div class="area-icon"><i class="fas fa-search-dollar"></i></div>
                 <h4>Digital Fraud Investigation</h4>
                 <p>Scam analysis, OSINT, and digital evidence</p>
             </div>
-            <div class="area-card">
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.2s;">
                 <div class="area-icon"><i class="fas fa-robot"></i></div>
                 <h4>AI & Cyber Security</h4>
                 <p>AI-powered cybersecurity tools and platforms</p>
             </div>
-            <div class="area-card">
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.3s;">
                 <div class="area-icon"><i class="fas fa-newspaper"></i></div>
                 <h4>Investigative Journalism</h4>
                 <p>Research-driven investigation and awareness</p>
             </div>
-            <div class="area-card">
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.4s;">
                 <div class="area-icon"><i class="fas fa-heartbeat"></i></div>
                 <h4>Healthcare</h4>
                 <p>Healthcare education and professional experience</p>
@@ -167,85 +245,111 @@
     </div>
 </section>
 
-<!-- ====== FEATURED PROJECTS ====== -->
-<section class="section" style="background: var(--pure-white);">
+<!-- ====== TESTIMONIALS ====== -->
+<section class="testimonials-section">
     <div class="container">
-        <h2>Featured Projects</h2>
-        <p class="section-subtitle">Technology and investigation solutions built for real-world impact</p>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projects/placeholder.jpg" alt="Cyber Security Investigation Toolkit" />
-                    <span class="project-status active">Active</span>
-                </div>
-                <div class="project-body">
-                    <h3>Cyber Security Investigation Toolkit</h3>
-                    <p>Comprehensive toolkit for digital investigation, OSINT, and cyber crime analysis.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OSINT</span>
-                        <span>Forensics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-small btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Demo</a>
+        <h2 class="animate-on-scroll" style="text-align:center;">What People Say</h2>
+        <p class="section-subtitle animate-on-scroll" style="text-align:center; margin:0 auto 2rem;">
+            Professional feedback from clients and colleagues
+        </p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Manoj is a thorough investigator. His attention to detail and understanding 
+                    of digital fraud is exceptional."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">RK</div>
+                    <div>
+                        <div class="name">Rahul Kumar</div>
+                        <div class="role">Cybersecurity Lead</div>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projects/placeholder.jpg" alt="AI Agent Platform" />
-                    <span class="project-status development">Development</span>
-                </div>
-                <div class="project-body">
-                    <h3>AI Agent Platform</h3>
-                    <p>AI-powered investigation agents for fraud detection and cybersecurity.</p>
-                    <div class="project-tech">
-                        <span>AI/ML</span>
-                        <span>Python</span>
-                        <span>Cybersecurity</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-small btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "His investigative journalism work on digital scams has helped hundreds 
+                    of people avoid fraud."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">SM</div>
+                    <div>
+                        <div class="name">Priya Sharma</div>
+                        <div class="role">Journalist</div>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/images/projects/placeholder.jpg" alt="OSINT Investigation Toolkit" />
-                    <span class="project-status planning">Planning</span>
-                </div>
-                <div class="project-body">
-                    <h3>OSINT Investigation Toolkit</h3>
-                    <p>Open-source intelligence tools for digital investigation and research.</p>
-                    <div class="project-tech">
-                        <span>OSINT</span>
-                        <span>Data Analysis</span>
-                        <span>Research</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-small btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Working with Manoj on AI-driven security solutions has been transformative 
+                    for our organization."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">AV</div>
+                    <div>
+                        <div class="name">Anand Verma</div>
+                        <div class="role">CTO, TechFirm</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="text-align:center; margin-top:1.5rem;">
-            <a href="projects.html" class="btn btn-primary">View All Projects →</a>
         </div>
     </div>
 </section>
 
-<!-- ====== FUTURE VISION TEASER ====== -->
-<section class="section" style="background: var(--primary-navy); color: #fff;">
-    <div class="container" style="text-align:center;">
-        <h2 style="color:#fff;">Building the Future</h2>
-        <p style="color:rgba(255,255,255,0.8); max-width:600px; margin:0.5rem auto 1.5rem;">
-            Exploring next-generation cyber intelligence, AI-driven investigation platforms, 
-            and fraud prevention technology.
+<!-- ====== BLOG / INSIGHTS ====== -->
+<section class="blog-section">
+    <div class="container">
+        <h2 class="animate-on-scroll" style="text-align:center;">Insights & Research</h2>
+        <p class="section-subtitle animate-on-scroll" style="text-align:center; margin:0 auto 2rem;">
+            Latest articles, research, and investigations
         </p>
-        <a href="future-vision.html" class="btn btn-white"><i class="fas fa-rocket"></i> Read My Vision</a>
+        <div class="blog-grid">
+            <div class="blog-card animate-on-scroll">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">Cyber Crime</span>
+                    <h3>Understanding Digital Fraud in 2026</h3>
+                    <p>An in-depth analysis of emerging digital fraud patterns and protection strategies.</p>
+                    <div class="blog-meta">
+                        <span>August 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">AI & Security</span>
+                    <h3>AI-Powered Investigation Tools</h3>
+                    <p>How artificial intelligence is transforming digital investigation and fraud detection.</p>
+                    <div class="blog-meta">
+                        <span>July 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">Healthcare</span>
+                    <h3>Healthcare & Digital Security</h3>
+                    <p>Protecting patient data and healthcare systems from cyber threats and breaches.</p>
+                    <div class="blog-meta">
+                        <span>June 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
