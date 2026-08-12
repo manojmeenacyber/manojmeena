@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
     <title>Contact Manoj Meena</title>
     <meta name="description" content="Connect with Manoj Meena - Cyber Crime Analyst, Digital Fraud Investigator, and Founder of MK Global Nexus. LinkedIn, GitHub, and professional contact." />
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
@@ -16,7 +15,6 @@
 </head>
 <body>
 
-<!-- ====== NAVIGATION ====== -->
 <header class="navbar">
     <div class="container nav-container">
         <div class="logo"><a href="index.html">Manoj Meena</a></div>
@@ -28,6 +26,7 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="nexus.html">MK Global Nexus</a></li>
                 <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="channels.html">Channels</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -37,7 +36,6 @@
     </div>
 </header>
 
-<!-- ====== PAGE HEADER ====== -->
 <section class="page-header">
     <div class="container">
         <h1>Contact</h1>
@@ -45,12 +43,10 @@
     </div>
 </section>
 
-<!-- ====== CONTENT ====== -->
-<section class="contact-content">
+<section class="section">
     <div class="container">
         <div class="contact-grid">
             
-            <!-- Contact Info -->
             <div class="contact-info">
                 <h2>Get in Touch</h2>
                 <p>
@@ -63,8 +59,15 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4>Professional Email</h4>
                             <a href="mailto:manoj.meena@example.com">manoj.meena@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>Company Email</h4>
+                            <a href="mailto:info@mkglobalnexus.com">info@mkglobalnexus.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -77,7 +80,7 @@
                 </div>
 
                 <div class="contact-social">
-                    <h3>Professional Profiles</h3>
+                    <h3>Connect on Social</h3>
                     <div class="social-links">
                         <a href="#" class="social-link linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                         <a href="#" class="social-link github"><i class="fab fa-github"></i> GitHub</a>
@@ -87,7 +90,6 @@
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <div class="contact-form">
                 <h2>Send a Message</h2>
                 <form id="contactForm">
@@ -100,12 +102,20 @@
                         <input type="email" id="email" placeholder="your@email.com" required />
                     </div>
                     <div class="form-group">
-                        <label for="subject">Subject</label>
+                        <label for="organization">Organization (Optional)</label>
+                        <input type="text" id="organization" placeholder="Your organization" />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Inquiry Type</label>
                         <select id="subject">
                             <option value="collaboration">Professional Collaboration</option>
-                            <option value="research">Research Opportunity</option>
-                            <option value="speaking">Speaking/Event</option>
-                            <option value="project">Project Inquiry</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="investigation">Digital Investigation</option>
+                            <option value="ai">AI & Technology</option>
+                            <option value="journalism">Journalism / Media</option>
+                            <option value="research">Research</option>
+                            <option value="business">Business</option>
+                            <option value="healthcare">Healthcare</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -115,14 +125,13 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
-                <div id="formResponse" style="display:none; margin-top:1rem; padding:1rem; border-radius:8px;"></div>
+                <div id="formResponse" style="display:none;"></div>
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- ====== FOOTER ====== -->
 <footer>
     <div class="container footer-content">
         <div class="footer-col">
@@ -139,6 +148,7 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="nexus.html">MK Global Nexus</a></li>
                 <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="channels.html">Channels</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -150,18 +160,25 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
-            <p class="footer-email"><i class="fas fa-envelope"></i> manoj.meena@example.com</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <p>&copy; 2026 Manoj Meena. All Rights Reserved.</p>
-            <p class="footer-meta">
-                <a href="robots.txt">robots.txt</a> ·
-                <a href="sitemap.xml">sitemap.xml</a> ·
-                <a href="README.md">README</a>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.6);">
+                <i class="fas fa-envelope"></i> manoj.meena@example.com
             </p>
         </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; 2026 Manoj Meena. All Rights Reserved.</p>
+        <p class="footer-meta">
+            <a href="robots.txt">robots.txt</a>
+            <a href="sitemap.xml">sitemap.xml</a>
+            <a href="README.md">README</a>
+        </p>
     </div>
 </footer>
 
