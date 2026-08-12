@@ -1,1 +1,205 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoj Meena — Projects & Technology</title>
+    <meta name="description" content="View Manoj Meena's technology projects - Cyber Security Investigation Toolkit, OSINT tools, AI agents, and investigation systems." />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon/favicon.ico" />
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<header class="navbar">
+    <div class="container nav-container">
+        <div class="logo"><a href="index.html">Manoj Meena</a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="nexus.html">MK Global Nexus</a></li>
+                <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- ====== PAGE HEADER ====== -->
+<section class="page-header">
+    <div class="container">
+        <h1>Projects & Technology</h1>
+        <p>Tools, platforms, and solutions built for cyber investigation, fraud detection, and digital security.</p>
+    </div>
+</section>
+
+<!-- ====== PROJECTS GRID ====== -->
+<section class="projects-grid-section">
+    <div class="container">
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="development">Development</button>
+            <button class="filter-btn" data-filter="planning">Planning</button>
+        </div>
+
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-item" data-status="active">
+                <div class="project-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Cyber Security Investigation Toolkit" />
+                    <span class="project-status active">Active</span>
+                </div>
+                <div class="project-details">
+                    <h3>Cyber Security Investigation Toolkit</h3>
+                    <p>
+                        Comprehensive toolkit for digital investigation, OSINT, and cyber crime analysis. 
+                        Designed to streamline the investigation process and improve efficiency.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>OSINT</span>
+                        <span>Digital Forensics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item" data-status="development">
+                <div class="project-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="AI Agent Platform" />
+                    <span class="project-status development">Development</span>
+                </div>
+                <div class="project-details">
+                    <h3>AI Agent Platform</h3>
+                    <p>
+                        AI-powered investigation agents for fraud detection and cybersecurity. 
+                        Automating threat analysis and providing real-time intelligence.
+                    </p>
+                    <div class="project-tech">
+                        <span>AI/ML</span>
+                        <span>Python</span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item" data-status="planning">
+                <div class="project-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="OSINT Investigation Toolkit" />
+                    <span class="project-status planning">Planning</span>
+                </div>
+                <div class="project-details">
+                    <h3>OSINT Investigation Toolkit</h3>
+                    <p>
+                        Open-source intelligence tools for digital investigation and research. 
+                        Designed to gather and analyze publicly available information.
+                    </p>
+                    <div class="project-tech">
+                        <span>OSINT</span>
+                        <span>Data Analysis</span>
+                        <span>Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-item" data-status="active">
+                <div class="project-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Case Management System" />
+                    <span class="project-status active">Active</span>
+                </div>
+                <div class="project-details">
+                    <h3>Investigation Case Management System</h3>
+                    <p>
+                        Web-based case management system for tracking investigations, evidence, 
+                        and case progress in digital fraud and cyber crime cases.
+                    </p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>Manoj Meena</h4>
+            <p>Cyber Crime Analyst · Digital Fraud Investigator<br />AI & Cyber Security Innovator</p>
+            <p class="footer-company">Founder & CEO, <strong>MK Global Nexus</strong></p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="nexus.html">MK Global Nexus</a></li>
+                <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="footer-email"><i class="fas fa-envelope"></i> manoj.meena@example.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 Manoj Meena. All Rights Reserved.</p>
+            <p class="footer-meta">
+                <a href="robots.txt">robots.txt</a> ·
+                <a href="sitemap.xml">sitemap.xml</a> ·
+                <a href="README.md">README</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
