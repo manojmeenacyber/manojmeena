@@ -1,1310 +1,409 @@
-/* ====== MANOJ MEENA V2 — DARK THEME + MOBILE OPTIMIZED ====== */
-
-/* ---------- ROOT VARIABLES ---------- */
-:root {
-  /* Primary: Light Black / Dark Gray */
-  --primary-dark: #1a1a2e;
-  --primary-charcoal: #2d2d44;
-  --primary-slate: #4a4a6a;
-  --primary-light-slate: #6a6a8a;
-  
-  /* Backgrounds */
-  --bg-warm: #f5f5f7;
-  --bg-white: #ffffff;
-  --bg-light: #eaeaee;
-  --bg-dark: #1a1a2e;
-  
-  /* Text */
-  --text-dark: #1a1a2e;
-  --text-gray: #4a4a5e;
-  --text-light: #8a8a9e;
-  --text-white: #ffffff;
-  
-  /* Status Colors */
-  --success-green: #27ae60;
-  --warning-orange: #f39c12;
-  --planning-gray: #7f8c8d;
-  
-  /* Shadows */
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.2);
-  
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  
-  /* Transitions */
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ---------- RESET ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg-warm);
-  color: var(--text-dark);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* ---------- SCROLLBAR ---------- */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-warm);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary-dark);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-charcoal);
-}
-
-/* ---------- SELECTION ---------- */
-::selection {
-  background: var(--primary-dark);
-  color: #fff;
-}
-
-/* ---------- TYPOGRAPHY ---------- */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--primary-dark);
-}
-
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
-h3 { font-size: clamp(1.2rem, 2vw, 1.8rem); }
-h4 { font-size: clamp(1rem, 1.5vw, 1.3rem); }
-
-.section-subtitle {
-  color: var(--text-gray);
-  font-size: 1.1rem;
-  max-width: 650px;
-  margin-top: 0.3rem;
-}
-
-/* ---------- BUTTONS (LIGHT BLACK) ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  padding: 0.85rem 2.2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1rem;
-  border: 2px solid transparent;
-  transition: var(--transition);
-  cursor: pointer;
-  text-align: center;
-  letter-spacing: 0.01em;
-  min-height: 52px;
-  touch-action: manipulation;
-}
-
-.btn-primary {
-  background: var(--primary-dark);
-  color: #fff;
-  border-color: var(--primary-dark);
-}
-.btn-primary:hover {
-  background: var(--primary-charcoal);
-  border-color: var(--primary-charcoal);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(26, 26, 46, 0.35);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--primary-dark);
-  border-color: var(--primary-dark);
-}
-.btn-outline:hover {
-  background: var(--primary-dark);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(26, 26, 46, 0.2);
-}
-
-.btn-secondary {
-  background: var(--bg-light);
-  color: var(--primary-dark);
-  border-color: transparent;
-}
-.btn-secondary:hover {
-  background: #d4d4dc;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(26, 26, 46, 0.1);
-}
-
-.btn-small {
-  padding: 0.5rem 1.4rem;
-  font-size: 0.85rem;
-  min-height: 42px;
-}
-
-.btn-white {
-  background: #fff;
-  color: var(--primary-dark);
-  border-color: #fff;
-}
-.btn-white:hover {
-  background: var(--bg-light);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
-}
-
-/* ---------- NAVBAR ---------- */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0.6rem 0;
-  transition: var(--transition);
-}
-
-.navbar.scrolled {
-  box-shadow: var(--shadow-sm);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-}
-
-.logo a {
-  font-weight: 800;
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-  color: var(--primary-dark);
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-charcoal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-links a {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--text-gray);
-  padding: 0.3rem 0;
-  border-bottom: 2px solid transparent;
-  transition: var(--transition);
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-dark);
-  transition: var(--transition);
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--primary-dark);
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 8px;
-  touch-action: manipulation;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 2.5px;
-  background: var(--text-dark);
-  border-radius: 4px;
-  transition: var(--transition);
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* ---------- HERO ---------- */
-.hero {
-  padding: 9rem 0 4rem;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(160deg, #f5f5f7 0%, #eaeaee 100%);
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(26, 26, 46, 0.04) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  background: rgba(26, 26, 46, 0.08);
-  padding: 0.3rem 1.4rem;
-  border-radius: 50px;
-  color: var(--primary-dark);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(26, 26, 46, 0.1);
-}
-
-.hero-badge i {
-  font-size: 0.7rem;
-}
-
-.hero-text h1 {
-  font-size: clamp(2.8rem, 7vw, 4.8rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 0.2rem;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-charcoal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary-charcoal);
-  margin-bottom: 0.2rem;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-gray);
-  margin-bottom: 0.8rem;
-}
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-tags span {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding: 0.3rem 1.2rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: var(--shadow-sm);
-}
-
-.hero-desc {
-  font-size: 1.1rem;
-  color: var(--text-gray);
-  max-width: 520px;
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.hero-social {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.hero-social a {
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--bg-white);
-  color: var(--text-gray);
-  font-size: 1.2rem;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.hero-social a:hover {
-  background: var(--primary-dark);
-  color: #fff;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.hero-image .profile-wrapper {
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.hero-image .profile-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: -10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-charcoal));
-  opacity: 0.1;
-  z-index: -1;
-}
-
-.profile-image {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  border: 5px solid #fff;
-}
-
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---------- QUICK LINKS ---------- */
-.quick-links {
-  padding: 3rem 0;
-}
-
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-}
-
-.quick-card {
-  background: var(--bg-white);
-  padding: 1.8rem 1.2rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: var(--transition);
-  text-align: center;
-}
-
-.quick-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-}
-
-.quick-card i {
-  font-size: 2.2rem;
-  color: var(--primary-dark);
-  margin-bottom: 0.6rem;
-}
-
-.quick-card h3 {
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-}
-
-.quick-card p {
-  font-size: 0.85rem;
-  color: var(--text-gray);
-  margin-bottom: 0.6rem;
-}
-
-.card-link {
-  font-weight: 600;
-  color: var(--primary-dark);
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-.card-link:hover {
-  color: var(--primary-charcoal);
-  gap: 4px;
-}
-
-/* ---------- SECTIONS ---------- */
-.section {
-  padding: 4rem 0;
-}
-
-.section-dark {
-  background: var(--primary-dark);
-  color: #fff;
-}
-
-.section-dark h2,
-.section-dark .section-subtitle {
-  color: #fff;
-}
-
-/* ---------- AREAS ---------- */
-.areas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.area-card {
-  background: var(--bg-white);
-  padding: 1.8rem 1.2rem;
-  border-radius: var(--radius-md);
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: var(--transition);
-}
-
-.area-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-}
-
-.area-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(26, 26, 46, 0.08);
-  color: var(--primary-dark);
-  font-size: 1.8rem;
-}
-
-.area-card h4 {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-.area-card p {
-  font-size: 0.85rem;
-  color: var(--text-gray);
-}
-
-/* ---------- PROJECTS ---------- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-  margin: 2rem 0;
-}
-
-.project-card {
-  background: var(--bg-white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: var(--transition);
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-
-.project-image {
-  height: 200px;
-  overflow: hidden;
-  background: var(--bg-light);
-  position: relative;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
-
-.project-status {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.2rem 1rem;
-  border-radius: 50px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: var(--shadow-sm);
-}
-
-.project-status.active {
-  background: var(--success-green);
-  color: #fff;
-}
-.project-status.development {
-  background: var(--warning-orange);
-  color: #fff;
-}
-.project-status.planning {
-  background: var(--planning-gray);
-  color: #fff;
-}
-.project-status.completed {
-  background: var(--primary-dark);
-  color: #fff;
-}
-
-.project-body {
-  padding: 1.2rem 1.5rem 1.5rem;
-}
-
-.project-body h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-}
-
-.project-body p {
-  font-size: 0.9rem;
-  color: var(--text-gray);
-  margin-bottom: 0.8rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-}
-
-.project-tech span {
-  background: rgba(26, 26, 46, 0.08);
-  padding: 0.15rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-}
-
-.project-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-/* ---------- EXPERTISE PAGE ---------- */
-.expertise-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-}
-
-.expertise-card {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 1.5rem;
-  background: var(--bg-white);
-  padding: 1.8rem 2rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: var(--transition);
-}
-
-.expertise-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateX(4px);
-}
-
-.expertise-icon {
-  font-size: 2.5rem;
-  color: var(--primary-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.expertise-content h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
-  color: var(--primary-dark);
-}
-
-.expertise-content p {
-  color: var(--text-gray);
-  margin-bottom: 0.8rem;
-  line-height: 1.7;
-}
-
-.expertise-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.expertise-tags span {
-  background: rgba(26, 26, 46, 0.08);
-  padding: 0.15rem 0.9rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--primary-dark);
-}
-
-/* ---------- PAGE HEADER ---------- */
-.page-header {
-  padding: 7rem 0 2rem;
-  background: linear-gradient(160deg, #f5f5f7 0%, #eaeaee 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.page-header h1 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-.page-header p {
-  font-size: 1.05rem;
-  color: var(--text-gray);
-  max-width: 600px;
-}
-
-/* ---------- CHANNELS ---------- */
-.channels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.channel-card {
-  background: var(--bg-white);
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  transition: var(--transition);
-}
-
-.channel-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.channel-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.channel-icon.linkedin { background: #0a66c2; }
-.channel-icon.github { background: #181717; }
-.channel-icon.youtube { background: #ff0000; }
-.channel-icon.twitter { background: #1DA1F2; }
-.channel-icon.email { background: var(--primary-dark); }
-
-.channel-info h3 {
-  font-size: 1rem;
-  margin-bottom: 0.1rem;
-}
-
-.channel-info p {
-  font-size: 0.85rem;
-  color: var(--text-gray);
-}
-
-.channel-handle {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--primary-dark);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
-
-/* ---------- CONTACT ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.contact-info h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.contact-info > p {
-  color: var(--text-gray);
-  margin-bottom: 1.5rem;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.contact-item i {
-  font-size: 1.3rem;
-  color: var(--primary-dark);
-  width: 2rem;
-}
-
-.contact-item h4 {
-  font-size: 0.85rem;
-  margin: 0;
-}
-
-.contact-item a,
-.contact-item p {
-  color: var(--text-gray);
-  font-size: 0.9rem;
-}
-
-.contact-item a:hover {
-  color: var(--primary-dark);
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 0.85rem;
-  border: 1px solid #dce4ec;
-  transition: var(--transition);
-  background: var(--bg-white);
-}
-
-.social-link:hover {
-  border-color: var(--primary-dark);
-  background: rgba(26, 26, 46, 0.06);
-}
-
-.social-link.linkedin:hover { background: #0a66c2; color: #fff; border-color: #0a66c2; }
-.social-link.github:hover { background: #181717; color: #fff; border-color: #181717; }
-.social-link.youtube:hover { background: #ff0000; color: #fff; border-color: #ff0000; }
-.social-link.twitter:hover { background: #1DA1F2; color: #fff; border-color: #1DA1F2; }
-
-.contact-form {
-  background: var(--bg-white);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.contact-form h2 {
-  font-size: 1.3rem;
-  margin-bottom: 1.2rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 0.2rem;
-  color: var(--text-dark);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border: 1px solid #dce4ec;
-  border-radius: var(--radius-sm);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  transition: var(--transition);
-  background: var(--bg-warm);
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-dark);
-  box-shadow: 0 0 0 4px rgba(26, 26, 46, 0.08);
-  background: #fff;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-#formResponse {
-  margin-top: 1rem;
-  padding: 0.8rem 1rem;
-  border-radius: var(--radius-sm);
-  display: none;
-}
-
-#formResponse.form-success {
-  display: block;
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-#formResponse.form-error {
-  display: block;
-  background: #fde8e8;
-  color: #c0392b;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  background: var(--primary-dark);
-  color: #fff;
-  padding-top: 3rem;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-col h4 {
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 0.7rem;
-}
-
-.footer-col p,
-.footer-col li {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-col ul li {
-  margin-bottom: 0.3rem;
-}
-
-.footer-col ul li a:hover {
-  color: #fff;
-}
-
-.footer-social {
-  display: flex;
-  gap: 0.7rem;
-  margin-bottom: 0.7rem;
-  flex-wrap: wrap;
-}
-
-.footer-social a {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
-  transition: var(--transition);
-}
-
-.footer-social a:hover {
-  background: var(--primary-charcoal);
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-.footer-company {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer-company strong {
-  color: #fff;
-}
-
-.footer-bottom {
-  padding: 1.2rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.footer-bottom p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer-meta a {
-  color: rgba(255, 255, 255, 0.4);
-  margin-left: 0.8rem;
-  font-size: 0.8rem;
-}
-
-.footer-meta a:hover {
-  color: #fff;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero-grid {
-    gap: 2.5rem;
-  }
-  .hero-image .profile-wrapper {
-    max-width: 320px;
-  }
-}
-
-/* Mobile Landscape */
-@media (max-width: 850px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  .hero {
-    padding: 7rem 0 3rem;
-  }
-  .hero-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-tags {
-    justify-content: center;
-  }
-  .hero-actions {
-    justify-content: center;
-  }
-  .hero-social {
-    justify-content: center;
-  }
-  .hero-image .profile-wrapper {
-    max-width: 260px;
-  }
-  .footer-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .expertise-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 1.5rem;
-  }
-  .expertise-tags {
-    justify-content: center;
-  }
-  .channel-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .page-header {
-    padding: 6rem 0 1.5rem;
-  }
-  .section {
-    padding: 3rem 0;
-  }
-  .quick-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .areas-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile Portrait */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.2rem;
-    display: none;
-    padding: 2rem;
-    z-index: 999;
-  }
-  .nav-links.open {
-    display: flex;
-  }
-  .hamburger {
-    display: flex;
-    z-index: 1000;
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .footer-social {
-    justify-content: center;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-meta a {
-    margin: 0 0.4rem;
-  }
-  .channels-grid {
-    grid-template-columns: 1fr;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .quick-grid {
-    grid-template-columns: 1fr;
-  }
-  .areas-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-text h1 {
-    font-size: 2.4rem;
-  }
-  .hero-title {
-    font-size: 1rem;
-  }
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  .hero-desc {
-    font-size: 0.95rem;
-  }
-  .btn {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    min-height: 48px;
-    font-size: 0.95rem;
-  }
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .hero-social a {
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
-  }
-  .contact-form {
-    padding: 1.5rem;
-  }
-  .social-links {
-    flex-direction: column;
-  }
-  .social-link {
-    justify-content: center;
-  }
-  .section {
-    padding: 2.5rem 0;
-  }
-  .container {
-    padding: 0 1rem;
-  }
-  .page-header h1 {
-    font-size: 1.8rem;
-  }
-}
-
-/* Small Phones */
-@media (max-width: 400px) {
-  .hero {
-    padding: 6rem 0 2rem;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .hero-badge {
-    font-size: 0.7rem;
-    padding: 0.2rem 1rem;
-  }
-  .hero-tags span {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.8rem;
-  }
-  .hero-image .profile-wrapper {
-    max-width: 200px;
-  }
-  .quick-card {
-    padding: 1.2rem 0.8rem;
-  }
-  .area-card {
-    padding: 1.2rem 0.8rem;
-  }
-  .project-body {
-    padding: 1rem;
-  }
-  .expertise-card {
-    padding: 1.2rem;
-  }
-  .channel-card {
-    padding: 1.2rem;
-  }
-  .contact-form {
-    padding: 1rem;
-  }
-  .btn {
-    font-size: 0.85rem;
-    padding: 0.6rem 1.2rem;
-    min-height: 42px;
-  }
-  .btn-small {
-    font-size: 0.75rem;
-    padding: 0.3rem 1rem;
-    min-height: 36px;
-  }
-}
-
-/* ---------- UTILITY ---------- */
-.text-center { text-align: center; }
-.text-white { color: #fff; }
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-
-.hidden-mobile {
-  display: inline;
-}
-
-@media (max-width: 768px) {
-  .hidden-mobile {
-    display: none;
-  }
-}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoj Meena — Cyber Crime Analyst & AI Cyber Security Innovator</title>
+    <meta name="description" content="Manoj Meena | Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator. Founder & CEO, MK Global Nexus." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Manoj Meena — Cyber Crime Analyst & AI Cyber Security Innovator" />
+    <meta property="og:description" content="Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator. Founder & CEO, MK Global Nexus." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manojmeena.com" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.ico" />
+</head>
+<body>
+
+<!-- ====== DARK MODE TOGGLE ====== -->
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- ====== WHATSAPP FLOATING BUTTON ====== -->
+<a id="whatsappBtn" class="whatsapp-float" data-phone="919999999999" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">Chat on WhatsApp</span>
+</a>
+
+<!-- ====== BACK TO TOP ====== -->
+<button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ====== NAVIGATION ====== -->
+<header class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="index.html">Manoj Meena</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="nexus.html">MK Global Nexus</a></li>
+                <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="channels.html">Channels</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    
+    <div class="container hero-grid">
+        <div class="hero-text animate-on-scroll-left">
+            <span class="hero-badge"><i class="fas fa-shield-halved"></i> Cyber Intelligence</span>
+            
+            <!-- Status Indicator -->
+            <div class="status-indicator" style="margin-bottom: 0.8rem;">
+                <span class="status-dot active"></span>
+                Available for Collaboration
+            </div>
+            
+            <h1>Manoj Meena</h1>
+            <p class="hero-title">Founder & CEO, MK Global Nexus</p>
+            <p class="hero-subtitle">Cyber Crime Analyst · Digital Fraud Investigator · AI & Cyber Security Innovator</p>
+            
+            <!-- Language Toggle -->
+            <div class="lang-toggle" style="margin-bottom: 1rem;">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hi">हिंदी</button>
+            </div>
+            
+            <div data-lang="en">
+                <div class="hero-tags">
+                    <span>Investigative Journalism</span>
+                    <span>Healthcare Professional</span>
+                    <span>Technology Innovator</span>
+                </div>
+                <p class="hero-desc">
+                    Multidisciplinary professional working at the intersection of cyber investigation, 
+                    digital fraud, AI, cybersecurity, investigative journalism, and healthcare.
+                </p>
+            </div>
+            
+            <div data-lang="hi" style="display:none;">
+                <div class="hero-tags">
+                    <span>जांच पत्रकारिता</span>
+                    <span>स्वास्थ्य देखभाल</span>
+                    <span>प्रौद्योगिकी नवप्रवर्तक</span>
+                </div>
+                <p class="hero-desc">
+                    साइबर जांच, डिजिटल फ्रॉड, AI, साइबर सुरक्षा, पत्रकारिता और स्वास्थ्य सेवा के 
+                    अंतर्संबंध पर काम करने वाला बहु-विषयक पेशेवर।
+                </p>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="projects.html" class="btn btn-primary"><i class="fas fa-code"></i> Explore My Work</a>
+                <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Connect</a>
+            </div>
+            
+            <div class="hero-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        
+        <div class="hero-image animate-on-scroll-right">
+            <div class="profile-wrapper">
+                <div class="profile-image">
+                    <img src="assets/images/profile.jpg" alt="Manoj Meena — Cyber Crime Analyst" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SEARCH BAR ====== -->
+<section class="section" style="padding: 1rem 0 0;">
+    <div class="container">
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search website..." />
+        </div>
+    </div>
+</section>
+
+<!-- ====== QUICK LINKS ====== -->
+<section class="quick-links">
+    <div class="container">
+        <div class="quick-grid">
+            <div class="quick-card animate-on-scroll">
+                <i class="fas fa-user-tie"></i>
+                <h3>About</h3>
+                <p>My professional identity and journey</p>
+                <a href="about.html" class="card-link">Learn More →</a>
+            </div>
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.1s;">
+                <i class="fas fa-microscope"></i>
+                <h3>Expertise</h3>
+                <p>8 professional areas of knowledge</p>
+                <a href="expertise.html" class="card-link">Explore →</a>
+            </div>
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <i class="fas fa-code"></i>
+                <h3>Projects</h3>
+                <p>Technology & investigation tools</p>
+                <a href="projects.html" class="card-link">View All →</a>
+            </div>
+            <div class="quick-card animate-on-scroll" style="transition-delay: 0.3s;">
+                <i class="fas fa-building"></i>
+                <h3>MK Global Nexus</h3>
+                <p>My business ecosystem</p>
+                <a href="nexus.html" class="card-link">Discover →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== STATS SECTION ====== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <span class="stat-number" data-target="12" data-suffix="+">0</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.1s;">
+                <span class="stat-number" data-target="50" data-suffix="+">0</span>
+                <span class="stat-label">Investigations</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.2s;">
+                <span class="stat-number" data-target="15" data-suffix="+">0</span>
+                <span class="stat-label">Countries</span>
+            </div>
+            <div class="stat-item animate-on-scroll" style="transition-delay: 0.3s;">
+                <span class="stat-number" data-target="8" data-suffix="">0</span>
+                <span class="stat-label">Publications</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== PROFESSIONAL AREAS ====== -->
+<section class="section">
+    <div class="container">
+        <h2 class="animate-on-scroll">Professional Areas</h2>
+        <p class="section-subtitle animate-on-scroll">Multidisciplinary expertise across interconnected domains</p>
+        <div class="areas-grid">
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><i class="fas fa-shield-halved"></i></div>
+                <h4>Cyber Crime Analysis</h4>
+                <p>Understanding cyber threats and digital crime patterns</p>
+            </div>
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="area-icon"><i class="fas fa-search-dollar"></i></div>
+                <h4>Digital Fraud Investigation</h4>
+                <p>Scam analysis, OSINT, and digital evidence</p>
+            </div>
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="area-icon"><i class="fas fa-robot"></i></div>
+                <h4>AI & Cyber Security</h4>
+                <p>AI-powered cybersecurity tools and platforms</p>
+            </div>
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.3s;">
+                <div class="area-icon"><i class="fas fa-newspaper"></i></div>
+                <h4>Investigative Journalism</h4>
+                <p>Research-driven investigation and awareness</p>
+            </div>
+            <div class="area-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="area-icon"><i class="fas fa-heartbeat"></i></div>
+                <h4>Healthcare</h4>
+                <p>Healthcare education and professional experience</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:1.5rem;">
+            <a href="expertise.html" class="btn btn-secondary">View Full Expertise →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="animate-on-scroll" style="text-align:center;">What People Say</h2>
+        <p class="section-subtitle animate-on-scroll" style="text-align:center; margin:0 auto 2rem;">
+            Professional feedback from clients and colleagues
+        </p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Manoj is a thorough investigator. His attention to detail and understanding 
+                    of digital fraud is exceptional."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">RK</div>
+                    <div>
+                        <div class="name">Rahul Kumar</div>
+                        <div class="role">Cybersecurity Lead</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "His investigative journalism work on digital scams has helped hundreds 
+                    of people avoid fraud."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">SM</div>
+                    <div>
+                        <div class="name">Priya Sharma</div>
+                        <div class="role">Journalist</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Working with Manoj on AI-driven security solutions has been transformative 
+                    for our organization."
+                </p>
+                <div class="testimonial-author">
+                    <div class="avatar">AV</div>
+                    <div>
+                        <div class="name">Anand Verma</div>
+                        <div class="role">CTO, TechFirm</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== BLOG / INSIGHTS ====== -->
+<section class="blog-section">
+    <div class="container">
+        <h2 class="animate-on-scroll" style="text-align:center;">Insights & Research</h2>
+        <p class="section-subtitle animate-on-scroll" style="text-align:center; margin:0 auto 2rem;">
+            Latest articles, research, and investigations
+        </p>
+        <div class="blog-grid">
+            <div class="blog-card animate-on-scroll">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">Cyber Crime</span>
+                    <h3>Understanding Digital Fraud in 2026</h3>
+                    <p>An in-depth analysis of emerging digital fraud patterns and protection strategies.</p>
+                    <div class="blog-meta">
+                        <span>August 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">AI & Security</span>
+                    <h3>AI-Powered Investigation Tools</h3>
+                    <p>How artificial intelligence is transforming digital investigation and fraud detection.</p>
+                    <div class="blog-meta">
+                        <span>July 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-card animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="blog-image">
+                    <img src="assets/images/projects/placeholder.jpg" alt="Blog" />
+                </div>
+                <div class="blog-body">
+                    <span class="blog-tag">Healthcare</span>
+                    <h3>Healthcare & Digital Security</h3>
+                    <p>Protecting patient data and healthcare systems from cyber threats and breaches.</p>
+                    <div class="blog-meta">
+                        <span>June 2026</span>
+                        <a href="#" style="color:var(--primary-dark);font-weight:600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>Manoj Meena</h4>
+            <p>Cyber Crime Analyst · Digital Fraud Investigator<br />AI & Cyber Security Innovator</p>
+            <p class="footer-company">Founder & CEO, <strong>MK Global Nexus</strong></p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="expertise.html">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="nexus.html">MK Global Nexus</a></li>
+                <li><a href="future-vision.html">Future Vision</a></li>
+                <li><a href="channels.html">Channels</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.6);">
+                <i class="fas fa-envelope"></i> manojmeenacyber@gmail.com
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; 2026 Manoj Meena. All Rights Reserved.</p>
+        <p class="footer-meta">
+            <a href="robots.txt">robots.txt</a>
+            <a href="sitemap.xml">sitemap.xml</a>
+            <a href="README.md">README</a>
+        </p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
