@@ -1,28 +1,34 @@
-# Manoj Meena — Personal Professional Website
+# Manoj Meena — Official Personal Professional Website
 
-[![Website](https://img.shields.io/badge/Website-ManojMeena.com-1d5b7a)](https://manojmeena.com)
-[![GitHub](https://img.shields.io/badge/GitHub-mojmeena-181717?logo=github)](https://github.com/mojmeena)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel)](https://vercel.com)
+## About
+This is the official professional website of **Manoj Meena** — Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator, Investigative Journalist, Healthcare Professional, and Founder & CEO of **MK Global Nexus**.
 
----
+## Tech Stack
+- HTML5
+- CSS3 (Premium Design System)
+- JavaScript
+- Font Awesome Icons
+- Google Fonts (Inter)
 
-## 🧑‍💻 About This Website
+## Pages
+1. Home — Hero section, quick links, featured work
+2. About — Professional identity, philosophy, healthcare background
+3. Expertise — 8 professional areas
+4. Projects — Technology and investigation projects with status filters
+5. MK Global Nexus — Company ecosystem
+6. Future Vision — Forward-looking initiatives
+7. Channels — Media & social channels
+8. Contact — Professional contact and form
+9. Privacy Policy
+10. Disclaimer
 
-This is the **official professional digital identity** of **Manoj Meena** — Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator, Investigative Journalist, Healthcare Professional, and Founder & CEO of **MK Global Nexus**.
+## Deployment
+- GitHub: https://github.com/manojmeena/manojmeena
+- Vercel: https://manojmeena.vercel.app
+- Domain: https://manojmeena.com
 
-The website presents a complete, credible, and professional portrait of a multidisciplinary professional working at the intersection of cyber investigation, digital fraud, AI, cybersecurity, investigative journalism, healthcare, and technology innovation.
+## License
+All Rights Reserved — Manoj Meena
 
----
-
-## 🎯 Purpose
-
-- Establish **Manoj Meena** as a credible, technology-oriented professional
-- Showcase **multidisciplinary expertise** across 5 core domains
-- Present **projects, research, and technology work**
-- Introduce **MK Global Nexus** as the business ecosystem
-- Communicate **future vision and upcoming initiatives**
-- Provide **professional contact and verified digital presence**
-
----
-
-## 🏗️ Website Structure
+## Contact
+Email: manoj.meena@example.com
