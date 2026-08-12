@@ -1,29 +1,27 @@
-// ====== MANOJ MEENA V2 — COMPLETE PREMIUM ======
+// ====== MANOJ MEENA V2 — OPTIMIZED ======
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ---------- DARK MODE TOGGLE ----------
+    // ---------- DARK MODE ----------
     const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle?.querySelector('i');
-    
     if (themeToggle) {
-        // Check saved theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+        updateIcon(savedTheme);
 
         themeToggle.addEventListener('click', function () {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
         });
     }
 
-    function updateThemeIcon(theme) {
-        if (themeIcon) {
-            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    function updateIcon(theme) {
+        const icon = themeToggle?.querySelector('i');
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
     }
 
@@ -50,8 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---------- NAVBAR SCROLL ----------
     const navbar = document.querySelector('.navbar');
     if (navbar) {
+        let ticking = false;
         window.addEventListener('scroll', function () {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    navbar.classList.toggle('scrolled', window.scrollY > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     }
 
@@ -67,61 +72,67 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- STATS COUNTER ----------
+    // ---------- STATS COUNTER (Optimized) ----------
     const statNumbers = document.querySelectorAll('.stat-number');
-    let animated = false;
+    let statsAnimated = false;
 
     function animateStats() {
-        if (animated) return;
-        const statsSection = document.querySelector('.stats-section');
-        if (!statsSection) return;
-        const rect = statsSection.getBoundingClientRect();
+        if (statsAnimated || !statNumbers.length) return;
+        
+        const section = document.querySelector('.stats-section');
+        if (!section) return;
+        
+        const rect = section.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-            animated = true;
+            statsAnimated = true;
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-target')) || 0;
-                const duration = 2000;
-                const startTime = performance.now();
+                const suffix = stat.getAttribute('data-suffix') || '';
+                let current = 0;
+                const increment = Math.ceil(target / 40);
                 
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const value = Math.floor(progress * target);
-                    stat.textContent = value + (stat.getAttribute('data-suffix') || '');
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        stat.textContent = target + (stat.getAttribute('data-suffix') || '');
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
                     }
-                }
-                requestAnimationFrame(updateCounter);
+                    stat.textContent = current + suffix;
+                }, 30);
             });
         }
     }
 
+    // Use Intersection Observer for stats
     if (statNumbers.length) {
-        window.addEventListener('scroll', animateStats);
-        window.addEventListener('load', animateStats);
-        setTimeout(animateStats, 500);
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) statsObserver.observe(statsSection);
     }
 
-    // ---------- SCROLL ANIMATIONS ----------
+    // ---------- SCROLL ANIMATIONS (Optimized) ----------
     const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    animateElements.forEach(el => observer.observe(el));
+    
+    if (animateElements.length) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+        
+        animateElements.forEach(el => observer.observe(el));
+    }
 
     // ---------- PROJECT FILTERS ----------
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -136,10 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 projectItems.forEach(item => {
                     if (filter === 'all' || item.dataset.status === filter) {
                         item.style.display = 'block';
-                        setTimeout(() => item.style.opacity = '1', 10);
                     } else {
                         item.style.display = 'none';
-                        item.style.opacity = '0';
                     }
                 });
             });
@@ -153,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm && formResponse) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            
             const name = document.getElementById('name')?.value.trim();
             const email = document.getElementById('email')?.value.trim();
             const message = document.getElementById('message')?.value.trim();
@@ -164,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             formResponse.className = 'form-success';
-            formResponse.textContent = '✅ Thank you, ' + name + '! Your message has been sent. I will get back to you soon.';
+            formResponse.textContent = '✅ Thank you, ' + name + '! Your message has been sent.';
             contactForm.reset();
 
             setTimeout(() => {
@@ -177,13 +187,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---------- SEARCH ----------
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
+        let searchTimeout;
         searchInput.addEventListener('keyup', function () {
-            const query = this.value.toLowerCase().trim();
-            const items = document.querySelectorAll('.search-item');
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(query) ? 'block' : 'none';
-            });
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const query = this.value.toLowerCase().trim();
+                document.querySelectorAll('.search-item').forEach(item => {
+                    item.style.display = item.textContent.toLowerCase().includes(query) ? 'block' : 'none';
+                });
+            }, 200);
         });
     }
 
@@ -202,15 +214,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- WHATSAPP CLICK ----------
+    // ---------- WHATSAPP ----------
     const whatsappBtn = document.getElementById('whatsappBtn');
     if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function () {
+        whatsappBtn.addEventListener('click', function (e) {
+            e.preventDefault();
             const phone = this.dataset.phone || '919999999999';
             const message = encodeURIComponent('Hello Manoj, I want to connect with you.');
             window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
         });
     }
 
-    console.log('🚀 Manoj Meena V2 — Premium Website Loaded');
+    console.log('✅ Manoj Meena — Website Loaded Successfully');
 });
