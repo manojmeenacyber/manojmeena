@@ -1,32 +1,29 @@
-// ====== MANOJ MEENA — SCRIPT (FIXED) ======
+// ====== MANOJ MEENA — COMPLETE SCRIPT ======
 
 document.addEventListener('DOMContentLoaded', function () {
 
     // ---------- DARK MODE TOGGLE ----------
     const themeToggle = document.getElementById('themeToggle');
-    
+
     if (themeToggle) {
-        // Check saved theme
+        // Load saved theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateIcon(savedTheme);
 
-        // Toggle on click
-        themeToggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-            
-            console.log('Theme changed to:', newTheme); // Debug
+        // Toggle
+        themeToggle.addEventListener('click', function () {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateIcon(next);
         });
     }
 
     function updateIcon(theme) {
-        const icon = themeToggle?.querySelector('i');
+        const icon = document.querySelector('#themeToggle i');
         if (icon) {
             if (theme === 'dark') {
                 icon.className = 'fas fa-sun';
@@ -66,18 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- BACK TO TOP ----------
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', function () {
-            backToTop.classList.toggle('show', window.scrollY > 400);
-        });
-
-        backToTop.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
     // ---------- WHATSAPP ----------
     const whatsappBtn = document.getElementById('whatsappBtn');
     if (whatsappBtn) {
@@ -89,34 +74,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- CONTACT FORM ----------
-    const contactForm = document.getElementById('contactForm');
-    const formResponse = document.getElementById('formResponse');
-
-    if (contactForm && formResponse) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name')?.value.trim();
-            const email = document.getElementById('email')?.value.trim();
-            const message = document.getElementById('message')?.value.trim();
-
-            if (!name || !email || !message) {
-                formResponse.className = 'form-error';
-                formResponse.textContent = '⚠️ Please fill in all required fields.';
-                return;
-            }
-
-            formResponse.className = 'form-success';
-            formResponse.textContent = '✅ Thank you, ' + name + '! Your message has been sent.';
-            contactForm.reset();
-
-            setTimeout(() => {
-                formResponse.className = '';
-                formResponse.textContent = '';
-            }, 5000);
-        });
-    }
-
-    console.log('✅ Manoj Meena Website Loaded Successfully');
+    console.log('✅ Manoj Meena Website Loaded');
 });
