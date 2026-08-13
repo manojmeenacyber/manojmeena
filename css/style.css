@@ -41,21 +41,66 @@
   --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* ---------- DARK MODE ---------- */
-[data-theme="dark"] {
-  --brand-primary: #0a0a1a;
-  --brand-secondary: #12122a;
-  --off-white: #12121e;
-  --light-gray: #1a1a2e;
-  --text-body: #b0b0c0;
-  --text-dark: #eaeaee;
-  --text-muted: #6a6a82;
-  --shadow-sm: 0 2px 20px rgba(0,0,0,0.3);
-  --shadow-md: 0 8px 40px rgba(0,0,0,0.4);
-  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
-  --shadow-xl: 0 30px 80px rgba(0,0,0,0.6);
+/* ====== THEME TOGGLE (FIXED) ====== */
+.theme-toggle {
+  position: fixed;
+  top: 0.8rem;
+  right: 5rem;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
+.theme-toggle:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--brand-accent, #c9a84c);
+  transform: scale(1.05);
+}
+
+/* Dark Mode में Button */
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eaeaee;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(201, 168, 76, 0.2);
+  border-color: #c9a84c;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 0.6rem;
+    right: 3.8rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    top: 0.5rem;
+    right: 3.2rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}
 /* ---------- RESET ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
