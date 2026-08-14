@@ -12,13 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
         updateIcon(savedTheme);
 
         // Toggle
-        themeToggle.addEventListener('click', function () {
+        themeToggle.addEventListener('click', function (e) {
+            e.preventDefault();
             const current = document.documentElement.getAttribute('data-theme');
             const next = current === 'dark' ? 'light' : 'dark';
 
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             updateIcon(next);
+
+            console.log('Theme changed to:', next);
         });
     }
 
@@ -74,5 +77,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    console.log('✅ Manoj Meena Website Loaded');
+    console.log('✅ Manoj Meena Website Loaded Successfully');
 });
