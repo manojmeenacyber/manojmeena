@@ -1,6 +1,12 @@
 /* =========================================================
-   MANOJ MEENA — PERSONAL WEBSITE V2
-   Main JavaScript
+   MK GLOBAL NEXUS
+   MANOJ MEENA
+   MAIN JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   01. DOM READY
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,57 +18,47 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menuToggle");
     const mainNav = document.getElementById("mainNav");
 
+
     if (menuToggle && mainNav) {
 
         menuToggle.addEventListener("click", function () {
 
             const isOpen =
-                mainNav.classList.toggle("open");
+                mainNav.classList.toggle("active");
+
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                isOpen ? "true" : "false"
             );
 
-
-            /* Change hamburger icon */
 
             const icon =
                 menuToggle.querySelector("i");
 
+
             if (icon) {
 
-                if (isOpen) {
+                icon.classList.toggle(
+                    "fa-bars",
+                    !isOpen
+                );
 
-                    icon.classList.remove(
-                        "fa-bars"
-                    );
-
-                    icon.classList.add(
-                        "fa-xmark"
-                    );
-
-                } else {
-
-                    icon.classList.remove(
-                        "fa-xmark"
-                    );
-
-                    icon.classList.add(
-                        "fa-bars"
-                    );
-
-                }
+                icon.classList.toggle(
+                    "fa-xmark",
+                    isOpen
+                );
 
             }
 
         });
 
 
-        /* Close menu after clicking a link */
+        /* Close menu when a navigation link is clicked */
 
         const navLinks =
             mainNav.querySelectorAll("a");
+
 
         navLinks.forEach(function (link) {
 
@@ -71,8 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 function () {
 
                     mainNav.classList.remove(
-                        "open"
+                        "active"
                     );
+
 
                     menuToggle.setAttribute(
                         "aria-expanded",
@@ -82,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const icon =
                         menuToggle.querySelector("i");
+
 
                     if (icon) {
 
@@ -100,219 +98,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-    }
 
+        /* Close menu when clicking outside */
 
-    /* =====================================================
-       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
-    ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (!mainNav || !menuToggle) {
-                return;
-            }
-
-
-            const clickedInsideNav =
-                mainNav.contains(event.target);
-
-            const clickedMenuButton =
-                menuToggle.contains(event.target);
-
-
-            if (
-                !clickedInsideNav &&
-                !clickedMenuButton
-            ) {
-
-                mainNav.classList.remove(
-                    "open"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-
-                const icon =
-                    menuToggle.querySelector("i");
-
-                if (icon) {
-
-                    icon.classList.remove(
-                        "fa-xmark"
-                    );
-
-                    icon.classList.add(
-                        "fa-bars"
-                    );
-
-                }
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       CONTACT FORM
-    ===================================================== */
-
-    const contactForm =
-        document.getElementById("contactForm");
-
-    const formStatus =
-        document.getElementById("formStatus");
-
-
-    if (contactForm) {
-
-        contactForm.addEventListener(
-            "submit",
+        document.addEventListener(
+            "click",
             function (event) {
 
-                event.preventDefault();
+                if (
+                    !mainNav.contains(event.target) &&
+                    !menuToggle.contains(event.target)
+                ) {
 
-
-                const name =
-                    document
-                        .getElementById("name")
-                        ?.value
-                        .trim() || "";
-
-
-                const email =
-                    document
-                        .getElementById("email")
-                        ?.value
-                        .trim() || "";
-
-
-                const message =
-                    document
-                        .getElementById("message")
-                        ?.value
-                        .trim() || "";
-
-
-                /* -----------------------------------------
-                   Validation
-                ----------------------------------------- */
-
-                if (!name) {
-
-                    showFormMessage(
-                        "Please enter your name."
+                    mainNav.classList.remove(
+                        "active"
                     );
 
-                    return;
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    const icon =
+                        menuToggle.querySelector("i");
+
+
+                    if (icon) {
+
+                        icon.classList.remove(
+                            "fa-xmark"
+                        );
+
+                        icon.classList.add(
+                            "fa-bars"
+                        );
+
+                    }
 
                 }
-
-
-                if (!email) {
-
-                    showFormMessage(
-                        "Please enter your email address."
-                    );
-
-                    return;
-
-                }
-
-
-                if (!isValidEmail(email)) {
-
-                    showFormMessage(
-                        "Please enter a valid email address."
-                    );
-
-                    return;
-
-                }
-
-
-                if (!message) {
-
-                    showFormMessage(
-                        "Please enter your message."
-                    );
-
-                    return;
-
-                }
-
-
-                /* -----------------------------------------
-                   Prepare email
-                ----------------------------------------- */
-
-                const subject =
-                    encodeURIComponent(
-                        "Website enquiry from " + name
-                    );
-
-
-                const body =
-                    encodeURIComponent(
-
-                        "Hello Manoj Meena,\n\n" +
-
-                        "Name: " +
-                        name +
-                        "\n" +
-
-                        "Email: " +
-                        email +
-                        "\n\n" +
-
-                        "Message:\n" +
-                        message +
-                        "\n\n" +
-
-                        "Sent from Manoj Meena official website."
-
-                    );
-
-
-                const mailtoLink =
-                    "mailto:manojmeenacyber@gmail.com" +
-                    "?subject=" +
-                    subject +
-                    "&body=" +
-                    body;
-
-
-                showFormMessage(
-                    "Opening your email application..."
-                );
-
-
-                /* -----------------------------------------
-                   Open email client
-                ----------------------------------------- */
-
-                window.location.href =
-                    mailtoLink;
-
-
-                /* -----------------------------------------
-                   Reset form
-                ----------------------------------------- */
-
-                setTimeout(
-                    function () {
-
-                        contactForm.reset();
-
-                    },
-                    1000
-                );
 
             }
         );
@@ -320,173 +145,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       EMAIL VALIDATION
-    ===================================================== */
-
-    function isValidEmail(email) {
-
-        const pattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        return pattern.test(email);
-
-    }
-
 
     /* =====================================================
-       FORM STATUS MESSAGE
+       02. ACTIVE NAVIGATION LINK
     ===================================================== */
 
-    function showFormMessage(message) {
-
-        if (!formStatus) {
-            return;
-        }
-
-
-        formStatus.textContent =
-            message;
-
-
-        formStatus.style.opacity =
-            "1";
-
-
-        setTimeout(
-            function () {
-
-                formStatus.style.opacity =
-                    "0";
-
-            },
-            6000
-        );
-
-    }
-
-
-    /* =====================================================
-       HEADER SCROLL EFFECT
-    ===================================================== */
-
-    const header =
-        document.querySelector(".site-header");
-
-
-    if (header) {
-
-        window.addEventListener(
-            "scroll",
-            function () {
-
-                if (window.scrollY > 30) {
-
-                    header.style.boxShadow =
-                        "0 10px 35px rgba(0,0,0,0.25)";
-
-                } else {
-
-                    header.style.boxShadow =
-                        "none";
-
-                }
-
-            },
-            { passive: true }
-        );
-
-    }
-
-
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ===================================================== */
-
-    const sections =
-        document.querySelectorAll(
-            "main section[id]"
-        );
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
 
 
     const navigationLinks =
-        document.querySelectorAll(
-            ".main-nav a[href^='#']"
-        );
+        document.querySelectorAll(".main-nav a");
 
 
-    if (
-        sections.length &&
-        navigationLinks.length
-    ) {
+    navigationLinks.forEach(function (link) {
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
-
-                    entries.forEach(
-                        function (entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                navigationLinks
-                                    .forEach(
-                                        function (link) {
-
-                                            link.classList
-                                                .remove(
-                                                    "active"
-                                                );
-
-                                        }
-                                    );
+        const linkPage =
+            link.getAttribute("href")
+                ?.split("/")
+                .pop()
+                .toLowerCase();
 
 
-                                const activeLink =
-                                    document.querySelector(
-                                        '.main-nav a[href="#' +
-                                        entry.target.id +
-                                        '"]'
-                                    );
+        if (
+            linkPage === currentPage ||
+            (
+                currentPage === "" &&
+                linkPage === "index.html"
+            )
+        ) {
 
+            link.classList.add("active");
 
-                                if (activeLink) {
+        }
 
-                                    activeLink.classList
-                                        .add(
-                                            "active"
-                                        );
+    });
 
-                                }
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    rootMargin:
-                        "-30% 0px -60% 0px"
-                }
-            );
-
-
-        sections.forEach(
-            function (section) {
-
-                observer.observe(section);
-
-            }
-        );
-
-    }
 
 
     /* =====================================================
-       SCROLL REVEAL
+       03. SCROLL REVEAL ANIMATION
     ===================================================== */
 
     const revealElements =
@@ -494,12 +195,15 @@ document.addEventListener("DOMContentLoaded", function () {
             ".expertise-card, " +
             ".project-card, " +
             ".intelligence-grid article, " +
-            ".media-card, " +
-            ".mission-card"
+            ".mission-card, " +
+            ".contact-item"
         );
 
 
-    if (revealElements.length) {
+    if (
+        "IntersectionObserver" in window &&
+        revealElements.length > 0
+    ) {
 
         const revealObserver =
             new IntersectionObserver(
@@ -517,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 entry.target.style.transform =
                                     "translateY(0)";
-
 
                                 observer.unobserve(
                                     entry.target
@@ -542,10 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     "0";
 
                 element.style.transform =
-                    "translateY(18px)";
+                    "translateY(20px)";
 
                 element.style.transition =
-                    "opacity 0.6s ease, transform 0.6s ease";
+                    "opacity 0.6s ease, " +
+                    "transform 0.6s ease";
 
 
                 revealObserver.observe(
@@ -558,13 +262,160 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
-       CURRENT YEAR
+       04. CONTACT FORM
     ===================================================== */
 
-    const currentYear =
-        new Date().getFullYear();
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
 
+
+    const formStatus =
+        document.getElementById(
+            "formStatus"
+        );
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "name"
+                    )?.value.trim();
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    )?.value.trim();
+
+
+                const subject =
+                    document.getElementById(
+                        "subject"
+                    )?.value.trim();
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    )?.value.trim();
+
+
+                if (
+                    !name ||
+                    !email ||
+                    !subject ||
+                    !message
+                ) {
+
+                    if (formStatus) {
+
+                        formStatus.textContent =
+                            "Please complete all fields.";
+
+                    }
+
+                    return;
+
+                }
+
+
+                /* Basic email validation */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (
+                    !emailPattern.test(email)
+                ) {
+
+                    if (formStatus) {
+
+                        formStatus.textContent =
+                            "Please enter a valid email address.";
+
+                    }
+
+                    return;
+
+                }
+
+
+                /*
+                    Static website:
+                    Open user's email application
+                    with a pre-filled message.
+                */
+
+                const destination =
+                    "manojmeenacyber@gmail.com";
+
+
+                const mailSubject =
+                    encodeURIComponent(
+                        subject
+                    );
+
+
+                const mailBody =
+                    encodeURIComponent(
+
+                        "Name: " +
+                        name +
+                        "\n\n" +
+
+                        "Email: " +
+                        email +
+                        "\n\n" +
+
+                        "Message:\n" +
+                        message
+
+                    );
+
+
+                const mailtoURL =
+                    "mailto:" +
+                    destination +
+                    "?subject=" +
+                    mailSubject +
+                    "&body=" +
+                    mailBody;
+
+
+                if (formStatus) {
+
+                    formStatus.textContent =
+                        "Opening your email application...";
+
+                }
+
+
+                window.location.href =
+                    mailtoURL;
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       05. CURRENT YEAR
+    ===================================================== */
 
     const yearElements =
         document.querySelectorAll(
@@ -576,14 +427,52 @@ document.addEventListener("DOMContentLoaded", function () {
         function (element) {
 
             element.textContent =
-                currentYear;
+                new Date().getFullYear();
 
         }
     );
 
 
+
     /* =====================================================
-       ESCAPE KEY — CLOSE MENU
+       06. IMAGE ERROR HANDLING
+    ===================================================== */
+
+    const images =
+        document.querySelectorAll(
+            "img"
+        );
+
+
+    images.forEach(
+        function (image) {
+
+            image.addEventListener(
+                "error",
+                function () {
+
+                    /*
+                        Keep broken images from
+                        destroying the layout.
+                    */
+
+                    image.style.opacity =
+                        "0.25";
+
+                    image.alt =
+                        "Image unavailable";
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       07. ESC KEY
+       Close mobile navigation
     ===================================================== */
 
     document.addEventListener(
@@ -591,16 +480,13 @@ document.addEventListener("DOMContentLoaded", function () {
         function (event) {
 
             if (
-                event.key === "Escape"
+                event.key === "Escape" &&
+                mainNav
             ) {
 
-                if (mainNav) {
-
-                    mainNav.classList.remove(
-                        "open"
-                    );
-
-                }
+                mainNav.classList.remove(
+                    "active"
+                );
 
 
                 if (menuToggle) {
@@ -609,7 +495,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         "aria-expanded",
                         "false"
                     );
-
 
                     const icon =
                         menuToggle.querySelector(
@@ -637,23 +522,131 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+
     /* =====================================================
-       CONSOLE BRANDING
+       08. HEADER SCROLL EFFECT
+    ===================================================== */
+
+    const header =
+        document.querySelector(
+            ".site-header"
+        );
+
+
+    if (header) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (
+                    window.scrollY > 20
+                ) {
+
+                    header.style.boxShadow =
+                        "0 10px 40px rgba(0,0,0,0.18)";
+
+                } else {
+
+                    header.style.boxShadow =
+                        "none";
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       09. SMOOTH INTERNAL LINKS
+    ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetID =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !targetID ||
+                        targetID === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetID
+                        );
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView(
+                            {
+                                behavior: "smooth",
+                                block: "start"
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       10. CONSOLE BRANDING
     ===================================================== */
 
     console.log(
-        "%cMANOJ MEENA",
-        "font-size:22px;font-weight:bold;color:#c8a45d;"
+        "%c MK GLOBAL NEXUS ",
+        "background:#00d9ff;" +
+        "color:#03111b;" +
+        "font-weight:900;" +
+        "padding:6px 12px;" +
+        "border-radius:5px;"
     );
 
-    console.log(
-        "%cMK GLOBAL NEXUS",
-        "font-size:14px;color:#ffffff;"
-    );
 
     console.log(
-        "%cCyber Intelligence • Digital Investigations • AI & Cyber Security",
-        "font-size:12px;color:#9da4ad;"
+        "%c Manoj Meena | Cyber Intelligence & Technology ",
+        "color:#00d9ff;" +
+        "font-weight:700;"
+    );
+
+
+    console.log(
+        "Professional website initialized."
     );
 
 });
