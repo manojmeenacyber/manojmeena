@@ -1,1118 +1,1095 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact | Manoj Meena</title>
+    <meta charset="UTF-8">
 
-  <meta
-    name="description"
-    content="Contact Manoj Meena — Founder & CEO, MK Global Nexus | Cyber Crime Analyst | Digital Fraud Investigator | AI & Cyber Security Innovator."
-  >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description"
+          content="Contact Manoj Meena — Founder & CEO, MK Global Nexus | Cyber Crime Analyst | Digital Fraud Investigator | AI & Cyber Security Innovator | Investigative Journalist | Healthcare Professional.">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+    <meta name="author"
+          content="Manoj Meena">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta name="robots"
+          content="index, follow">
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta name="theme-color"
+          content="#050b18">
 
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.10), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(0, 119, 255, 0.10), transparent 30%),
-        #030712;
-      color: #ffffff;
-      min-height: 100vh;
-      line-height: 1.6;
-    }
+    <title>
+        Contact | Manoj Meena — MK Global Nexus
+    </title>
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
 
-    /* =========================
-       HEADER
-    ========================= */
+    <!-- GOOGLE FONT -->
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(3, 7, 18, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 24px;
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
 
-    .brand-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+    <!-- FONT AWESOME -->
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-      background: linear-gradient(
-        135deg,
-        #00d9ff,
-        #0077ff
-      );
 
-      color: white;
-      font-weight: 800;
-      font-size: 16px;
+    <!-- ROOT CSS -->
 
-      box-shadow:
-        0 0 25px rgba(0, 210, 255, 0.25);
-    }
+    <link rel="stylesheet"
+          href="style.css">
 
-    .brand-text strong {
-      display: block;
-      font-size: 15px;
-      letter-spacing: 0.08em;
-    }
-
-    .brand-text span {
-      display: block;
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      color: #8ea0b8;
-      margin-top: 2px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #aab7c9;
-      font-size: 13px;
-      font-weight: 500;
-      transition: 0.25s ease;
-    }
-
-    nav a:hover {
-      color: #00d9ff;
-    }
-
-    nav a.active {
-      color: #00d9ff;
-    }
-
-    .nav-contact {
-      padding: 10px 16px;
-      border: 1px solid rgba(0, 217, 255, 0.35);
-      border-radius: 10px;
-      color: #00d9ff !important;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 110px 24px 70px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-
-      color: #00d9ff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #00d9ff;
-      box-shadow: 0 0 12px #00d9ff;
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 0.95;
-      letter-spacing: -0.055em;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: #00d9ff;
-    }
-
-    .hero p {
-      max-width: 720px;
-      color: #aab7c9;
-      font-size: 17px;
-    }
-
-    /* =========================
-       CONTACT GRID
-    ========================= */
-
-    .contact-section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px 24px 100px;
-    }
-
-    .section-label {
-      color: #00d9ff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 35px;
-      letter-spacing: -0.03em;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-
-      padding: 28px;
-      border-radius: 22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(16, 30, 55, 0.95),
-          rgba(5, 13, 28, 0.95)
-        );
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-
-      background: rgba(0, 217, 255, 0.08);
-
-      filter: blur(35px);
-
-      top: -80px;
-      right: -60px;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(0, 217, 255, 0.35);
-      box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25);
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: rgba(0, 217, 255, 0.1);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-
-      color: #00d9ff;
-      font-size: 20px;
-
-      margin-bottom: 20px;
-    }
-
-    .contact-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .contact-card .description {
-      color: #8493a8;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      color: #00d9ff;
-      font-size: 14px;
-      font-weight: 600;
-
-      word-break: break-word;
-    }
-
-    .contact-link:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       SOCIAL
-    ========================= */
-
-    .social-section {
-      margin-top: 90px;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .social-card {
-      padding: 22px;
-      border-radius: 18px;
-
-      background: rgba(10, 20, 38, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-
-      transition: 0.25s ease;
-    }
-
-    .social-card:hover {
-      border-color: rgba(0, 217, 255, 0.35);
-      transform: translateY(-3px);
-    }
-
-    .social-name {
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .social-handle {
-      color: #8290a4;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .social-card a {
-      color: #00d9ff;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       MEDIA / COLLABORATION
-    ========================= */
-
-    .media-section {
-      margin-top: 90px;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .media-card {
-      padding: 30px;
-
-      border-radius: 22px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(14, 30, 54, 0.95),
-          rgba(5, 12, 25, 0.95)
-        );
-
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .media-card h3 {
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-
-    .media-handle {
-      color: #00d9ff;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .email-box {
-      padding: 14px 16px;
-      border-radius: 12px;
-
-      background: rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-
-      margin-bottom: 18px;
-    }
-
-    .email-label {
-      color: #77869b;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 5px;
-    }
-
-    .email-address {
-      color: #ffffff;
-      font-size: 14px;
-      word-break: break-word;
-    }
-
-    .media-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      padding: 11px 18px;
-
-      border-radius: 10px;
-
-      background: #00d9ff;
-      color: #02111b;
-
-      font-size: 13px;
-      font-weight: 700;
-
-      transition: 0.25s ease;
-    }
-
-    .media-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
-    }
-
-    /* =========================
-       COLLABORATION BANNER
-    ========================= */
-
-    .collab {
-      margin-top: 80px;
-      padding: 45px;
-
-      border-radius: 26px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(0, 217, 255, 0.12),
-          rgba(0, 80, 255, 0.08),
-          rgba(255, 255, 255, 0.02)
-        );
-
-      border: 1px solid rgba(0, 217, 255, 0.18);
-
-      text-align: center;
-    }
-
-    .collab h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .collab p {
-      max-width: 680px;
-      margin: auto auto 25px;
-      color: #9aa8ba;
-      font-size: 14px;
-    }
-
-    .collab-email {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 13px 22px;
-
-      border-radius: 12px;
-
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(0, 217, 255, 0.2);
-
-      color: #00d9ff;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-      padding: 35px 24px;
-
-      background: rgba(0, 0, 0, 0.18);
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .footer-brand span {
-      color: #00d9ff;
-    }
-
-    .footer-copy {
-      color: #657389;
-      font-size: 12px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 850px) {
-
-      .nav-container {
-        padding: 14px 18px;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      nav a:not(.nav-contact) {
-        display: none;
-      }
-
-      .hero {
-        padding: 75px 20px 50px;
-      }
-
-      .contact-section {
-        padding: 20px 20px 70px;
-      }
-
-      .contact-grid,
-      .media-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .collab {
-        padding: 35px 22px;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 520px) {
-
-      .brand-text strong {
-        font-size: 13px;
-      }
-
-      .brand-text span {
-        font-size: 7px;
-      }
-
-      .brand-logo {
-        width: 40px;
-        height: 40px;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .social-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card,
-      .media-card {
-        padding: 23px;
-      }
-
-      .collab h2 {
-        font-size: 26px;
-      }
-    }
-  </style>
 </head>
+
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
 
-  <header>
-    <div class="nav-container">
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-      <a href="index.html" class="brand">
+<header class="site-header">
 
-        <div class="brand-logo">
-          MM
-        </div>
+    <div class="container navbar">
 
-        <div class="brand-text">
-          <strong>MANOJ MEENA</strong>
-          <span>INTELLIGENCE • TECHNOLOGY</span>
-        </div>
 
-      </a>
+        <a href="index.html"
+           class="brand"
+           aria-label="Manoj Meena Home">
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="expertise.html">Expertise</a>
-        <a href="projects.html">Projects</a>
-        <a href="nexus.html">MK Global Nexus</a>
-        <a href="contact.html" class="active nav-contact">
-          Contact
+            <div class="brand-mark">
+                MM
+            </div>
+
+
+            <div class="brand-info">
+
+                <strong>
+                    MANOJ MEENA
+                </strong>
+
+                <span>
+                    INTELLIGENCE • TECHNOLOGY
+                </span>
+
+            </div>
+
         </a>
-      </nav>
+
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+        <nav class="main-nav"
+             aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="expertise.html">
+                Expertise
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="nexus.html">
+                MK Global Nexus
+            </a>
+
+            <a href="contact.html"
+               class="active">
+                Contact
+            </a>
+
+        </nav>
 
     </div>
-  </header>
+
+</header>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
 
-  <main>
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-    <section class="hero">
-
-      <div class="eyebrow">
-        CONNECT • COLLABORATE
-      </div>
-
-      <h1>
-        Let's build<br>
-        <span>something meaningful.</span>
-      </h1>
-
-      <p>
-        For professional discussions, cyber intelligence,
-        digital investigations, technology collaboration,
-        media opportunities, research or strategic partnerships,
-        feel free to connect.
-      </p>
-
-    </section>
+<main>
 
 
-    <!-- =========================
-         PRIMARY CONTACT
-    ========================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <section class="contact-section">
+<section class="hero">
 
-      <div class="section-label">
-        01 / DIRECT CONTACT
-      </div>
-
-      <h2 class="section-title">
-        Professional Contact
-      </h2>
+    <div class="container">
 
 
-      <div class="contact-grid">
-
-        <!-- Personal Email -->
-
-        <div class="contact-card">
-
-          <div class="card-icon">
-            ✉
-          </div>
-
-          <h3>
-            Manoj Meena
-          </h3>
-
-          <p class="description">
-            Personal professional contact
-          </p>
-
-          <a
-            href="mailto:manojmeenacyber@gmail.com"
-            class="contact-link"
-          >
-            manojmeenacyber@gmail.com →
-          </a>
-
-        </div>
+        <div class="hero-content">
 
 
-        <!-- Company Email -->
+            <div class="eyebrow">
+                CONNECT • COLLABORATE
+            </div>
 
-        <div class="contact-card">
 
-          <div class="card-icon">
-            ◈
-          </div>
+            <h1>
 
-          <h3>
-            MK Global Nexus
-          </h3>
+                Let's build
 
-          <p class="description">
-            Company, business and strategic enquiries
-          </p>
+                <span>
+                    something meaningful.
+                </span>
 
-          <a
-            href="mailto:mkglobalnexus@gmail.com"
-            class="contact-link"
-          >
-            mkglobalnexus@gmail.com →
-          </a>
+            </h1>
+
+
+            <h2>
+
+                Professional communication,
+                collaboration and strategic opportunities.
+
+            </h2>
+
+
+            <p>
+
+                For professional discussions, cyber
+                intelligence, digital investigations,
+                technology collaboration, media opportunities,
+                research or strategic partnerships,
+                feel free to connect.
+
+            </p>
+
+
+            <div class="btn-group">
+
+
+                <a href="mailto:mkglobalnexus@gmail.com"
+                   class="btn btn-primary">
+
+                    <i class="fas fa-envelope"></i>
+
+                    &nbsp; Email MK Global Nexus
+
+                </a>
+
+
+                <a href="about.html"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-user"></i>
+
+                    &nbsp; About Me
+
+                </a>
+
+            </div>
 
         </div>
 
 
-        <!-- Company Website -->
+        <div class="hero-image">
 
-        <div class="contact-card">
+            <div style="
+                text-align:center;
+                width:100%;
+                padding:35px;
+            ">
 
-          <div class="card-icon">
-            ◉
-          </div>
+                <div style="
+                    width:110px;
+                    height:110px;
+                    margin:0 auto 25px;
+                    border-radius:28px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    background:rgba(0,217,255,.08);
+                    border:1px solid rgba(0,217,255,.30);
+                    box-shadow:0 0 45px rgba(0,217,255,.12);
+                ">
 
-          <h3>
-            Company Website
-          </h3>
+                    <i class="fas fa-envelope"
+                       style="
+                           font-size:48px;
+                           color:#00d9ff;
+                       ">
+                    </i>
 
-          <p class="description">
-            Explore MK Global Nexus
-          </p>
+                </div>
 
-          <a
-            href="https://mkglobalnexus.free.nf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
-            mkglobalnexus.free.nf →
-          </a>
+
+                <h3>
+                    Manoj Meena
+                </h3>
+
+
+                <p>
+                    Founder &amp; CEO — MK Global Nexus
+                </p>
+
+
+                <div class="tags"
+                     style="justify-content:center;">
+
+                    <span class="tag">
+                        CYBER INTELLIGENCE
+                    </span>
+
+                    <span class="tag">
+                        TECHNOLOGY
+                    </span>
+
+                </div>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <!-- LinkedIn -->
-
-        <div class="contact-card">
-
-          <div class="card-icon">
-            in
-          </div>
-
-          <h3>
-            LinkedIn
-          </h3>
-
-          <p class="description">
-            Professional profile and networking
-          </p>
-
-          <a
-            href="https://www.linkedin.com/in/manojmeenacyber"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-link"
-          >
-            linkedin.com/in/manojmeenacyber →
-          </a>
-
-        </div>
-
-      </div>
+</section>
 
 
-      <!-- =========================
-           SOCIAL PROFILES
-      ========================= -->
 
-      <section class="social-section">
+<!-- =====================================================
+     DIRECT CONTACT
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
 
         <div class="section-label">
-          02 / SOCIAL PRESENCE
+            01 / DIRECT CONTACT
         </div>
+
 
         <h2 class="section-title">
-          Find Me Online
+
+            Professional
+
+            <span class="gradient-text">
+                Contact.
+            </span>
+
         </h2>
 
 
-        <div class="social-grid">
+        <p class="section-description">
 
-          <!-- GitHub -->
+            Choose the appropriate contact channel
+            depending on the nature of your enquiry.
 
-          <div class="social-card">
-
-            <div class="social-name">
-              GitHub
-            </div>
-
-            <div class="social-handle">
-              @manojmeenacyber
-            </div>
-
-            <a
-              href="https://github.com/manojmeenacyber"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View GitHub →
-            </a>
-
-          </div>
-
-
-          <!-- X -->
-
-          <div class="social-card">
-
-            <div class="social-name">
-              X
-            </div>
-
-            <div class="social-handle">
-              @manojmeenacyber
-            </div>
-
-            <a
-              href="https://x.com/manojmeenacyber"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View X Profile →
-            </a>
-
-          </div>
-
-
-          <!-- Instagram -->
-
-          <div class="social-card">
-
-            <div class="social-name">
-              Instagram
-            </div>
-
-            <div class="social-handle">
-              @manojmeenacyber
-            </div>
-
-            <a
-              href="https://www.instagram.com/manojmeenacyber"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Instagram →
-            </a>
-
-          </div>
-
-
-          <!-- Facebook -->
-
-          <div class="social-card">
-
-            <div class="social-name">
-              Facebook
-            </div>
-
-            <div class="social-handle">
-              @manojmeenacyber
-            </div>
-
-            <a
-              href="https://www.facebook.com/manojmeenacyber"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Facebook →
-            </a>
-
-          </div>
-
-
-          <!-- LinkedIn -->
-
-          <div class="social-card">
-
-            <div class="social-name">
-              LinkedIn
-            </div>
-
-            <div class="social-handle">
-              /in/manojmeenacyber
-            </div>
-
-            <a
-              href="https://www.linkedin.com/in/manojmeenacyber"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View LinkedIn →
-            </a>
-
-          </div>
-
-
-          <!-- Company -->
-
-          <div class="social-card">
-
-            <div class="social-name">
-              MK Global Nexus
-            </div>
-
-            <div class="social-handle">
-              Intelligence • Research • Innovation
-            </div>
-
-            <a
-              href="https://mkglobalnexus.free.nf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit Company →
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           MEDIA CHANNELS
-      ========================= -->
-
-      <section class="media-section">
-
-        <div class="section-label">
-          03 / MEDIA & RESEARCH
-        </div>
-
-        <h2 class="section-title">
-          Media & YouTube Channels
-        </h2>
-
-
-        <div class="media-grid">
-
-          <!-- MK CyberHawk -->
-
-          <div class="media-card">
-
-            <h3>
-              MK CyberHawk
-            </h3>
-
-            <div class="media-handle">
-              @MKCyberHawk
-            </div>
-
-            <div class="email-box">
-
-              <div class="email-label">
-                Collaboration Email
-              </div>
-
-              <div class="email-address">
-                mkcyberhawk@gmail.com
-              </div>
-
-            </div>
-
-            <a
-              href="https://www.youtube.com/@MKCyberHawk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="media-button"
-            >
-              ▶ Visit Channel
-            </a>
-
-          </div>
-
-
-          <!-- MKX Global News -->
-
-          <div class="media-card">
-
-            <h3>
-              MKX Global News
-            </h3>
-
-            <div class="media-handle">
-              @MKXGLOBALNEWS
-            </div>
-
-            <div class="email-box">
-
-              <div class="email-label">
-                Media & Collaboration Email
-              </div>
-
-              <div class="email-address">
-                mkxnewsdesk@gmail.com
-              </div>
-
-            </div>
-
-            <a
-              href="https://www.youtube.com/@MKXGLOBALNEWS"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="media-button"
-            >
-              ▶ Visit Channel
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      <!-- =========================
-           COLLABORATION
-      ========================= -->
-
-      <section class="collab">
-
-        <div class="section-label">
-          OPEN FOR COLLABORATION
-        </div>
-
-        <h2>
-          Have an idea, project or opportunity?
-        </h2>
-
-        <p>
-          For cybersecurity research, digital fraud awareness,
-          investigative journalism, AI innovation, technology
-          projects, media collaboration or strategic partnerships,
-          connect through the appropriate channel above.
         </p>
 
-        <a
-          href="mailto:mkglobalnexus@gmail.com"
-          class="collab-email"
-        >
-          ✉ Contact MK Global Nexus
-        </a>
 
-      </section>
-
-    </section>
-
-  </main>
+        <div class="grid">
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+            <!-- PERSONAL -->
 
-  <footer>
+            <article class="card">
 
-    <div class="footer-container">
+                <div class="card-icon">
+                    <i class="fas fa-user"></i>
+                </div>
 
-      <div class="footer-brand">
-        © 2026 <span>Manoj Meena</span>
-      </div>
 
-      <div class="footer-copy">
-        Cyber Intelligence • Digital Investigations • AI • Technology
-      </div>
+                <h3>
+                    Manoj Meena
+                </h3>
+
+
+                <p>
+                    Personal professional contact.
+                </p>
+
+
+                <a href="mailto:manojmeenacyber@gmail.com"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-envelope"></i>
+
+                    &nbsp; manojmeenacyber@gmail.com
+
+                </a>
+
+            </article>
+
+
+
+            <!-- COMPANY -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+
+
+                <h3>
+                    MK Global Nexus
+                </h3>
+
+
+                <p>
+                    Company, business and strategic enquiries.
+                </p>
+
+
+                <a href="mailto:mkglobalnexus@gmail.com"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-envelope"></i>
+
+                    &nbsp; mkglobalnexus@gmail.com
+
+                </a>
+
+            </article>
+
+
+
+            <!-- WEBSITE -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+
+
+                <h3>
+                    Company Website
+                </h3>
+
+
+                <p>
+                    Explore MK Global Nexus.
+                </p>
+
+
+                <a href="https://mkglobalnexus.free.nf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+
+                    &nbsp; Visit Website
+
+                </a>
+
+            </article>
+
+
+
+            <!-- LINKEDIN -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+
+                <p>
+                    Professional networking and profile.
+                </p>
+
+
+                <a href="https://www.linkedin.com/in/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                    &nbsp; LinkedIn Profile
+
+                </a>
+
+            </article>
+
+        </div>
 
     </div>
 
-  </footer>
+</section>
+
+
+
+<!-- =====================================================
+     SOCIAL PRESENCE
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            02 / SOCIAL PRESENCE
+        </div>
+
+
+        <h2 class="section-title">
+
+            Find Me
+
+            <span class="gradient-text">
+                Online.
+            </span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            My professional and public profiles across
+            major digital platforms.
+
+        </p>
+
+
+        <div class="grid">
+
+
+            <!-- GITHUB -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    <strong>@manojmeenacyber</strong>
+                </p>
+
+                <a href="https://github.com/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    View GitHub
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- X -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-x-twitter"></i>
+                </div>
+
+                <h3>
+                    X
+                </h3>
+
+                <p>
+                    <strong>@manojmeenacyber</strong>
+                </p>
+
+                <a href="https://x.com/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    View X Profile
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- INSTAGRAM -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+
+                <h3>
+                    Instagram
+                </h3>
+
+                <p>
+                    <strong>@manojmeenacyber</strong>
+                </p>
+
+                <a href="https://www.instagram.com/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    View Instagram
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- FACEBOOK -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+
+                <h3>
+                    Facebook
+                </h3>
+
+                <p>
+                    <strong>@manojmeenacyber</strong>
+                </p>
+
+                <a href="https://www.facebook.com/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    View Facebook
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- LINKEDIN -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    <strong>/in/manojmeenacyber</strong>
+                </p>
+
+                <a href="https://www.linkedin.com/in/manojmeenacyber"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    View LinkedIn
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- COMPANY -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+
+                <h3>
+                    MK Global Nexus
+                </h3>
+
+                <p>
+                    Intelligence • Research • Innovation
+                </p>
+
+                <a href="https://mkglobalnexus.free.nf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-outline">
+
+                    Visit Company
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEDIA & YOUTUBE
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="section-label">
+            03 / MEDIA &amp; RESEARCH
+        </div>
+
+
+        <h2 class="section-title">
+
+            Media &amp; YouTube
+
+            <span class="gradient-text">
+                Channels.
+            </span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            For media collaboration, research,
+            interviews and channel-related enquiries.
+
+        </p>
+
+
+        <div class="grid">
+
+
+            <!-- MK CYBERHAWK -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+
+
+                <h3>
+                    MK CyberHawk
+                </h3>
+
+
+                <p>
+                    Cybersecurity, cyber awareness
+                    and technology-focused content.
+                </p>
+
+
+                <div class="mission"
+                     style="margin:20px 0 20px;
+                            padding:18px;">
+
+                    <small>
+                        COLLABORATION EMAIL
+                    </small>
+
+                    <p style="
+                        margin-top:6px;
+                        word-break:break-word;
+                    ">
+
+                        <a href="mailto:mkcyberhawk@gmail.com">
+
+                            mkcyberhawk@gmail.com
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+
+                <a href="https://www.youtube.com/@MKCyberHawk"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary">
+
+                    <i class="fab fa-youtube"></i>
+
+                    &nbsp; Visit Channel
+
+                </a>
+
+            </article>
+
+
+
+            <!-- MKX GLOBAL NEWS -->
+
+            <article class="card">
+
+                <div class="card-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+
+
+                <h3>
+                    MKX Global News
+                </h3>
+
+
+                <p>
+                    News, investigative journalism,
+                    public awareness and global topics.
+                </p>
+
+
+                <div class="mission"
+                     style="margin:20px 0 20px;
+                            padding:18px;">
+
+                    <small>
+                        MEDIA &amp; COLLABORATION EMAIL
+                    </small>
+
+                    <p style="
+                        margin-top:6px;
+                        word-break:break-word;
+                    ">
+
+                        <a href="mailto:mkxnewsdesk@gmail.com">
+
+                            mkxnewsdesk@gmail.com
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+
+                <a href="https://www.youtube.com/@MKXGLOBALNEWS"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary">
+
+                    <i class="fab fa-youtube"></i>
+
+                    &nbsp; Visit Channel
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFESSIONAL IDENTITY
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="mission">
+
+
+            <div class="section-label">
+                PROFESSIONAL IDENTITY
+            </div>
+
+
+            <h2>
+
+                Manoj Meena
+
+                <span class="gradient-text">
+                    — MK Global Nexus
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Founder &amp; CEO, MK Global Nexus |
+                Cyber Crime Analyst |
+                Digital Fraud Investigator |
+                AI &amp; Cyber Security Innovator |
+                Investigative Journalist |
+                Healthcare Professional
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    CYBER CRIME ANALYST
+                </span>
+
+                <span class="tag">
+                    DIGITAL FRAUD INVESTIGATOR
+                </span>
+
+                <span class="tag">
+                    AI &amp; CYBER SECURITY
+                </span>
+
+                <span class="tag">
+                    INVESTIGATIVE JOURNALIST
+                </span>
+
+                <span class="tag">
+                    HEALTHCARE PROFESSIONAL
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COLLABORATION
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+
+        <div class="mission"
+             style="text-align:center;">
+
+
+            <div class="section-label">
+                OPEN FOR COLLABORATION
+            </div>
+
+
+            <h2>
+
+                Have an idea,
+                project or opportunity?
+
+            </h2>
+
+
+            <p>
+
+                For cybersecurity research, digital fraud
+                awareness, investigative journalism,
+                AI innovation, technology projects,
+                media collaboration or strategic
+                partnerships, connect through the
+                appropriate channel.
+
+            </p>
+
+
+            <div class="btn-group"
+                 style="justify-content:center;">
+
+
+                <a href="mailto:mkglobalnexus@gmail.com"
+                   class="btn btn-primary">
+
+                    <i class="fas fa-envelope"></i>
+
+                    &nbsp; Contact MK Global Nexus
+
+                </a>
+
+
+                <a href="mailto:manojmeenacyber@gmail.com"
+                   class="btn btn-outline">
+
+                    <i class="fas fa-user"></i>
+
+                    &nbsp; Contact Manoj Meena
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+
+        <div>
+
+            <div class="footer-brand">
+                MANOJ MEENA
+            </div>
+
+            <p>
+                Founder &amp; CEO — MK Global Nexus
+            </p>
+
+            <p>
+                Intelligence • Technology • Innovation
+            </p>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="https://github.com/manojmeenacyber"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fab fa-github"></i>
+
+                GitHub
+
+            </a>
+
+
+            <a href="https://x.com/manojmeenacyber"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fab fa-x-twitter"></i>
+
+                X
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/manojmeenacyber"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <i class="fab fa-linkedin-in"></i>
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <p>
+
+                ©
+                <span data-current-year></span>
+                Manoj Meena.
+                All rights reserved.
+
+            </p>
+
+
+            <div class="social-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ROOT JAVASCRIPT -->
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>
