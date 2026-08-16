@@ -2,78 +2,120 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================= MOBILE NAVIGATION ================= */
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
 
-    const menuToggle =
-        document.querySelector(".menu-toggle");
-
-    const mainNav =
-        document.querySelector(".main-nav");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
     if (menuToggle && mainNav) {
 
-        menuToggle.addEventListener("click", () => {
+        const closeMenu = () => {
 
-            const opened =
-                mainNav.classList.toggle("active");
+            mainNav.classList.remove("active");
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                String(opened)
+                "false"
             );
 
             menuToggle.setAttribute(
                 "aria-label",
-                opened
+                "Open navigation menu"
+            );
+        };
+
+
+        const toggleMenu = () => {
+
+            const isOpen =
+                mainNav.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
-        });
+        };
 
-        mainNav.querySelectorAll("a")
+
+        menuToggle.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                toggleMenu();
+            }
+        );
+
+
+        mainNav
+            .querySelectorAll("a")
             .forEach(link => {
 
-                link.addEventListener("click", () => {
+                link.addEventListener(
+                    "click",
+                    () => {
 
-                    mainNav.classList.remove("active");
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-                });
+                        closeMenu();
+                    }
+                );
             });
 
-        document.addEventListener("click", event => {
 
-            if (
-                !mainNav.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
+        document.addEventListener(
+            "click",
+            event => {
 
-                mainNav.classList.remove("active");
+                if (
+                    mainNav.classList.contains("active") &&
+                    !mainNav.contains(event.target) &&
+                    !menuToggle.contains(event.target)
+                ) {
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                    closeMenu();
+                }
             }
-        });
+        );
+
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                if (window.innerWidth > 700) {
+                    closeMenu();
+                }
+            }
+        );
     }
 
 
-    /* ================= ACTIVE NAVIGATION ================= */
 
-    const currentPage =
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
+
+    const currentPath =
         window.location.pathname
             .split("/")
             .pop()
             .toLowerCase();
+
+
+    const currentPage =
+        currentPath === ""
+            ? "index.html"
+            : currentPath;
+
 
     document
         .querySelectorAll(".main-nav a")
@@ -84,30 +126,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!href) return;
 
+
+            /*
+             * Ignore external URLs
+             */
+
+            if (
+                href.startsWith("http://") ||
+                href.startsWith("https://") ||
+                href.startsWith("mailto:")
+            ) {
+                return;
+            }
+
+
             const page =
                 href
                     .split("/")
                     .pop()
+                    .split("#")[0]
                     .toLowerCase();
+
 
             link.classList.remove("active");
 
-            if (
-                page === currentPage ||
-                (
-                    currentPage === "" &&
-                    page === "index.html"
-                )
-            ) {
+
+            if (page === currentPage) {
+
                 link.classList.add("active");
             }
+
         });
 
 
-    /* ================= CURRENT YEAR ================= */
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
 
     const year =
         new Date().getFullYear();
+
 
     document
         .querySelectorAll("[data-current-year]")
@@ -117,40 +176,64 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* ================= SMOOTH SCROLL ================= */
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ===================================================== */
 
     document
         .querySelectorAll('a[href^="#"]')
         .forEach(link => {
 
-            link.addEventListener("click", event => {
+            link.addEventListener(
+                "click",
+                event => {
 
-                const id =
-                    link.getAttribute("href");
+                    const id =
+                        link.getAttribute("href");
 
-                if (!id || id === "#") return;
 
-                const target =
-                    document.querySelector(id);
+                    if (
+                        !id ||
+                        id === "#"
+                    ) {
+                        return;
+                    }
 
-                if (!target) return;
 
-                event.preventDefault();
+                    const target =
+                        document.querySelector(id);
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            });
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
         });
 
 
-    /* ================= SCROLL REVEAL ================= */
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
 
     const revealElements =
         document.querySelectorAll(
             ".card, .project-card, .contact-card, .mission"
         );
+
 
     if (
         revealElements.length &&
@@ -163,37 +246,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     entries.forEach(entry => {
 
-                        if (!entry.isIntersecting)
+                        if (!entry.isIntersecting) {
                             return;
+                        }
+
+
+                        /*
+                         * IMPORTANT:
+                         * Directly reveal the element.
+                         * This prevents the invisible-card bug.
+                         */
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
 
                         entry.target.classList.add(
                             "visible"
                         );
 
+
                         observer.unobserve(
                             entry.target
                         );
+
                     });
+
                 },
                 {
-                    threshold: 0.12
+                    threshold: 0.10
                 }
             );
 
-        revealElements.forEach(element => {
 
-            element.style.opacity = "0";
+        revealElements.forEach(
+            (element, index) => {
 
-            element.style.transform =
-                "translateY(20px)";
+                element.style.opacity = "0";
 
-            element.style.transition =
-                "opacity .7s ease, transform .7s ease";
+                element.style.transform =
+                    "translateY(20px)";
 
-            observer.observe(element);
-        });
+
+                element.style.transition =
+                    `opacity .65s ease ${index * 40}ms,
+                     transform .65s ease ${index * 40}ms`;
+
+
+                observer.observe(element);
+            }
+        );
+
 
     } else {
+
+        /*
+         * Fallback for older browsers
+         */
 
         revealElements.forEach(element => {
 
@@ -201,68 +312,120 @@ document.addEventListener("DOMContentLoaded", () => {
 
             element.style.transform =
                 "translateY(0)";
+
         });
+
     }
 
 
-    /* ================= BACK TO TOP ================= */
 
-    const backTop =
-        document.createElement("button");
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
 
-    backTop.type = "button";
-
-    backTop.id = "backToTop";
-
-    backTop.innerHTML = "↑";
-
-    backTop.setAttribute(
-        "aria-label",
-        "Back to top"
-    );
-
-    Object.assign(
-        backTop.style,
-        {
-            position: "fixed",
-            right: "22px",
-            bottom: "22px",
-            width: "46px",
-            height: "46px",
-            borderRadius: "50%",
-            border:
-                "1px solid rgba(0,217,255,.35)",
-            background:
-                "rgba(5,15,30,.92)",
-            color: "#00d9ff",
-            fontSize: "20px",
-            fontWeight: "800",
-            cursor: "pointer",
-            zIndex: "9999",
-            display: "none",
-            backdropFilter: "blur(10px)"
-        }
-    );
-
-    document.body.appendChild(backTop);
+    let backTop =
+        document.getElementById("backToTop");
 
 
-    window.addEventListener(
-        "scroll",
+    /*
+     * Prevent duplicate button
+     * if script is loaded more than once.
+     */
+
+    if (!backTop) {
+
+        backTop =
+            document.createElement("button");
+
+
+        backTop.type = "button";
+
+        backTop.id = "backToTop";
+
+        backTop.innerHTML = "↑";
+
+
+        backTop.setAttribute(
+            "aria-label",
+            "Back to top"
+        );
+
+
+        Object.assign(
+            backTop.style,
+            {
+                position: "fixed",
+
+                right: "22px",
+
+                bottom: "22px",
+
+                width: "46px",
+
+                height: "46px",
+
+                borderRadius: "50%",
+
+                border:
+                    "1px solid rgba(0,217,255,.35)",
+
+                background:
+                    "rgba(5,15,30,.92)",
+
+                color: "#00d9ff",
+
+                fontSize: "20px",
+
+                fontWeight: "800",
+
+                cursor: "pointer",
+
+                zIndex: "9999",
+
+                display: "none",
+
+                placeItems: "center",
+
+                backdropFilter:
+                    "blur(10px)",
+
+                WebkitBackdropFilter:
+                    "blur(10px)"
+            }
+        );
+
+
+        document.body.appendChild(
+            backTop
+        );
+
+    }
+
+
+
+    const updateBackTop =
         () => {
+
+            if (!backTop) return;
+
 
             backTop.style.display =
                 window.scrollY > 500
                     ? "grid"
                     : "none";
+        };
 
-            backTop.style.placeItems =
-                "center";
-        },
+
+    window.addEventListener(
+        "scroll",
+        updateBackTop,
         {
             passive: true
         }
     );
+
+
+    updateBackTop();
 
 
     backTop.addEventListener(
@@ -273,42 +436,77 @@ document.addEventListener("DOMContentLoaded", () => {
                 top: 0,
                 behavior: "smooth"
             });
+
         }
     );
 
 
-    /* ================= EXTERNAL LINKS ================= */
+
+    /* =====================================================
+       EXTERNAL LINKS
+    ===================================================== */
 
     document
-        .querySelectorAll('a[href^="http"]')
+        .querySelectorAll(
+            'a[href^="http://"], a[href^="https://"]'
+        )
         .forEach(link => {
 
             const url =
                 link.getAttribute("href");
 
+
             if (!url) return;
 
-            if (
-                url.includes(
+
+            try {
+
+                const linkUrl =
+                    new URL(
+                        url,
+                        window.location.href
+                    );
+
+
+                /*
+                 * Open only genuinely external
+                 * domains in a new tab.
+                 */
+
+                if (
+                    linkUrl.hostname !==
                     window.location.hostname
-                )
-            ) {
-                return;
+                ) {
+
+                    link.setAttribute(
+                        "target",
+                        "_blank"
+                    );
+
+
+                    link.setAttribute(
+                        "rel",
+                        "noopener noreferrer"
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.warn(
+                    "Invalid URL:",
+                    url
+                );
+
             }
 
-            link.setAttribute(
-                "target",
-                "_blank"
-            );
-
-            link.setAttribute(
-                "rel",
-                "noopener noreferrer"
-            );
         });
 
 
-    /* ================= IMAGE ERROR ================= */
+
+    /* =====================================================
+       IMAGE ERROR HANDLING
+    ===================================================== */
 
     document
         .querySelectorAll("img")
@@ -321,26 +519,96 @@ document.addEventListener("DOMContentLoaded", () => {
                     image.style.background =
                         "#0a1728";
 
+
                     image.style.minHeight =
                         "200px";
 
+
                     image.alt =
+                        image.alt ||
                         "Image unavailable";
+
                 }
             );
+
         });
 
 
-    /* ================= CONSOLE ================= */
+
+    /* =====================================================
+       KEYBOARD ACCESSIBILITY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            /*
+             * ESC closes mobile navigation
+             */
+
+            if (
+                event.key === "Escape" &&
+                mainNav &&
+                mainNav.classList.contains("active")
+            ) {
+
+                mainNav.classList.remove(
+                    "active"
+                );
+
+
+                if (menuToggle) {
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       PAGE READY
+    ===================================================== */
+
+    document.documentElement.classList.add(
+        "js-ready"
+    );
+
+
+
+    /* =====================================================
+       CONSOLE BRANDING
+    ===================================================== */
 
     console.log(
         "%c MANOJ MEENA ",
         "color:#00d9ff;font-size:20px;font-weight:800;"
     );
 
+
     console.log(
         "%c MK GLOBAL NEXUS ",
         "color:#ffffff;font-size:13px;font-weight:700;"
+    );
+
+
+    console.log(
+        "%c Cyber Intelligence • Digital Investigation • AI ",
+        "color:#96a4b9;font-size:11px;"
     );
 
 });
