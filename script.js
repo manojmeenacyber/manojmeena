@@ -4,66 +4,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        MANOJ MEENA — PERSONAL BRAND WEBSITE
-       Global JavaScript
-    ===================================================== */
+       Main JavaScript
+       ===================================================== */
 
+    /* ================= MOBILE NAVIGATION ================= */
 
-    /* =====================================================
-       MOBILE NAVIGATION
-    ===================================================== */
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-    const menuToggle =
-        document.querySelector(".menu-toggle") ||
-        document.querySelector(".hamburger");
+    if (hamburger && navLinks) {
 
-    const mainNav =
-        document.querySelector(".main-nav") ||
-        document.querySelector(".nav-links");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open navigation menu");
 
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener("click", (event) => {
-
+        hamburger.addEventListener("click", (event) => {
             event.stopPropagation();
 
-            const opened =
-                mainNav.classList.toggle("active");
+            const isOpen = navLinks.classList.toggle("active");
 
-            menuToggle.classList.toggle(
-                "active",
-                opened
-            );
+            hamburger.classList.toggle("active", isOpen);
 
-            menuToggle.setAttribute(
+            hamburger.setAttribute(
                 "aria-expanded",
-                String(opened)
+                String(isOpen)
             );
 
-            menuToggle.setAttribute(
+            hamburger.setAttribute(
                 "aria-label",
-                opened
+                isOpen
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
         });
 
+        /* Close menu after clicking a link */
 
-        /* Close after clicking a navigation link */
-
-        mainNav.querySelectorAll("a").forEach(link => {
+        navLinks.querySelectorAll("a").forEach((link) => {
 
             link.addEventListener("click", () => {
 
-                mainNav.classList.remove("active");
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
 
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
+                hamburger.setAttribute(
                     "aria-expanded",
                     "false"
                 );
 
-                menuToggle.setAttribute(
+                hamburger.setAttribute(
                     "aria-label",
                     "Open navigation menu"
                 );
@@ -71,23 +59,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
         /* Close when clicking outside */
 
-        document.addEventListener("click", event => {
+        document.addEventListener("click", (event) => {
 
             if (
-                !mainNav.contains(event.target) &&
-                !menuToggle.contains(event.target)
+                !navLinks.contains(event.target) &&
+                !hamburger.contains(event.target)
             ) {
 
-                mainNav.classList.remove("active");
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
 
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
+                hamburger.setAttribute(
                     "aria-expanded",
                     "false"
+                );
+
+                hamburger.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
                 );
             }
 
@@ -96,9 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ===================================================== */
+    /* ================= ACTIVE NAVIGATION ================= */
 
     const currentPath =
         window.location.pathname
@@ -106,77 +95,53 @@ document.addEventListener("DOMContentLoaded", () => {
             .pop()
             .toLowerCase() || "index.html";
 
+    if (navLinks) {
 
-    const navigationLinks =
-        document.querySelectorAll(
-            ".main-nav a, .nav-links a"
-        );
+        navLinks.querySelectorAll("a").forEach((link) => {
 
+            const href = link.getAttribute("href");
 
-    navigationLinks.forEach(link => {
+            if (!href) return;
 
-        const href =
-            link.getAttribute("href");
+            const cleanHref =
+                href.split("#")[0]
+                    .split("?")[0]
+                    .split("/")
+                    .pop()
+                    .toLowerCase() || "index.html";
 
-        if (!href || href.startsWith("#")) {
-            return;
-        }
+            link.classList.remove("active");
 
+            if (cleanHref === currentPath) {
+                link.classList.add("active");
+            }
 
-        const linkPage =
-            href
-                .split("/")
-                .pop()
-                .split("?")[0]
-                .split("#")[0]
-                .toLowerCase();
+        });
 
-
-        link.classList.remove("active");
+    }
 
 
-        if (
-            linkPage === currentPath ||
-            (
-                currentPath === "" &&
-                linkPage === "index.html"
-            )
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
+    /* ================= CURRENT YEAR ================= */
 
     const currentYear =
         new Date().getFullYear();
 
-
     document
         .querySelectorAll("[data-current-year]")
-        .forEach(element => {
+        .forEach((element) => {
 
-            element.textContent =
-                currentYear;
+            element.textContent = currentYear;
 
         });
 
 
-    /* =====================================================
-       SMOOTH SCROLL
-    ===================================================== */
+    /* ================= SMOOTH SCROLL ================= */
 
     document
         .querySelectorAll('a[href^="#"]')
-        .forEach(link => {
+        .forEach((link) => {
 
-            link.addEventListener("click", event => {
+            link.addEventListener("click", (event) => {
 
                 const targetId =
                     link.getAttribute("href");
@@ -188,17 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-
                 const target =
                     document.querySelector(targetId);
 
-                if (!target) {
-                    return;
-                }
-
+                if (!target) return;
 
                 event.preventDefault();
-
 
                 target.scrollIntoView({
                     behavior: "smooth",
@@ -210,59 +170,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
+    /* ================= SCROLL REVEAL ================= */
 
     const revealElements =
         document.querySelectorAll(
-            `
-            .expertise-card,
-            .presence-card,
-            .future-card,
-            .project-card,
-            .channel-card,
-            .contact-card,
-            .mission,
-            .identity-grid,
-            .nexus-box,
-            .roadmap-item,
-            .future-cta
-            `
+            ".card, " +
+            ".project-card, " +
+            ".channel-card, " +
+            ".contact-card, " +
+            ".future-card, " +
+            ".mission, " +
+            ".expertise-card, " +
+            ".roadmap-item"
         );
 
-
     if (
-        revealElements.length &&
+        revealElements.length > 0 &&
         "IntersectionObserver" in window
     ) {
 
         const revealObserver =
             new IntersectionObserver(
-                entries => {
+                (entries, observer) => {
 
-                    entries.forEach(entry => {
+                    entries.forEach((entry) => {
 
-                        if (
-                            !entry.isIntersecting
-                        ) {
+                        if (!entry.isIntersecting) {
                             return;
                         }
 
+                        entry.target.classList.add("visible");
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-
-                        entry.target.style.opacity =
-                            "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-
-                        revealObserver.unobserve(
+                        observer.unobserve(
                             entry.target
                         );
 
@@ -275,16 +214,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
 
+        revealElements.forEach((element) => {
 
-        revealElements.forEach(element => {
-
-            element.style.opacity = "0";
-
-            element.style.transform =
-                "translateY(24px)";
-
-            element.style.transition =
-                "opacity .7s ease, transform .7s ease";
+            element.classList.add("reveal");
 
             revealObserver.observe(element);
 
@@ -293,89 +225,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
+    /* ================= BACK TO TOP ================= */
 
-    let backTop =
-        document.getElementById("backToTop");
+    const backToTop =
+        document.createElement("button");
 
+    backToTop.type = "button";
+    backToTop.id = "backToTop";
+    backToTop.innerHTML = "↑";
 
-    if (!backTop) {
+    backToTop.setAttribute(
+        "aria-label",
+        "Back to top"
+    );
 
-        backTop =
-            document.createElement("button");
-
-        backTop.type = "button";
-
-        backTop.id = "backToTop";
-
-        backTop.innerHTML =
-            '<i class="fas fa-arrow-up"></i>';
-
-        backTop.setAttribute(
-            "aria-label",
-            "Back to top"
-        );
+    document.body.appendChild(backToTop);
 
 
-        Object.assign(
-            backTop.style,
-            {
-                position: "fixed",
-                right: "22px",
-                bottom: "22px",
-                width: "46px",
-                height: "46px",
-                borderRadius: "50%",
-                border:
-                    "1px solid rgba(0,217,255,.35)",
-                background:
-                    "rgba(4,12,25,.94)",
-                color: "#00d9ff",
-                fontSize: "16px",
-                cursor: "pointer",
-                zIndex: "9999",
-                display: "none",
-                placeItems: "center",
-                backdropFilter: "blur(12px)",
-                boxShadow:
-                    "0 10px 30px rgba(0,0,0,.35)"
+    const updateBackToTop =
+        () => {
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
             }
-        );
 
-
-        document.body.appendChild(backTop);
-
-    }
+        };
 
 
     window.addEventListener(
         "scroll",
-        () => {
-
-            if (
-                window.scrollY > 500
-            ) {
-
-                backTop.style.display =
-                    "grid";
-
-            } else {
-
-                backTop.style.display =
-                    "none";
-
-            }
-
-        },
+        updateBackToTop,
         {
             passive: true
         }
     );
 
 
-    backTop.addEventListener(
+    backToTop.addEventListener(
         "click",
         () => {
 
@@ -388,33 +280,24 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       EXTERNAL LINKS
-    ===================================================== */
+    /* ================= EXTERNAL LINKS ================= */
 
     document
         .querySelectorAll('a[href^="http"]')
-        .forEach(link => {
+        .forEach((link) => {
 
-            const url =
+            const href =
                 link.getAttribute("href");
 
-            if (!url) {
-                return;
-            }
-
+            if (!href) return;
 
             try {
 
-                const linkURL =
-                    new URL(
-                        url,
-                        window.location.href
-                    );
-
+                const url =
+                    new URL(href);
 
                 if (
-                    linkURL.hostname !==
+                    url.hostname !==
                     window.location.hostname
                 ) {
 
@@ -434,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 console.warn(
                     "Invalid external URL:",
-                    url
+                    href
                 );
 
             }
@@ -442,13 +325,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* =====================================================
-       IMAGE ERROR HANDLING
-    ===================================================== */
+    /* ================= IMAGE FALLBACK ================= */
 
     document
         .querySelectorAll("img")
-        .forEach(image => {
+        .forEach((image) => {
 
             image.addEventListener(
                 "error",
@@ -458,8 +339,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         "image-error"
                     );
 
-                    image.alt =
-                        "Image unavailable";
+                    image.setAttribute(
+                        "alt",
+                        "Image unavailable"
+                    );
 
                 }
             );
@@ -467,121 +350,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* =====================================================
-       NAVBAR SCROLL EFFECT
-    ===================================================== */
-
-    const navbar =
-        document.querySelector(".navbar");
-
-
-    if (navbar) {
-
-        const updateNavbar =
-            () => {
-
-                if (
-                    window.scrollY > 30
-                ) {
-
-                    navbar.classList.add(
-                        "scrolled"
-                    );
-
-                } else {
-
-                    navbar.classList.remove(
-                        "scrolled"
-                    );
-
-                }
-
-            };
-
-
-        window.addEventListener(
-            "scroll",
-            updateNavbar,
-            {
-                passive: true
-            }
-        );
-
-
-        updateNavbar();
-
-    }
-
-
-    /* =====================================================
-       HERO PARALLAX — VERY LIGHT
-    ===================================================== */
-
-    const heroProfile =
-        document.querySelector(
-            ".hero-profile"
-        );
-
-
-    if (
-        heroProfile &&
-        window.matchMedia(
-            "(min-width: 901px)"
-        ).matches
-    ) {
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                const scroll =
-                    window.scrollY;
-
-
-                if (scroll < 700) {
-
-                    heroProfile.style.transform =
-                        `translateY(${scroll * 0.04}px)`;
-
-                }
-
-            },
-            {
-                passive: true
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ACCESSIBILITY — KEYBOARD MENU
-    ===================================================== */
+    /* ================= KEYBOARD ESCAPE ================= */
 
     document.addEventListener(
         "keydown",
-        event => {
+        (event) => {
 
             if (
                 event.key === "Escape" &&
-                mainNav &&
-                menuToggle
+                navLinks &&
+                hamburger
             ) {
 
-                mainNav.classList.remove(
-                    "active"
-                );
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
 
-                menuToggle.classList.remove(
-                    "active"
-                );
-
-                menuToggle.setAttribute(
+                hamburger.setAttribute(
                     "aria-expanded",
                     "false"
                 );
-
-                menuToggle.focus();
 
             }
 
@@ -589,9 +376,12 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       CONSOLE BRANDING
-    ===================================================== */
+    /* ================= PAGE READY ================= */
+
+    document.body.classList.add("page-loaded");
+
+
+    /* ================= BRAND CONSOLE ================= */
 
     console.log(
         "%c MANOJ MEENA ",
@@ -599,13 +389,13 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     console.log(
-        "%c MK GLOBAL NEXUS ",
+        "%c Founder & CEO — MK Global Nexus ",
         "color:#ffffff;font-size:13px;font-weight:700;"
     );
 
     console.log(
         "%c Cyber Intelligence • Digital Investigations ",
-        "color:#7dd3fc;font-size:12px;"
+        "color:#00d9ff;font-size:12px;"
     );
 
 });
