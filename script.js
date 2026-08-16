@@ -1,133 +1,226 @@
 "use strict";
 
+/*
+=========================================================
+MANOJ MEENA — OFFICIAL PERSONAL WEBSITE
+FINAL JAVASCRIPT
+MK GLOBAL NEXUS
+=========================================================
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       01. MOBILE NAVIGATION
-       ===================================================== */
+       01. ELEMENT REFERENCES
+    ===================================================== */
 
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    const navbar =
+        document.querySelector(".navbar");
+
+    const navLinks =
+        document.querySelector(".nav-links") ||
+        document.querySelector(".main-nav");
+
+    const hamburger =
+        document.getElementById("hamburger") ||
+        document.querySelector(".hamburger") ||
+        document.querySelector(".menu-toggle");
+
+
+    /* =====================================================
+       02. MOBILE NAVIGATION
+    ===================================================== */
 
     if (hamburger && navLinks) {
 
-        hamburger.addEventListener("click", (event) => {
+        const setMenuState = (open) => {
 
-            event.stopPropagation();
+            navLinks.classList.toggle("active", open);
 
-            const isOpen =
-                navLinks.classList.toggle("active");
+            /*
+             * Support both navigation systems:
+             * active / open
+             */
+            navLinks.classList.toggle("open", open);
 
             hamburger.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                String(open)
             );
 
             hamburger.setAttribute(
                 "aria-label",
-                isOpen
+                open
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
 
-        });
+            /*
+             * Accessibility
+             */
+            hamburger.setAttribute(
+                "aria-controls",
+                navLinks.id || "main-navigation"
+            );
+
+        };
 
 
-        /* Close menu after clicking a link */
+        /*
+         * Give navigation an ID if it does not already have one.
+         */
+        if (!navLinks.id) {
+            navLinks.id = "main-navigation";
+        }
 
+
+        /*
+         * Open / close menu
+         */
+        hamburger.addEventListener(
+            "click",
+            (event) => {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                const isOpen =
+                    navLinks.classList.contains("active") ||
+                    navLinks.classList.contains("open");
+
+                setMenuState(!isOpen);
+
+            }
+        );
+
+
+        /*
+         * Close after navigation link click
+         */
         navLinks
             .querySelectorAll("a")
             .forEach((link) => {
 
-                link.addEventListener("click", () => {
+                link.addEventListener(
+                    "click",
+                    () => {
 
-                    navLinks.classList.remove("active");
+                        setMenuState(false);
 
-                    hamburger.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    hamburger.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                });
+                    }
+                );
 
             });
 
 
-        /* Close menu when clicking outside */
+        /*
+         * Close when clicking outside
+         */
+        document.addEventListener(
+            "click",
+            (event) => {
 
-        document.addEventListener("click", (event) => {
+                const clickedInsideMenu =
+                    navLinks.contains(event.target);
 
-            if (
-                !navLinks.contains(event.target) &&
-                !hamburger.contains(event.target)
-            ) {
+                const clickedButton =
+                    hamburger.contains(event.target);
 
-                navLinks.classList.remove("active");
+                if (
+                    !clickedInsideMenu &&
+                    !clickedButton
+                ) {
 
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                    setMenuState(false);
 
-                hamburger.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
+                }
 
             }
+        );
 
-        });
 
+        /*
+         * Close with Escape
+         */
+        document.addEventListener(
+            "keydown",
+            (event) => {
 
-        /* Close mobile menu when pressing Escape */
+                if (event.key !== "Escape") {
+                    return;
+                }
 
-        document.addEventListener("keydown", (event) => {
+                setMenuState(false);
 
-            if (event.key !== "Escape") {
-                return;
             }
+        );
 
-            navLinks.classList.remove("active");
 
-            hamburger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+        /*
+         * Close menu when resizing to desktop
+         */
+        window.addEventListener(
+            "resize",
+            () => {
 
-            hamburger.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
+                if (window.innerWidth > 900) {
 
-        });
+                    setMenuState(false);
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
 
     }
 
 
     /* =====================================================
-       02. ACTIVE NAVIGATION
-       ===================================================== */
+       03. ACTIVE NAVIGATION
+    ===================================================== */
 
-    const currentPath =
-        window.location.pathname
+    const normalizePage = (value) => {
+
+        if (!value) {
+            return "index.html";
+        }
+
+        let page = value
+            .split("?")[0]
+            .split("#")[0]
             .split("/")
             .pop()
             .toLowerCase();
 
+        if (!page) {
+            page = "index.html";
+        }
+
+        return page;
+
+    };
+
 
     const currentPage =
-        currentPath === ""
-            ? "index.html"
-            : currentPath;
+        normalizePage(
+            window.location.pathname
+        );
 
 
+    /*
+     * Support both:
+     *
+     * .nav-links a
+     * .main-nav a
+     */
     document
-        .querySelectorAll(".nav-links a")
+        .querySelectorAll(
+            ".nav-links a, .main-nav a"
+        )
         .forEach((link) => {
 
             const href =
@@ -139,38 +232,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
-             * Ignore external URLs and hash links.
+             * Ignore external URLs
              */
-
             if (
                 href.startsWith("http://") ||
                 href.startsWith("https://") ||
+                href.startsWith("//") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:") ||
                 href.startsWith("#") ||
-                href.startsWith("mailto:")
+                href.startsWith("javascript:")
             ) {
+
                 return;
+
             }
 
 
             const linkPage =
-                href
-                    .split("/")
-                    .pop()
-                    .toLowerCase();
+                normalizePage(href);
 
 
-            link.classList.remove("active");
+            link.classList.remove(
+                "active"
+            );
 
 
             if (
                 linkPage === currentPage ||
                 (
                     currentPage === "index.html" &&
-                    linkPage === ""
+                    (
+                        linkPage === "" ||
+                        linkPage === "index"
+                    )
                 )
             ) {
 
-                link.classList.add("active");
+                link.classList.add(
+                    "active"
+                );
 
             }
 
@@ -178,15 +279,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       03. CURRENT YEAR
-       ===================================================== */
+       04. CURRENT YEAR
+    ===================================================== */
 
     const currentYear =
         new Date().getFullYear();
 
 
     document
-        .querySelectorAll("[data-current-year]")
+        .querySelectorAll(
+            "[data-current-year]"
+        )
         .forEach((element) => {
 
             element.textContent =
@@ -196,72 +299,107 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       04. SMOOTH SCROLL
-       ===================================================== */
+       05. SMOOTH INTERNAL SCROLL
+    ===================================================== */
 
     document
-        .querySelectorAll('a[href^="#"]')
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
         .forEach((link) => {
 
-            link.addEventListener("click", (event) => {
+            link.addEventListener(
+                "click",
+                (event) => {
 
-                const targetId =
-                    link.getAttribute("href");
+                    const targetId =
+                        link.getAttribute("href");
 
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+
+                        event.preventDefault();
+
+                        return;
+
+                    }
+
+
+                    let target = null;
+
+
+                    try {
+
+                        target =
+                            document.querySelector(
+                                targetId
+                            );
+
+                    } catch (error) {
+
+                        return;
+
+                    }
+
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    const navbarHeight =
+                        navbar
+                            ? navbar.offsetHeight
+                            : 0;
+
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        navbarHeight -
+                        15;
+
+
+                    window.scrollTo({
+
+                        top:
+                            Math.max(
+                                0,
+                                targetPosition
+                            ),
+
+                        behavior: "smooth"
+
+                    });
+
                 }
-
-
-                const target =
-                    document.querySelector(targetId);
-
-
-                if (!target) {
-                    return;
-                }
-
-
-                event.preventDefault();
-
-
-                const navbar =
-                    document.querySelector(".navbar");
-
-
-                const offset =
-                    navbar
-                        ? navbar.offsetHeight + 15
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect().top +
-                    window.pageYOffset -
-                    offset;
-
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-
-            });
+            );
 
         });
 
 
     /* =====================================================
-       05. SCROLL REVEAL
-       ===================================================== */
+       06. SCROLL REVEAL
+    ===================================================== */
 
     const revealElements =
         document.querySelectorAll(
-            ".reveal, .future-card, .card, .project-card, .contact-card, .channel-card, .mission"
+            [
+                ".reveal",
+                ".future-card",
+                ".card",
+                ".project-card",
+                ".contact-card",
+                ".channel-card",
+                ".mission",
+                ".roadmap-item"
+            ].join(", ")
         );
 
 
@@ -270,94 +408,140 @@ document.addEventListener("DOMContentLoaded", () => {
         "IntersectionObserver" in window
     ) {
 
+
         /*
-         * Only apply the hidden state when
-         * IntersectionObserver is available.
+         * IMPORTANT:
+         *
+         * Add .reveal first.
+         * The CSS already defines:
+         *
+         * .reveal.reveal-hidden
+         * .reveal.visible
+         *
+         * This prevents cards from remaining hidden.
          */
 
-        revealElements.forEach((element) => {
+        revealElements.forEach(
+            (element) => {
 
-            element.classList.add(
-                "reveal-hidden"
-            );
+                element.classList.add(
+                    "reveal"
+                );
 
-        });
+                element.classList.add(
+                    "reveal-hidden"
+                );
+
+            }
+        );
 
 
         const revealObserver =
             new IntersectionObserver(
-                (entries, observer) => {
+                (
+                    entries,
+                    observer
+                ) => {
 
-                    entries.forEach((entry) => {
+                    entries.forEach(
+                        (entry) => {
 
-                        if (!entry.isIntersecting) {
-                            return;
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            const element =
+                                entry.target;
+
+
+                            element.classList.remove(
+                                "reveal-hidden"
+                            );
+
+
+                            element.classList.add(
+                                "visible"
+                            );
+
+
+                            observer.unobserve(
+                                element
+                            );
+
                         }
-
-
-                        entry.target.classList.remove(
-                            "reveal-hidden"
-                        );
-
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    });
+                    );
 
                 },
                 {
-                    threshold: 0.10,
-                    rootMargin: "0px 0px -40px 0px"
+                    threshold: 0.08,
+
+                    rootMargin:
+                        "0px 0px -35px 0px"
                 }
             );
 
 
-        revealElements.forEach((element) => {
+        revealElements.forEach(
+            (element) => {
 
-            revealObserver.observe(element);
+                revealObserver.observe(
+                    element
+                );
 
-        });
+            }
+        );
 
     } else {
 
         /*
-         * Fallback for older browsers.
+         * Fallback
          */
 
-        revealElements.forEach((element) => {
+        revealElements.forEach(
+            (element) => {
 
-            element.classList.remove(
-                "reveal-hidden"
-            );
+                element.classList.add(
+                    "reveal"
+                );
 
-            element.classList.add(
-                "visible"
-            );
+                element.classList.remove(
+                    "reveal-hidden"
+                );
 
-        });
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
 
     }
 
 
     /* =====================================================
-       06. BACK TO TOP
-       ===================================================== */
+       07. BACK TO TOP
+    ===================================================== */
 
     let backToTop =
-        document.getElementById("backToTop");
+        document.getElementById(
+            "backToTop"
+        );
 
+
+    /*
+     * Create button automatically
+     * if HTML does not contain one.
+     */
 
     if (!backToTop) {
 
         backToTop =
-            document.createElement("button");
+            document.createElement(
+                "button"
+            );
 
         backToTop.type =
             "button";
@@ -366,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "backToTop";
 
         backToTop.innerHTML =
-            "↑";
+            '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
 
         backToTop.setAttribute(
             "aria-label",
@@ -384,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             if (
-                window.scrollY > 500
+                window.scrollY > 450
             ) {
 
                 backToTop.style.display =
@@ -417,8 +601,11 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
 
         }
@@ -426,11 +613,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       07. EXTERNAL LINKS
-       ===================================================== */
+       08. EXTERNAL LINKS
+    ===================================================== */
 
     document
-        .querySelectorAll('a[href^="http"]')
+        .querySelectorAll(
+            'a[href^="http://"], a[href^="https://"]'
+        )
         .forEach((link) => {
 
             const href =
@@ -442,10 +631,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /*
-             * Open external links safely.
-             */
-
             try {
 
                 const linkUrl =
@@ -454,6 +639,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         window.location.href
                     );
 
+
+                /*
+                 * Only modify genuinely external links.
+                 */
 
                 if (
                     linkUrl.hostname !==
@@ -475,7 +664,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
 
                 /*
-                 * Ignore malformed URLs.
+                 * Invalid URL:
+                 * leave untouched.
                  */
 
             }
@@ -484,8 +674,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       08. IMAGE ERROR HANDLING
-       ===================================================== */
+       09. IMAGE ERROR HANDLING
+    ===================================================== */
 
     document
         .querySelectorAll("img")
@@ -495,15 +685,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 "error",
                 () => {
 
+                    /*
+                     * Prevent infinite error loop
+                     */
+                    if (
+                        image.dataset.errorHandled ===
+                        "true"
+                    ) {
+                        return;
+                    }
+
+
+                    image.dataset.errorHandled =
+                        "true";
+
+
                     image.classList.add(
                         "image-error"
                     );
+
 
                     image.setAttribute(
                         "alt",
                         "Image unavailable"
                     );
 
+                },
+                {
+                    once: true
                 }
             );
 
@@ -511,12 +720,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       09. NAVBAR SCROLL EFFECT
-       ===================================================== */
-
-    const navbar =
-        document.querySelector(".navbar");
-
+       10. NAVBAR SCROLL EFFECT
+    ===================================================== */
 
     const updateNavbar =
         () => {
@@ -526,7 +731,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            if (window.scrollY > 20) {
+            if (
+                window.scrollY > 20
+            ) {
 
                 navbar.classList.add(
                     "navbar-scrolled"
@@ -556,11 +763,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       10. PREVENT EMPTY # LINKS
-       ===================================================== */
+       11. PREVENT EMPTY # LINKS
+    ===================================================== */
 
     document
-        .querySelectorAll('a[href="#"]')
+        .querySelectorAll(
+            'a[href="#"]'
+        )
         .forEach((link) => {
 
             link.addEventListener(
@@ -576,17 +785,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       11. PAGE LOAD
-       ===================================================== */
+       12. KEYBOARD ACCESSIBILITY
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            "a, button, input, textarea, select"
+        )
+        .forEach((element) => {
+
+            element.addEventListener(
+                "keydown",
+                (event) => {
+
+                    /*
+                     * Enter / Space behaviour
+                     * is normally handled natively.
+                     *
+                     * This block intentionally does
+                     * not override native behaviour.
+                     */
+
+                    if (
+                        event.key === "Tab"
+                    ) {
+
+                        element.classList.add(
+                            "keyboard-focus"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       13. PAGE READY
+    ===================================================== */
 
     document.documentElement.classList.add(
         "js-ready"
     );
 
 
+    document.body.classList.add(
+        "page-ready"
+    );
+
+
     /* =====================================================
-       12. CONSOLE BRANDING
-       ===================================================== */
+       14. CONSOLE BRANDING
+    ===================================================== */
 
     console.log(
         "%c MANOJ MEENA ",
