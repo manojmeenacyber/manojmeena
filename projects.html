@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
 
@@ -9,7 +9,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Projects by Manoj Meena and MK Global Nexus — Cyber Intelligence, OSINT, Digital Investigation, AI and Cyber Security technology projects.">
+          content="Projects and technology initiatives by Manoj Meena and MK Global Nexus, covering cyber intelligence, OSINT, digital investigation, AI and cybersecurity.">
 
     <meta name="author"
           content="Manoj Meena">
@@ -17,16 +17,46 @@
     <meta name="robots"
           content="index, follow">
 
+    <meta name="theme-color"
+          content="#07111f">
+
     <title>
         Projects | Manoj Meena — MK Global Nexus
     </title>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
 
 </head>
 
@@ -43,12 +73,17 @@
     <div class="header-container">
 
 
+        <!-- BRAND -->
+
         <a href="index.html"
-           class="brand">
+           class="brand"
+           aria-label="Manoj Meena Home">
+
 
             <div class="brand-logo">
                 MM
             </div>
+
 
             <div class="brand-text">
 
@@ -65,9 +100,13 @@
         </a>
 
 
+
+        <!-- MOBILE MENU -->
+
         <button
             class="menu-toggle"
             id="menuToggle"
+            type="button"
             aria-label="Open navigation menu"
             aria-expanded="false">
 
@@ -76,31 +115,43 @@
         </button>
 
 
-        <nav class="main-nav"
-             id="mainNav">
+
+        <!-- NAVIGATION -->
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main navigation">
+
 
             <a href="index.html">
                 Home
             </a>
 
+
             <a href="about.html">
                 About
             </a>
+
 
             <a href="expertise.html">
                 Expertise
             </a>
 
+
             <a href="projects.html">
                 Projects
             </a>
+
 
             <a href="nexus.html">
                 MK Global Nexus
             </a>
 
-            <a href="contact.html"
-               class="nav-contact">
+
+            <a
+                href="contact.html"
+                class="nav-contact">
 
                 Contact
 
@@ -115,7 +166,15 @@
 
 
 <!-- =====================================================
-     HERO
+     MAIN
+===================================================== -->
+
+<main>
+
+
+
+<!-- =====================================================
+     PROJECT HERO
 ===================================================== -->
 
 <section class="hero-section">
@@ -130,17 +189,17 @@
 
                 <span class="status-indicator"></span>
 
-                PROJECTS &amp; TECHNOLOGY
+                PROJECTS • RESEARCH • INNOVATION
 
             </div>
 
 
             <h1>
 
-                Building
+                Ideas into
 
                 <span>
-                    Intelligence.
+                    technology.
                 </span>
 
             </h1>
@@ -148,18 +207,19 @@
 
             <h2>
 
-                Practical tools for research,
-                investigation and cybersecurity.
+                Building tools,
+                platforms and
+                intelligence workflows.
 
             </h2>
 
 
             <p class="hero-description">
 
-                Technology initiatives and intelligence
-                workflows developed around digital security,
-                OSINT research, investigation and responsible
-                technology innovation.
+                A growing collection of projects
+                exploring cyber intelligence, OSINT,
+                digital investigation, artificial
+                intelligence and cybersecurity.
 
             </p>
 
@@ -168,14 +228,12 @@
 
 
                 <a
-                    href="https://github.com/manojmeenacyber"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="nexus.html"
                     class="btn btn-primary">
 
-                    <i class="fab fa-github"></i>
+                    <i class="fas fa-globe"></i>
 
-                    Professional GitHub
+                    MK Global Nexus
 
                 </a>
 
@@ -186,9 +244,34 @@
 
                     <i class="fas fa-envelope"></i>
 
-                    Discuss a Project
+                    Contact
 
                 </a>
+
+            </div>
+
+
+            <div class="hero-tags">
+
+                <span>
+                    OSINT
+                </span>
+
+                <span>
+                    CYBER INTELLIGENCE
+                </span>
+
+                <span>
+                    DIGITAL INVESTIGATION
+                </span>
+
+                <span>
+                    AI
+                </span>
+
+                <span>
+                    SECURITY
+                </span>
 
             </div>
 
@@ -196,46 +279,87 @@
 
 
 
-        <!-- PROFILE -->
+        <!-- PROJECT VISUAL -->
 
         <div class="hero-profile">
 
-            <div class="profile-frame">
 
-                <img
-                    src="assets/images/profile.jpg"
-                    alt="Manoj Meena — Founder & CEO, MK Global Nexus"
-                    class="profile-image">
+            <div class="profile-frame"
+                 style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:360px;
+                    background:
+                    radial-gradient(
+                        circle at center,
+                        rgba(0,217,255,.18),
+                        transparent 55%
+                    );
+                 ">
+
+                <div
+                    style="
+                        text-align:center;
+                        padding:35px;
+                    ">
+
+
+                    <i
+                        class="fas fa-code"
+                        style="
+                            font-size:80px;
+                            color:var(--accent);
+                            margin-bottom:25px;
+                        ">
+                    </i>
+
+
+                    <h3
+                        style="
+                            margin:0 0 10px;
+                            font-size:25px;
+                        ">
+
+                        MK NEXUS LAB
+
+                    </h3>
+
+
+                    <p
+                        style="
+                            margin:0;
+                            opacity:.75;
+                        ">
+
+                        Research • Build • Innovate
+
+                    </p>
+
+                </div>
 
             </div>
 
 
             <div class="profile-card">
 
+
                 <div class="profile-status">
 
                     <span class="online-dot"></span>
 
-                    Technology &amp; Intelligence
+                    PROJECT ECOSYSTEM
 
                 </div>
 
 
                 <strong>
-
                     MK Global Nexus
-
                 </strong>
 
 
                 <p>
-
-                    Research
-                    •
-                    Innovation
-                    •
-                    Security
-
+                    Intelligence • Technology • Innovation
                 </p>
 
             </div>
@@ -249,10 +373,10 @@
 
 
 <!-- =====================================================
-     PROJECTS
+     PROJECT OVERVIEW
 ===================================================== -->
 
-<section class="section">
+<section class="section about-section">
 
     <div class="section-container">
 
@@ -260,16 +384,16 @@
         <div class="section-heading">
 
             <span class="section-number">
-                01 / SELECTED PROJECTS
+                01 / PROJECT ECOSYSTEM
             </span>
 
 
             <h2>
 
-                From ideas
+                Building for the
 
                 <span>
-                    to technology.
+                    real world.
                 </span>
 
             </h2>
@@ -277,14 +401,14 @@
 
             <p>
 
-                A selection of projects and technology
-                concepts focused on cyber intelligence,
-                OSINT, digital investigations and
-                security research.
+                Projects are designed around
+                practical research, organized
+                workflows and responsible technology.
 
             </p>
 
         </div>
+
 
 
         <div class="projects-grid">
@@ -292,7 +416,7 @@
 
             <!-- =================================================
                  PROJECT 01
-            ================================================= -->
+            ================================================== -->
 
             <article class="project-card">
 
@@ -300,7 +424,7 @@
                 <div class="project-top">
 
                     <span>
-                        PROJECT 01
+                        INTELLIGENCE PLATFORM
                     </span>
 
                     <i class="fas fa-brain"></i>
@@ -322,10 +446,10 @@
 
                 <p>
 
-                    An OSINT and cyber intelligence
-                    platform concept designed to organize
-                    research resources, investigation
-                    workflows and digital intelligence.
+                    An intelligence platform concept
+                    designed to organize OSINT resources,
+                    cyber research and investigation
+                    workflows in one structured environment.
 
                 </p>
 
@@ -341,10 +465,6 @@
                     </span>
 
                     <span>
-                        WEB
-                    </span>
-
-                    <span>
                         RESEARCH
                     </span>
 
@@ -357,22 +477,9 @@
                         href="nexus.html"
                         class="btn btn-primary">
 
-                        <i class="fas fa-globe"></i>
-
                         Explore
 
-                    </a>
-
-
-                    <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary">
-
-                        <i class="fab fa-github"></i>
-
-                        GitHub
+                        <i class="fas fa-arrow-right"></i>
 
                     </a>
 
@@ -384,7 +491,7 @@
 
             <!-- =================================================
                  PROJECT 02
-            ================================================= -->
+            ================================================== -->
 
             <article class="project-card">
 
@@ -392,7 +499,82 @@
                 <div class="project-top">
 
                     <span>
-                        PROJECT 02
+                        OSINT PLATFORM
+                    </span>
+
+                    <i class="fas fa-magnifying-glass"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fas fa-magnifying-glass"></i>
+
+                </div>
+
+
+                <h3>
+                    OSINT Command Center
+                </h3>
+
+
+                <p>
+
+                    A centralized workspace concept
+                    for organizing open-source intelligence
+                    tools, research resources and
+                    investigation workflows.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        OSINT
+                    </span>
+
+                    <span>
+                        TOOLS
+                    </span>
+
+                    <span>
+                        WORKFLOW
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="nexus.html"
+                        class="btn btn-primary">
+
+                        Explore
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 03
+            ================================================== -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        CYBER SECURITY
                     </span>
 
                     <i class="fas fa-terminal"></i>
@@ -414,9 +596,10 @@
 
                 <p>
 
-                    A Python-based command-line toolkit
-                    concept for organizing security
-                    investigation and analysis workflows.
+                    A Python-based toolkit concept
+                    for organizing cybersecurity
+                    research and investigation
+                    utilities through a unified workflow.
 
                 </p>
 
@@ -435,104 +618,18 @@
                         SECURITY
                     </span>
 
-                    <span>
-                        ANALYSIS
-                    </span>
-
                 </div>
 
 
                 <div class="project-actions">
 
                     <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="nexus.html"
                         class="btn btn-primary">
 
-                        <i class="fab fa-github"></i>
+                        View Ecosystem
 
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 PROJECT 03
-            ================================================= -->
-
-            <article class="project-card">
-
-
-                <div class="project-top">
-
-                    <span>
-                        PROJECT 03
-                    </span>
-
-                    <i class="fas fa-network-wired"></i>
-
-                </div>
-
-
-                <div class="project-icon">
-
-                    <i class="fas fa-network-wired"></i>
-
-                </div>
-
-
-                <h3>
-                    OSINT Command Center
-                </h3>
-
-
-                <p>
-
-                    A centralized workspace for discovering,
-                    organizing and accessing open-source
-                    intelligence resources for research.
-
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        OSINT
-                    </span>
-
-                    <span>
-                        RESEARCH
-                    </span>
-
-                    <span>
-                        WORKFLOW
-                    </span>
-
-                    <span>
-                        INTELLIGENCE
-                    </span>
-
-                </div>
-
-
-                <div class="project-actions">
-
-                    <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary">
-
-                        <i class="fab fa-github"></i>
-
-                        GitHub
+                        <i class="fas fa-arrow-right"></i>
 
                     </a>
 
@@ -544,7 +641,7 @@
 
             <!-- =================================================
                  PROJECT 04
-            ================================================= -->
+            ================================================== -->
 
             <article class="project-card">
 
@@ -552,87 +649,7 @@
                 <div class="project-top">
 
                     <span>
-                        PROJECT 04
-                    </span>
-
-                    <i class="fas fa-folder-open"></i>
-
-                </div>
-
-
-                <div class="project-icon">
-
-                    <i class="fas fa-folder-open"></i>
-
-                </div>
-
-
-                <h3>
-                    Investigation Workspace
-                </h3>
-
-
-                <p>
-
-                    A structured digital workspace concept
-                    for organizing cases, notes, targets,
-                    priorities, investigators and status.
-
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>
-                        CASE MANAGEMENT
-                    </span>
-
-                    <span>
-                        WEB APP
-                    </span>
-
-                    <span>
-                        WORKFLOW
-                    </span>
-
-                    <span>
-                        INVESTIGATION
-                    </span>
-
-                </div>
-
-
-                <div class="project-actions">
-
-                    <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary">
-
-                        <i class="fab fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =================================================
-                 PROJECT 05
-            ================================================= -->
-
-            <article class="project-card">
-
-
-                <div class="project-top">
-
-                    <span>
-                        PROJECT 05
+                        AI &amp; AUTOMATION
                     </span>
 
                     <i class="fas fa-robot"></i>
@@ -655,8 +672,9 @@
                 <p>
 
                     Experimental projects exploring
-                    responsible AI-assisted research,
-                    automation and cybersecurity workflows.
+                    AI-assisted research, automation,
+                    cybersecurity workflows and
+                    responsible technology applications.
 
                 </p>
 
@@ -672,11 +690,7 @@
                     </span>
 
                     <span>
-                        CYBER SECURITY
-                    </span>
-
-                    <span>
-                        RESEARCH
+                        CYBER
                     </span>
 
                 </div>
@@ -685,14 +699,87 @@
                 <div class="project-actions">
 
                     <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="contact.html"
                         class="btn btn-primary">
 
-                        <i class="fab fa-github"></i>
+                        Discuss
 
-                        GitHub
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 05
+            ================================================== -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        DIGITAL RESEARCH
+                    </span>
+
+                    <i class="fas fa-fingerprint"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fas fa-fingerprint"></i>
+
+                </div>
+
+
+                <h3>
+                    Digital Fraud Research
+                </h3>
+
+
+                <p>
+
+                    Research-oriented work focused on
+                    understanding online scam patterns,
+                    fraud methodologies and digital
+                    awareness.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        FRAUD
+                    </span>
+
+                    <span>
+                        RESEARCH
+                    </span>
+
+                    <span>
+                        AWARENESS
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-primary">
+
+                        Connect
+
+                        <i class="fas fa-arrow-right"></i>
 
                     </a>
 
@@ -704,7 +791,7 @@
 
             <!-- =================================================
                  PROJECT 06
-            ================================================= -->
+            ================================================== -->
 
             <article class="project-card">
 
@@ -712,32 +799,31 @@
                 <div class="project-top">
 
                     <span>
-                        PROJECT 06
+                        FUTURE RESEARCH
                     </span>
 
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-flask"></i>
 
                 </div>
 
 
                 <div class="project-icon">
 
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-flask"></i>
 
                 </div>
 
 
                 <h3>
-                    Digital Intelligence Tools
+                    Emerging Technology Research
                 </h3>
 
 
                 <p>
 
-                    A growing collection of utilities,
-                    web interfaces and research tools
-                    developed for practical digital
-                    intelligence workflows.
+                    Future-focused exploration of
+                    artificial intelligence, cybersecurity,
+                    digital safety and emerging technology.
 
                 </p>
 
@@ -745,19 +831,15 @@
                 <div class="project-tags">
 
                     <span>
-                        WEB
+                        FUTURE TECH
                     </span>
 
                     <span>
-                        PYTHON
+                        AI
                     </span>
 
                     <span>
-                        OSINT
-                    </span>
-
-                    <span>
-                        TOOLS
+                        SECURITY
                     </span>
 
                 </div>
@@ -766,14 +848,12 @@
                 <div class="project-actions">
 
                     <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="contact.html"
                         class="btn btn-primary">
 
-                        <i class="fab fa-github"></i>
+                        Collaborate
 
-                        Explore GitHub
+                        <i class="fas fa-arrow-right"></i>
 
                     </a>
 
@@ -793,7 +873,7 @@
      PROJECT PHILOSOPHY
 ===================================================== -->
 
-<section class="section about-section">
+<section class="section">
 
     <div class="section-container">
 
@@ -801,21 +881,30 @@
         <div class="section-heading">
 
             <span class="section-number">
-                02 / PROJECT PHILOSOPHY
+                02 / BUILD PHILOSOPHY
             </span>
 
 
             <h2>
 
-                Build with
+                Research first.
 
                 <span>
-                    purpose.
+                    Build with purpose.
                 </span>
 
             </h2>
 
+
+            <p>
+
+                Every useful technology project
+                should begin with a real problem.
+
+            </p>
+
         </div>
+
 
 
         <div class="intelligence-grid">
@@ -825,7 +914,7 @@
 
                 <div class="intelligence-icon">
 
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-circle-question"></i>
 
                 </div>
 
@@ -837,9 +926,8 @@
 
                 <p>
 
-                    Start with a real problem,
-                    research requirement or
-                    technology opportunity.
+                    Understand the problem,
+                    user need and real-world context.
 
                 </p>
 
@@ -863,9 +951,8 @@
 
                 <p>
 
-                    Understand the problem,
-                    available information and
-                    relevant technologies.
+                    Study available information,
+                    technologies and possible approaches.
 
                 </p>
 
@@ -889,9 +976,8 @@
 
                 <p>
 
-                    Convert the concept into a
-                    practical and usable technology
-                    solution.
+                    Convert the idea into a practical
+                    prototype, tool or platform.
 
                 </p>
 
@@ -903,20 +989,20 @@
 
                 <div class="intelligence-icon">
 
-                    <i class="fas fa-shield-halved"></i>
+                    <i class="fas fa-rotate"></i>
 
                 </div>
 
 
                 <h3>
-                    Build Responsibly
+                    Improve
                 </h3>
 
 
                 <p>
 
-                    Prioritize lawful, ethical and
-                    security-conscious technology use.
+                    Test, learn, refine and continuously
+                    improve the technology.
 
                 </p>
 
@@ -931,7 +1017,101 @@
 
 
 <!-- =====================================================
-     GITHUB CTA
+     TECHNOLOGY STACK
+===================================================== -->
+
+<section class="section about-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                03 / TECHNOLOGY
+            </span>
+
+
+            <h2>
+
+                Tools for
+
+                <span>
+                    building.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Technologies and platforms used
+                across different experiments and
+                development workflows.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="nexus-pillars">
+
+
+            <span>
+                HTML
+            </span>
+
+
+            <span>
+                CSS
+            </span>
+
+
+            <span>
+                JavaScript
+            </span>
+
+
+            <span>
+                Python
+            </span>
+
+
+            <span>
+                GitHub
+            </span>
+
+
+            <span>
+                Vercel
+            </span>
+
+
+            <span>
+                AI Tools
+            </span>
+
+
+            <span>
+                OSINT Tools
+            </span>
+
+
+            <span>
+                Cyber Security
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MK GLOBAL NEXUS
 ===================================================== -->
 
 <section class="section nexus-section">
@@ -940,18 +1120,16 @@
 
 
         <div class="nexus-badge">
-
-            OPEN SOURCE &amp; RESEARCH
-
+            MK GLOBAL NEXUS
         </div>
 
 
         <h2>
 
-            Explore the work on
+            One ecosystem.
 
             <span>
-                GitHub.
+                Many possibilities.
             </span>
 
         </h2>
@@ -959,11 +1137,41 @@
 
         <p>
 
-            Selected public projects, experiments
-            and technology work can be explored
-            through the professional GitHub profile.
+            MK Global Nexus brings together
+            intelligence research, cybersecurity,
+            digital investigation, OSINT, AI and
+            technology innovation.
 
         </p>
+
+
+        <div class="nexus-pillars">
+
+            <span>
+                Cyber Intelligence
+            </span>
+
+            <span>
+                Digital Investigation
+            </span>
+
+            <span>
+                OSINT
+            </span>
+
+            <span>
+                AI
+            </span>
+
+            <span>
+                Cyber Security
+            </span>
+
+            <span>
+                Innovation
+            </span>
+
+        </div>
 
 
         <div class="hero-actions"
@@ -971,25 +1179,12 @@
 
 
             <a
-                href="https://github.com/manojmeenacyber"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="nexus.html"
                 class="btn btn-primary">
 
-                <i class="fab fa-github"></i>
+                <i class="fas fa-globe"></i>
 
-                Visit Professional GitHub
-
-            </a>
-
-
-            <a
-                href="contact.html"
-                class="btn btn-secondary">
-
-                <i class="fas fa-envelope"></i>
-
-                Discuss a Project
+                Explore MK Global Nexus
 
             </a>
 
@@ -998,6 +1193,142 @@
     </div>
 
 </section>
+
+
+
+<!-- =====================================================
+     FUTURE PROJECTS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-container">
+
+
+        <div class="mission-card"
+             style="text-align:center;">
+
+
+            <span class="card-label">
+                FUTURE WORK
+            </span>
+
+
+            <h3>
+                The laboratory is still growing.
+            </h3>
+
+
+            <p>
+
+                New tools, research projects and
+                technology experiments will be added
+                as they develop.
+
+            </p>
+
+
+            <div class="mission-values"
+                 style="justify-content:center;">
+
+                <span>
+                    Research
+                </span>
+
+                <span>
+                    Build
+                </span>
+
+                <span>
+                    Test
+                </span>
+
+                <span>
+                    Improve
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="section about-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading"
+             style="text-align:center;">
+
+            <span class="section-number">
+                NEXT STEP
+            </span>
+
+
+            <h2>
+
+                Explore the
+
+                <span>
+                    intelligence ecosystem.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Discover MK Global Nexus and the
+                broader vision behind these projects.
+
+            </p>
+
+
+            <div class="hero-actions"
+                 style="justify-content:center;">
+
+
+                <a
+                    href="nexus.html"
+                    class="btn btn-primary">
+
+                    <i class="fas fa-globe"></i>
+
+                    MK Global Nexus
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-secondary">
+
+                    <i class="fas fa-envelope"></i>
+
+                    Contact
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</main>
 
 
 
@@ -1066,33 +1397,41 @@
 
         <div class="footer-links">
 
+
             <a href="index.html">
                 Home
             </a>
+
 
             <a href="about.html">
                 About
             </a>
 
+
             <a href="expertise.html">
                 Expertise
             </a>
+
 
             <a href="projects.html">
                 Projects
             </a>
 
+
             <a href="nexus.html">
                 MK Global Nexus
             </a>
+
 
             <a href="contact.html">
                 Contact
             </a>
 
+
             <a href="privacy.html">
                 Privacy
             </a>
+
 
             <a href="disclaimer.html">
                 Disclaimer
@@ -1104,9 +1443,15 @@
 
         <div class="footer-bottom">
 
+
             <span>
 
-                © 2026 Manoj Meena.
+                ©
+                <span data-current-year>
+                    2026
+                </span>
+
+                Manoj Meena.
                 All rights reserved.
 
             </span>
