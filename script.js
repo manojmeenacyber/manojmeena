@@ -3,101 +3,97 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
+       MANOJ MEENA — PERSONAL BRAND WEBSITE
+       Global JavaScript
+    ===================================================== */
+
+
+    /* =====================================================
        MOBILE NAVIGATION
     ===================================================== */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mainNav = document.querySelector(".main-nav");
+    const menuToggle =
+        document.querySelector(".menu-toggle") ||
+        document.querySelector(".hamburger");
+
+    const mainNav =
+        document.querySelector(".main-nav") ||
+        document.querySelector(".nav-links");
 
     if (menuToggle && mainNav) {
 
-        const closeMenu = () => {
+        menuToggle.addEventListener("click", (event) => {
 
-            mainNav.classList.remove("active");
+            event.stopPropagation();
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
-        };
-
-
-        const toggleMenu = () => {
-
-            const isOpen =
+            const opened =
                 mainNav.classList.toggle("active");
 
+            menuToggle.classList.toggle(
+                "active",
+                opened
+            );
+
             menuToggle.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                String(opened)
             );
 
             menuToggle.setAttribute(
                 "aria-label",
-                isOpen
+                opened
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
-        };
+        });
 
 
-        menuToggle.addEventListener(
-            "click",
-            (event) => {
+        /* Close after clicking a navigation link */
 
-                event.stopPropagation();
+        mainNav.querySelectorAll("a").forEach(link => {
 
-                toggleMenu();
-            }
-        );
+            link.addEventListener("click", () => {
 
+                mainNav.classList.remove("active");
 
-        mainNav
-            .querySelectorAll("a")
-            .forEach(link => {
+                menuToggle.classList.remove("active");
 
-                link.addEventListener(
-                    "click",
-                    () => {
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-                        closeMenu();
-                    }
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
                 );
             });
 
+        });
 
-        document.addEventListener(
-            "click",
-            event => {
 
-                if (
-                    mainNav.classList.contains("active") &&
-                    !mainNav.contains(event.target) &&
-                    !menuToggle.contains(event.target)
-                ) {
+        /* Close when clicking outside */
 
-                    closeMenu();
-                }
+        document.addEventListener("click", event => {
+
+            if (
+                !mainNav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
             }
-        );
 
+        });
 
-        window.addEventListener(
-            "resize",
-            () => {
-
-                if (window.innerWidth > 700) {
-                    closeMenu();
-                }
-            }
-        );
     }
-
 
 
     /* =====================================================
@@ -108,63 +104,57 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.pathname
             .split("/")
             .pop()
-            .toLowerCase();
+            .toLowerCase() || "index.html";
 
 
-    const currentPage =
-        currentPath === ""
-            ? "index.html"
-            : currentPath;
+    const navigationLinks =
+        document.querySelectorAll(
+            ".main-nav a, .nav-links a"
+        );
 
 
-    document
-        .querySelectorAll(".main-nav a")
-        .forEach(link => {
+    navigationLinks.forEach(link => {
 
-            const href =
-                link.getAttribute("href");
+        const href =
+            link.getAttribute("href");
 
-            if (!href) return;
-
-
-            /*
-             * Ignore external URLs
-             */
-
-            if (
-                href.startsWith("http://") ||
-                href.startsWith("https://") ||
-                href.startsWith("mailto:")
-            ) {
-                return;
-            }
+        if (!href || href.startsWith("#")) {
+            return;
+        }
 
 
-            const page =
-                href
-                    .split("/")
-                    .pop()
-                    .split("#")[0]
-                    .toLowerCase();
+        const linkPage =
+            href
+                .split("/")
+                .pop()
+                .split("?")[0]
+                .split("#")[0]
+                .toLowerCase();
 
 
-            link.classList.remove("active");
+        link.classList.remove("active");
 
 
-            if (page === currentPage) {
+        if (
+            linkPage === currentPath ||
+            (
+                currentPath === "" &&
+                linkPage === "index.html"
+            )
+        ) {
 
-                link.classList.add("active");
-            }
+            link.classList.add("active");
 
-        });
+        }
 
+    });
 
 
     /* =====================================================
        CURRENT YEAR
     ===================================================== */
 
-    const year =
+    const currentYear =
         new Date().getFullYear();
 
 
@@ -172,9 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll("[data-current-year]")
         .forEach(element => {
 
-            element.textContent = year;
-        });
+            element.textContent =
+                currentYear;
 
+        });
 
 
     /* =====================================================
@@ -185,44 +176,38 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelectorAll('a[href^="#"]')
         .forEach(link => {
 
-            link.addEventListener(
-                "click",
-                event => {
+            link.addEventListener("click", event => {
 
-                    const id =
-                        link.getAttribute("href");
+                const targetId =
+                    link.getAttribute("href");
 
-
-                    if (
-                        !id ||
-                        id === "#"
-                    ) {
-                        return;
-                    }
-
-
-                    const target =
-                        document.querySelector(id);
-
-
-                    if (!target) {
-                        return;
-                    }
-
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
                 }
-            );
+
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
 
         });
-
 
 
     /* =====================================================
@@ -231,7 +216,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const revealElements =
         document.querySelectorAll(
-            ".card, .project-card, .contact-card, .mission"
+            `
+            .expertise-card,
+            .presence-card,
+            .future-card,
+            .project-card,
+            .channel-card,
+            .contact-card,
+            .mission,
+            .identity-grid,
+            .nexus-box,
+            .roadmap-item,
+            .future-cta
+            `
         );
 
 
@@ -240,27 +237,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "IntersectionObserver" in window
     ) {
 
-        const observer =
+        const revealObserver =
             new IntersectionObserver(
                 entries => {
 
                     entries.forEach(entry => {
 
-                        if (!entry.isIntersecting) {
+                        if (
+                            !entry.isIntersecting
+                        ) {
                             return;
                         }
-
-
-                        /*
-                         * IMPORTANT:
-                         * Directly reveal the element.
-                         * This prevents the invisible-card bug.
-                         */
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
 
 
                         entry.target.classList.add(
@@ -268,7 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         );
 
 
-                        observer.unobserve(
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+
+                        revealObserver.unobserve(
                             entry.target
                         );
 
@@ -276,47 +270,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 },
                 {
-                    threshold: 0.10
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
                 }
             );
 
 
-        revealElements.forEach(
-            (element, index) => {
-
-                element.style.opacity = "0";
-
-                element.style.transform =
-                    "translateY(20px)";
-
-
-                element.style.transition =
-                    `opacity .65s ease ${index * 40}ms,
-                     transform .65s ease ${index * 40}ms`;
-
-
-                observer.observe(element);
-            }
-        );
-
-
-    } else {
-
-        /*
-         * Fallback for older browsers
-         */
-
         revealElements.forEach(element => {
 
-            element.style.opacity = "1";
+            element.style.opacity = "0";
 
             element.style.transform =
-                "translateY(0)";
+                "translateY(24px)";
+
+            element.style.transition =
+                "opacity .7s ease, transform .7s ease";
+
+            revealObserver.observe(element);
 
         });
 
     }
-
 
 
     /* =====================================================
@@ -327,23 +301,17 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("backToTop");
 
 
-    /*
-     * Prevent duplicate button
-     * if script is loaded more than once.
-     */
-
     if (!backTop) {
 
         backTop =
             document.createElement("button");
 
-
         backTop.type = "button";
 
         backTop.id = "backToTop";
 
-        backTop.innerHTML = "↑";
-
+        backTop.innerHTML =
+            '<i class="fas fa-arrow-up"></i>';
 
         backTop.setAttribute(
             "aria-label",
@@ -355,77 +323,56 @@ document.addEventListener("DOMContentLoaded", () => {
             backTop.style,
             {
                 position: "fixed",
-
                 right: "22px",
-
                 bottom: "22px",
-
                 width: "46px",
-
                 height: "46px",
-
                 borderRadius: "50%",
-
                 border:
                     "1px solid rgba(0,217,255,.35)",
-
                 background:
-                    "rgba(5,15,30,.92)",
-
+                    "rgba(4,12,25,.94)",
                 color: "#00d9ff",
-
-                fontSize: "20px",
-
-                fontWeight: "800",
-
+                fontSize: "16px",
                 cursor: "pointer",
-
                 zIndex: "9999",
-
                 display: "none",
-
                 placeItems: "center",
-
-                backdropFilter:
-                    "blur(10px)",
-
-                WebkitBackdropFilter:
-                    "blur(10px)"
+                backdropFilter: "blur(12px)",
+                boxShadow:
+                    "0 10px 30px rgba(0,0,0,.35)"
             }
         );
 
 
-        document.body.appendChild(
-            backTop
-        );
+        document.body.appendChild(backTop);
 
     }
 
 
-
-    const updateBackTop =
-        () => {
-
-            if (!backTop) return;
-
-
-            backTop.style.display =
-                window.scrollY > 500
-                    ? "grid"
-                    : "none";
-        };
-
-
     window.addEventListener(
         "scroll",
-        updateBackTop,
+        () => {
+
+            if (
+                window.scrollY > 500
+            ) {
+
+                backTop.style.display =
+                    "grid";
+
+            } else {
+
+                backTop.style.display =
+                    "none";
+
+            }
+
+        },
         {
             passive: true
         }
     );
-
-
-    updateBackTop();
 
 
     backTop.addEventListener(
@@ -441,40 +388,33 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* =====================================================
        EXTERNAL LINKS
     ===================================================== */
 
     document
-        .querySelectorAll(
-            'a[href^="http://"], a[href^="https://"]'
-        )
+        .querySelectorAll('a[href^="http"]')
         .forEach(link => {
 
             const url =
                 link.getAttribute("href");
 
-
-            if (!url) return;
+            if (!url) {
+                return;
+            }
 
 
             try {
 
-                const linkUrl =
+                const linkURL =
                     new URL(
                         url,
                         window.location.href
                     );
 
 
-                /*
-                 * Open only genuinely external
-                 * domains in a new tab.
-                 */
-
                 if (
-                    linkUrl.hostname !==
+                    linkURL.hostname !==
                     window.location.hostname
                 ) {
 
@@ -482,7 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         "target",
                         "_blank"
                     );
-
 
                     link.setAttribute(
                         "rel",
@@ -494,14 +433,13 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
 
                 console.warn(
-                    "Invalid URL:",
+                    "Invalid external URL:",
                     url
                 );
 
             }
 
         });
-
 
 
     /* =====================================================
@@ -516,16 +454,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "error",
                 () => {
 
-                    image.style.background =
-                        "#0a1728";
-
-
-                    image.style.minHeight =
-                        "200px";
-
+                    image.classList.add(
+                        "image-error"
+                    );
 
                     image.alt =
-                        image.alt ||
                         "Image unavailable";
 
                 }
@@ -534,60 +467,126 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ===================================================== */
+
+    const navbar =
+        document.querySelector(".navbar");
+
+
+    if (navbar) {
+
+        const updateNavbar =
+            () => {
+
+                if (
+                    window.scrollY > 30
+                ) {
+
+                    navbar.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    navbar.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+            };
+
+
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            {
+                passive: true
+            }
+        );
+
+
+        updateNavbar();
+
+    }
+
 
     /* =====================================================
-       KEYBOARD ACCESSIBILITY
+       HERO PARALLAX — VERY LIGHT
+    ===================================================== */
+
+    const heroProfile =
+        document.querySelector(
+            ".hero-profile"
+        );
+
+
+    if (
+        heroProfile &&
+        window.matchMedia(
+            "(min-width: 901px)"
+        ).matches
+    ) {
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                const scroll =
+                    window.scrollY;
+
+
+                if (scroll < 700) {
+
+                    heroProfile.style.transform =
+                        `translateY(${scroll * 0.04}px)`;
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ACCESSIBILITY — KEYBOARD MENU
     ===================================================== */
 
     document.addEventListener(
         "keydown",
         event => {
 
-            /*
-             * ESC closes mobile navigation
-             */
-
             if (
                 event.key === "Escape" &&
                 mainNav &&
-                mainNav.classList.contains("active")
+                menuToggle
             ) {
 
                 mainNav.classList.remove(
                     "active"
                 );
 
+                menuToggle.classList.remove(
+                    "active"
+                );
 
-                if (menuToggle) {
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-label",
-                        "Open navigation menu"
-                    );
-
-                }
+                menuToggle.focus();
 
             }
 
         }
     );
-
-
-
-    /* =====================================================
-       PAGE READY
-    ===================================================== */
-
-    document.documentElement.classList.add(
-        "js-ready"
-    );
-
 
 
     /* =====================================================
@@ -599,16 +598,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "color:#00d9ff;font-size:20px;font-weight:800;"
     );
 
-
     console.log(
         "%c MK GLOBAL NEXUS ",
         "color:#ffffff;font-size:13px;font-weight:700;"
     );
 
-
     console.log(
-        "%c Cyber Intelligence • Digital Investigation • AI ",
-        "color:#96a4b9;font-size:11px;"
+        "%c Cyber Intelligence • Digital Investigations ",
+        "color:#7dd3fc;font-size:12px;"
     );
 
 });
