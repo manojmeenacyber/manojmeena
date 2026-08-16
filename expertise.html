@@ -2,51 +2,81 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Professional expertise of Manoj Meena across Cyber Crime Analysis, Digital Fraud Investigation, OSINT, AI, Cyber Security, Investigative Journalism and Healthcare.">
-
-    <meta name="author"
-          content="Manoj Meena">
-
-    <meta name="robots"
-          content="index, follow">
-
-    <meta name="theme-color"
-          content="#050b18">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>
-        Expertise | Manoj Meena — MK Global Nexus
+        Expertise | Manoj Meena — Cyber Intelligence & Digital Investigation
     </title>
+
+    <meta
+        name="description"
+        content="Explore Manoj Meena's professional expertise in Cyber Crime Analysis, Digital Fraud Investigation, OSINT, AI & Cyber Security, Investigative Journalism and Healthcare."
+    >
+
+    <meta
+        name="keywords"
+        content="Manoj Meena, Cyber Crime Analyst, Digital Fraud Investigator, Cyber Intelligence, OSINT, Digital Investigation, AI Cyber Security, Investigative Journalism, Healthcare, MK Global Nexus"
+    >
+
+    <meta
+        name="author"
+        content="Manoj Meena"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020817"
+    >
 
     <!-- GOOGLE FONT -->
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
     <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <!-- ROOT CSS -->
 
     <link
         rel="stylesheet"
-        href="style.css">
+        href="style.css"
+    >
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        href="favicon/favicon.ico"
+    >
 
 </head>
 
@@ -55,81 +85,117 @@
 
 
 <!-- =====================================================
-     HEADER
+     NAVIGATION
 ===================================================== -->
 
-<header class="site-header">
+<header class="navbar">
 
-    <div class="container navbar">
+    <div class="container nav-container">
 
 
         <!-- BRAND -->
 
-        <a href="index.html"
-           class="brand"
-           aria-label="Manoj Meena Home">
+        <div class="logo">
 
-            <div class="brand-mark">
-                MM
-            </div>
+            <a href="index.html">
 
-            <div class="brand-info">
-
-                <strong>
-                    MANOJ MEENA
-                </strong>
-
-                <span>
-                    INTELLIGENCE • TECHNOLOGY
+                <span class="logo-mark">
+                    MM
                 </span>
 
-            </div>
+                <span class="logo-text">
 
-        </a>
+                    <strong>
+                        MANOJ MEENA
+                    </strong>
 
+                    <small>
+                        INTELLIGENCE • TECHNOLOGY
+                    </small>
 
-        <!-- MOBILE MENU -->
+                </span>
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
+            </a>
 
-            <i class="fas fa-bars"></i>
-
-        </button>
+        </div>
 
 
         <!-- NAVIGATION -->
 
-        <nav class="main-nav"
-             aria-label="Main navigation">
+        <nav>
 
-            <a href="index.html">
-                Home
-            </a>
+            <ul class="nav-links">
 
-            <a href="about.html">
-                About
-            </a>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-            <a href="expertise.html"
-               class="active">
-                Expertise
-            </a>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-            <a href="projects.html">
-                Projects
-            </a>
+                <li>
+                    <a
+                        href="expertise.html"
+                        class="active"
+                    >
+                        Expertise
+                    </a>
+                </li>
 
-            <a href="nexus.html">
-                MK Global Nexus
-            </a>
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
 
-            <a href="contact.html">
-                Contact
-            </a>
+                <li>
+                    <a href="nexus.html">
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-contact"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
 
         </nav>
 
@@ -138,201 +204,111 @@
 </header>
 
 
-
 <!-- =====================================================
-     MAIN
+     PAGE HEADER
 ===================================================== -->
 
-<main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
+<section class="page-header">
 
     <div class="container">
 
+        <span class="eyebrow">
+            01 / CORE EXPERTISE
+        </span>
 
-        <div class="hero-content">
+        <h1>
+            Expertise
+            <span style="color:#00d9ff;">
+                in action.
+            </span>
+        </h1>
 
-            <div class="eyebrow">
-                CORE EXPERTISE
-            </div>
-
-
-            <h1>
-
-                Intelligence
-
-                <span>
-                    in action.
-                </span>
-
-            </h1>
-
-
-            <h2>
-                Research.
-                Analysis.
-                Investigation.
-                Innovation.
-            </h2>
-
-
-            <p>
-
-                A multidisciplinary professional focus
-                spanning cybercrime analysis, digital fraud
-                investigation, OSINT, artificial intelligence,
-                cybersecurity, investigative journalism
-                and healthcare.
-
-            </p>
-
-
-            <div class="btn-group">
-
-                <a href="projects.html"
-                   class="btn btn-primary">
-
-                    <i class="fas fa-layer-group"></i>
-
-                    &nbsp; View Projects
-
-                </a>
-
-
-                <a href="contact.html"
-                   class="btn btn-outline">
-
-                    <i class="fas fa-envelope"></i>
-
-                    &nbsp; Contact
-
-                </a>
-
-            </div>
-
-
-            <div class="tags">
-
-                <span class="tag">
-                    CYBERCRIME
-                </span>
-
-                <span class="tag">
-                    DIGITAL FRAUD
-                </span>
-
-                <span class="tag">
-                    OSINT
-                </span>
-
-                <span class="tag">
-                    AI
-                </span>
-
-                <span class="tag">
-                    CYBER SECURITY
-                </span>
-
-                <span class="tag">
-                    HEALTHCARE
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROFILE -->
-
-        <div class="hero-image">
-
-            <img
-                src="assets/images/profile.jpg"
-                alt="Manoj Meena"
-                loading="eager">
-
-
-            <div class="profile-card">
-
-                <small>
-                    ● PROFESSIONAL EXPERTISE
-                </small>
-
-                <h3>
-                    Manoj Meena
-                </h3>
-
-                <p>
-                    Founder &amp; CEO — MK Global Nexus
-                </p>
-
-            </div>
-
-        </div>
+        <p>
+            Research, analysis, investigation and innovation
+            across cyber intelligence, digital fraud,
+            artificial intelligence, journalism and healthcare.
+        </p>
 
     </div>
 
 </section>
 
 
-
 <!-- =====================================================
-     EXPERTISE OVERVIEW
+     EXPERTISE INTRO
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
 
-        <div class="section-label">
-            01 / EXPERTISE OVERVIEW
+        <div
+            style="
+                max-width:900px;
+                margin-bottom:55px;
+            "
+        >
+
+            <span class="eyebrow">
+                PROFESSIONAL FOCUS
+            </span>
+
+            <h2
+                style="
+                    font-size:clamp(38px,5vw,68px);
+                    line-height:1.05;
+                    letter-spacing:-3px;
+                    margin-bottom:22px;
+                "
+            >
+
+                Six domains.
+
+                <br>
+
+                <span style="color:#00d9ff;">
+                    One approach.
+                </span>
+
+            </h2>
+
+            <p
+                style="
+                    max-width:760px;
+                    color:#91a9bd;
+                    font-size:17px;
+                    line-height:1.9;
+                "
+            >
+
+                My professional and research focus spans
+                multiple disciplines connected by intelligence,
+                technology, investigation and public awareness.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
+        <!-- SIX DOMAINS -->
 
-            Six domains.
-
-            <span class="gradient-text">
-                One approach.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <!-- 01 -->
 
-            My professional and research focus spans
-            multiple disciplines connected by intelligence,
-            technology, investigation and public awareness.
+            <article class="future-card reveal">
 
-        </p>
-
-
-        <div class="grid">
-
-
-            <!-- CYBER CRIME -->
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-shield-halved"></i>
 
                 </div>
 
-
                 <h3>
                     Cyber Crime Analysis
                 </h3>
-
 
                 <p>
 
@@ -343,18 +319,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         Threat Analysis
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Cybercrime
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Risk Research
                     </span>
 
@@ -363,22 +338,19 @@
             </article>
 
 
+            <!-- 02 -->
 
-            <!-- DIGITAL FRAUD -->
+            <article class="future-card reveal">
 
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-user-shield"></i>
 
                 </div>
 
-
                 <h3>
                     Digital Fraud Investigation
                 </h3>
-
 
                 <p>
 
@@ -388,18 +360,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         Fraud
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Investigation
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Analysis
                     </span>
 
@@ -408,22 +379,19 @@
             </article>
 
 
+            <!-- 03 -->
 
-            <!-- OSINT -->
+            <article class="future-card reveal">
 
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-magnifying-glass"></i>
 
                 </div>
 
-
                 <h3>
                     OSINT Research
                 </h3>
-
 
                 <p>
 
@@ -433,18 +401,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         OSINT
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Research
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Verification
                     </span>
 
@@ -453,22 +420,19 @@
             </article>
 
 
+            <!-- 04 -->
 
-            <!-- AI -->
+            <article class="future-card reveal">
 
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-brain"></i>
 
                 </div>
 
-
                 <h3>
                     AI &amp; Cyber Security
                 </h3>
-
 
                 <p>
 
@@ -479,18 +443,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         AI
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Automation
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Security
                     </span>
 
@@ -499,22 +462,19 @@
             </article>
 
 
+            <!-- 05 -->
 
-            <!-- JOURNALISM -->
+            <article class="future-card reveal">
 
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-newspaper"></i>
 
                 </div>
 
-
                 <h3>
                     Investigative Journalism
                 </h3>
-
 
                 <p>
 
@@ -525,18 +485,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         Journalism
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Research
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Awareness
                     </span>
 
@@ -545,22 +504,19 @@
             </article>
 
 
+            <!-- 06 -->
 
-            <!-- HEALTHCARE -->
+            <article class="future-card reveal">
 
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-heart-pulse"></i>
 
                 </div>
 
-
                 <h3>
                     Healthcare Professional
                 </h3>
-
 
                 <p>
 
@@ -571,18 +527,17 @@
 
                 </p>
 
+                <div class="hero-focus">
 
-                <div class="tags">
-
-                    <span class="tag">
+                    <span>
                         Healthcare
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Awareness
                     </span>
 
-                    <span class="tag">
+                    <span>
                         Technology
                     </span>
 
@@ -597,48 +552,56 @@
 </section>
 
 
-
 <!-- =====================================================
      CYBER INTELLIGENCE
 ===================================================== -->
 
-<section>
+<section class="section section-dark">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            02 / CYBER INTELLIGENCE
+            <span>
+                02 / CYBER INTELLIGENCE
+            </span>
+
+            <h2>
+
+                Understanding
+
+                <strong>
+                    digital threats.
+                </strong>
+
+            </h2>
+
+            <p
+                style="
+                    margin-top:18px;
+                    color:#8fa7bb;
+                    max-width:720px;
+                "
+            >
+
+                Cybercrime continuously evolves.
+                Effective intelligence requires context,
+                evidence, verification and awareness.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Understanding
-
-            <span class="gradient-text">
-                digital threats.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <article class="future-card reveal">
 
-            Cybercrime continuously evolves.
-            Effective intelligence requires context,
-            evidence, verification and awareness.
+                <div class="future-icon">
 
-        </p>
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
                     <i class="fas fa-radar"></i>
+
                 </div>
 
                 <h3>
@@ -656,10 +619,12 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
+
                     <i class="fas fa-chart-line"></i>
+
                 </div>
 
                 <h3>
@@ -677,10 +642,12 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
+
                     <i class="fas fa-check-double"></i>
+
                 </div>
 
                 <h3>
@@ -703,47 +670,53 @@
 </section>
 
 
-
 <!-- =====================================================
      DIGITAL INVESTIGATION
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            03 / DIGITAL INVESTIGATION
+            <span>
+                03 / DIGITAL INVESTIGATION
+            </span>
+
+            <h2>
+
+                Follow the
+
+                <strong>
+                    digital trail.
+                </strong>
+
+            </h2>
+
+            <p
+                style="
+                    margin-top:18px;
+                    color:#8fa7bb;
+                    max-width:720px;
+                "
+            >
+
+                Structured research can transform
+                scattered digital information into
+                useful investigative context.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Follow the
-
-            <span class="gradient-text">
-                digital trail.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <article class="future-card reveal">
 
-            Structured research can transform
-            scattered digital information into
-            useful investigative context.
-
-        </p>
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-database"></i>
 
@@ -763,9 +736,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-diagram-project"></i>
 
@@ -785,9 +758,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-filter"></i>
 
@@ -807,11 +780,11 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
-                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-circle-check"></i>
 
                 </div>
 
@@ -835,48 +808,54 @@
 </section>
 
 
-
 <!-- =====================================================
      AI & CYBER SECURITY
 ===================================================== -->
 
-<section>
+<section class="section section-dark">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            04 / AI &amp; CYBER SECURITY
+            <span>
+                04 / AI &amp; CYBER SECURITY
+            </span>
+
+            <h2>
+
+                Responsible
+
+                <strong>
+                    innovation.
+                </strong>
+
+            </h2>
+
+            <p
+                style="
+                    margin-top:18px;
+                    color:#8fa7bb;
+                    max-width:720px;
+                "
+            >
+
+                Exploring practical applications of
+                artificial intelligence and automation
+                across research, cybersecurity and
+                digital investigation.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Responsible
-
-            <span class="gradient-text">
-                innovation.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <article class="future-card reveal">
 
-            Exploring practical applications of
-            artificial intelligence and automation
-            across research, cybersecurity and
-            digital investigation.
-
-        </p>
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-robot"></i>
 
@@ -896,9 +875,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-gears"></i>
 
@@ -918,9 +897,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-lock"></i>
 
@@ -947,46 +926,52 @@
 </section>
 
 
-
 <!-- =====================================================
      INVESTIGATIVE JOURNALISM
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            05 / INVESTIGATIVE JOURNALISM
+            <span>
+                05 / INVESTIGATIVE JOURNALISM
+            </span>
+
+            <h2>
+
+                Research before
+
+                <strong>
+                    reporting.
+                </strong>
+
+            </h2>
+
+            <p
+                style="
+                    margin-top:18px;
+                    color:#8fa7bb;
+                    max-width:720px;
+                "
+            >
+
+                Responsible journalism begins with
+                evidence, context and verification.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Research before
-
-            <span class="gradient-text">
-                reporting.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <article class="future-card reveal">
 
-            Responsible journalism begins with
-            evidence, context and verification.
-
-        </p>
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-book-open"></i>
 
@@ -1006,9 +991,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-search"></i>
 
@@ -1028,9 +1013,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-newspaper"></i>
 
@@ -1050,9 +1035,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-bullhorn"></i>
 
@@ -1078,47 +1063,53 @@
 </section>
 
 
-
 <!-- =====================================================
      HEALTHCARE
 ===================================================== -->
 
-<section>
+<section class="section section-dark">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            06 / HEALTHCARE
+            <span>
+                06 / HEALTHCARE
+            </span>
+
+            <h2>
+
+                Healthcare meets
+
+                <strong>
+                    technology.
+                </strong>
+
+            </h2>
+
+            <p
+                style="
+                    margin-top:18px;
+                    color:#8fa7bb;
+                    max-width:720px;
+                "
+            >
+
+                Healthcare knowledge remains an important
+                part of my multidisciplinary professional
+                perspective.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Healthcare meets
-
-            <span class="gradient-text">
-                technology.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <article class="future-card reveal">
 
-            Healthcare knowledge remains an important
-            part of my multidisciplinary professional
-            perspective.
-
-        </p>
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-heart-pulse"></i>
 
@@ -1138,9 +1129,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-user-shield"></i>
 
@@ -1160,9 +1151,9 @@
             </article>
 
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-microchip"></i>
 
@@ -1188,34 +1179,40 @@
 </section>
 
 
-
 <!-- =====================================================
      PROFESSIONAL APPROACH
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="mission reveal">
 
-        <div class="mission">
-
-            <div class="section-label">
+            <span class="eyebrow">
                 PROFESSIONAL APPROACH
-            </div>
+            </span>
 
-
-            <h2>
+            <h2
+                style="
+                    margin-bottom:22px;
+                    font-size:clamp(32px,5vw,58px);
+                    line-height:1.05;
+                    letter-spacing:-2.5px;
+                "
+            >
 
                 Observe.
+
                 Analyze.
+
                 Verify.
-                <span class="gradient-text">
+
+                <span style="color:#00d9ff;">
                     Innovate.
                 </span>
 
             </h2>
-
 
             <p>
 
@@ -1228,25 +1225,30 @@
             </p>
 
 
-            <div class="tags">
+            <div class="hero-focus">
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-book"></i>
                     RESEARCH
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-chart-line"></i>
                     ANALYSIS
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-magnifying-glass"></i>
                     INVESTIGATION
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-check"></i>
                     VERIFICATION
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-lightbulb"></i>
                     INNOVATION
                 </span>
 
@@ -1259,30 +1261,28 @@
 </section>
 
 
-
 <!-- =====================================================
      CTA
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="future-cta reveal">
 
-        <div class="mission"
-             style="text-align:center;">
-
-            <div class="section-label">
+            <span class="eyebrow">
                 EXPLORE FURTHER
-            </div>
-
+            </span>
 
             <h2>
 
-                Intelligence in action.
+                Intelligence
+                <span style="color:#00d9ff;">
+                    in action.
+                </span>
 
             </h2>
-
 
             <p>
 
@@ -1292,36 +1292,47 @@
             </p>
 
 
-            <div class="btn-group"
-                 style="justify-content:center;">
+            <div
+                style="
+                    display:flex;
+                    justify-content:center;
+                    flex-wrap:wrap;
+                    gap:12px;
+                "
+            >
 
-
-                <a href="projects.html"
-                   class="btn btn-primary">
+                <a
+                    href="projects.html"
+                    class="btn btn-primary"
+                >
 
                     <i class="fas fa-folder-open"></i>
 
-                    &nbsp; View Projects
+                    View Projects
 
                 </a>
 
 
-                <a href="nexus.html"
-                   class="btn btn-outline">
+                <a
+                    href="nexus.html"
+                    class="btn btn-secondary"
+                >
 
                     <i class="fas fa-globe"></i>
 
-                    &nbsp; MK Global Nexus
+                    MK Global Nexus
 
                 </a>
 
 
-                <a href="contact.html"
-                   class="btn btn-outline">
+                <a
+                    href="contact.html"
+                    class="btn btn-secondary"
+                >
 
                     <i class="fas fa-envelope"></i>
 
-                    &nbsp; Contact
+                    Contact
 
                 </a>
 
@@ -1334,10 +1345,6 @@
 </section>
 
 
-</main>
-
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -1347,31 +1354,212 @@
     <div class="container footer-content">
 
 
-        <div>
+        <div class="footer-col">
 
-            <div class="footer-brand">
-                MANOJ MEENA
-            </div>
+            <h4>
+                Manoj Meena
+            </h4>
 
             <p>
-                Intelligence • Technology • Innovation
+
+                Cyber Crime Analyst ·
+                Digital Fraud Investigator
+
+                <br>
+
+                AI &amp; Cyber Security Innovator
+
+            </p>
+
+            <p class="footer-company">
+
+                Founder &amp; CEO,
+
+                <strong>
+                    MK Global Nexus
+                </strong>
+
             </p>
 
         </div>
 
 
+        <div class="footer-col">
+
+            <h4>
+                Navigate
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="expertise.html">
+                        Expertise
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="nexus.html">
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Expertise
+            </h4>
+
+            <p>
+
+                Cyber Crime Analysis
+                <br>
+
+                Digital Fraud Investigation
+                <br>
+
+                OSINT Research
+                <br>
+
+                AI &amp; Cyber Security
+                <br>
+
+                Investigative Journalism
+                <br>
+
+                Healthcare
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Connect
+            </h4>
+
+            <div class="footer-social">
+
+                <a
+                    href="https://github.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="channels.html"
+                    aria-label="Channels"
+                >
+
+                    <i class="fas fa-share-nodes"></i>
+
+                </a>
+
+
+                <a
+                    href="mailto:manojmeenacyber@gmail.com"
+                    aria-label="Email"
+                >
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                manojmeenacyber@gmail.com
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
         <p>
 
-            ©
-            <span data-current-year></span>
+            &copy;
+
+            <span data-current-year>
+                2026
+            </span>
+
             Manoj Meena.
-            All rights reserved.
+
+            All Rights Reserved.
 
         </p>
 
 
-        <p>
-            Founder &amp; CEO — MK Global Nexus
+        <p class="footer-meta">
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="disclaimer.html">
+                Disclaimer
+            </a>
+
+            <a href="sitemap.xml">
+                Sitemap
+            </a>
+
         </p>
 
     </div>
@@ -1379,8 +1567,7 @@
 </footer>
 
 
-
-<!-- ROOT JS -->
+<!-- ROOT JAVASCRIPT -->
 
 <script src="script.js"></script>
 
