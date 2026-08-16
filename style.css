@@ -2355,3 +2355,258 @@ footer {
     }
 
 }
+/* =========================================================
+   MANOJ MEENA — FINAL INTERACTION PATCH
+   ========================================================= */
+
+/* ---------- Mobile Navigation ---------- */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        border: 1px solid rgba(0, 217, 255, 0.25);
+        border-radius: 12px;
+        background: rgba(0, 20, 35, 0.75);
+    }
+
+    .hamburger span {
+        display: block;
+        width: 21px;
+        height: 2px;
+        border-radius: 10px;
+        background: #00d9ff;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        padding: 14px;
+
+        border: 1px solid rgba(0, 217, 255, 0.18);
+        border-radius: 18px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(3, 16, 29, 0.98),
+                rgba(1, 7, 18, 0.98)
+            );
+
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.45),
+            0 0 35px rgba(0, 217, 255, 0.08);
+
+        backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 10px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: rgba(0, 217, 255, 0.09);
+    }
+}
+
+
+/* ---------- Desktop Hamburger ---------- */
+
+@media (min-width: 901px) {
+
+    .hamburger {
+        display: none;
+    }
+
+}
+
+
+/* ---------- Scroll Reveal ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- Back To Top ---------- */
+
+#backToTop {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(0, 217, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(3, 15, 28, 0.92);
+    color: #00d9ff;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease,
+        background 0.25s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: #00d9ff;
+    color: #00101c;
+    transform: translateY(-3px);
+}
+
+
+/* ---------- Image Error ---------- */
+
+.image-error {
+    background:
+        linear-gradient(
+            135deg,
+            #061321,
+            #0a2034
+        );
+
+    object-fit: contain;
+}
+
+
+/* ---------- Page Loading ---------- */
+
+body.page-loaded {
+    animation: pageFadeIn 0.45s ease both;
+}
+
+@keyframes pageFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 3px;
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+}
