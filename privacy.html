@@ -17,16 +17,45 @@
     <meta name="robots"
           content="index, follow">
 
+    <meta name="theme-color"
+          content="#050b18">
+
     <title>
         Privacy Policy | Manoj Meena — MK Global Nexus
     </title>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ROOT CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <!-- FAVICON -->
+
+    <link rel="icon"
+          href="favicon/favicon.ico">
 
 </head>
 
@@ -40,17 +69,19 @@
 
 <header class="site-header">
 
-    <div class="header-container">
+    <div class="container navbar">
 
 
         <a href="index.html"
-           class="brand">
+           class="brand"
+           aria-label="Manoj Meena Home">
 
-            <div class="brand-logo">
+            <div class="brand-mark">
                 MM
             </div>
 
-            <div class="brand-text">
+
+            <div class="brand-info">
 
                 <strong>
                     MANOJ MEENA
@@ -67,7 +98,7 @@
 
         <button
             class="menu-toggle"
-            id="menuToggle"
+            type="button"
             aria-label="Open navigation menu"
             aria-expanded="false">
 
@@ -77,7 +108,7 @@
 
 
         <nav class="main-nav"
-             id="mainNav">
+             aria-label="Main navigation">
 
             <a href="index.html">
                 Home
@@ -99,11 +130,16 @@
                 MK Global Nexus
             </a>
 
-            <a href="contact.html"
-               class="nav-contact">
+            <a href="future-vision.html">
+                Future Vision
+            </a>
 
+            <a href="channels.html">
+                Channels
+            </a>
+
+            <a href="contact.html">
                 Contact
-
             </a>
 
         </nav>
@@ -118,20 +154,16 @@
      HERO
 ===================================================== -->
 
-<section class="hero-section">
+<section class="hero">
 
-    <div class="hero-container">
+    <div class="container">
 
 
         <div class="hero-content">
 
 
-            <div class="hero-eyebrow">
-
-                <span class="status-indicator"></span>
-
+            <div class="eyebrow">
                 PRIVACY &amp; DATA PROTECTION
-
             </div>
 
 
@@ -154,7 +186,7 @@
             </h2>
 
 
-            <p class="hero-description">
+            <p>
 
                 This Privacy Policy explains how information
                 voluntarily provided through the Manoj Meena
@@ -163,26 +195,25 @@
             </p>
 
 
-            <div class="hero-actions">
+            <div class="btn-group">
 
-                <a
-                    href="contact.html"
-                    class="btn btn-primary">
+
+                <a href="contact.html"
+                   class="btn btn-primary">
 
                     <i class="fas fa-envelope"></i>
 
-                    Contact
+                    &nbsp; Contact
 
                 </a>
 
 
-                <a
-                    href="index.html"
-                    class="btn btn-secondary">
+                <a href="index.html"
+                   class="btn btn-outline">
 
                     <i class="fas fa-house"></i>
 
-                    Back to Home
+                    &nbsp; Back to Home
 
                 </a>
 
@@ -191,42 +222,60 @@
         </div>
 
 
+        <div class="hero-image">
 
-        <div class="hero-profile">
-
-            <div class="profile-frame">
-
-                <img
-                    src="assets/images/profile.jpg"
-                    alt="Manoj Meena — Founder & CEO, MK Global Nexus"
-                    class="profile-image">
-
-            </div>
+            <div style="
+                text-align:center;
+                width:100%;
+                padding:35px;
+            ">
 
 
-            <div class="profile-card">
+                <div style="
+                    width:115px;
+                    height:115px;
+                    margin:0 auto 25px;
+                    border-radius:30px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    background:rgba(0,217,255,.08);
+                    border:1px solid rgba(0,217,255,.32);
+                    box-shadow:0 0 50px rgba(0,217,255,.12);
+                ">
 
-                <div class="profile-status">
-
-                    <span class="online-dot"></span>
-
-                    Privacy &amp; Transparency
+                    <i class="fas fa-user-shield"
+                       style="
+                           font-size:50px;
+                           color:#00d9ff;
+                       ">
+                    </i>
 
                 </div>
 
 
-                <strong>
-
-                    Manoj Meena
-
-                </strong>
+                <h3>
+                    PRIVACY &amp; TRANSPARENCY
+                </h3>
 
 
                 <p>
-
-                    MK Global Nexus
-
+                    Manoj Meena — MK Global Nexus
                 </p>
+
+
+                <div class="tags"
+                     style="justify-content:center;">
+
+                    <span class="tag">
+                        PRIVACY
+                    </span>
+
+                    <span class="tag">
+                        SECURITY
+                    </span>
+
+                </div>
 
             </div>
 
@@ -242,52 +291,46 @@
      PRIVACY POLICY
 ===================================================== -->
 
-<section class="section about-section">
+<section>
 
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span class="section-number">
-                01 / PRIVACY POLICY
-            </span>
+    <div class="container">
 
 
-            <h2>
-
-                Privacy
-
-                <span>
-                    Information.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Last updated: August 2026
-
-            </p>
-
+        <div class="section-label">
+            01 / PRIVACY POLICY
         </div>
 
 
-        <div class="about-grid">
+        <h2 class="section-title">
+
+            Privacy
+
+            <span class="gradient-text">
+                Information.
+            </span>
+
+        </h2>
 
 
-            <div class="about-content">
+        <p class="section-description">
+
+            Last updated: August 2026
+
+        </p>
+
+
+        <div class="grid">
+
+
+            <article class="card">
 
 
                 <p class="large-text">
 
                     Manoj Meena and
-
                     <strong>
                         MK Global Nexus
                     </strong>
-
                     respect the privacy of website visitors
                     and aim to handle voluntarily provided
                     information responsibly.
@@ -296,14 +339,9 @@
 
 
 
-                <!-- 01 -->
-
                 <h3>
-
                     1. Information You Provide
-
                 </h3>
-
 
                 <p>
 
@@ -317,14 +355,9 @@
 
 
 
-                <!-- 02 -->
-
                 <h3>
-
                     2. Use of Information
-
                 </h3>
-
 
                 <p>
 
@@ -338,14 +371,9 @@
 
 
 
-                <!-- 03 -->
-
                 <h3>
-
                     3. Contact Form
-
                 </h3>
-
 
                 <p>
 
@@ -360,14 +388,9 @@
 
 
 
-                <!-- 04 -->
-
                 <h3>
-
                     4. Email Communication
-
                 </h3>
-
 
                 <p>
 
@@ -380,14 +403,9 @@
 
 
 
-                <!-- 05 -->
-
                 <h3>
-
                     5. Third-Party Services
-
                 </h3>
-
 
                 <p>
 
@@ -402,14 +420,9 @@
 
 
 
-                <!-- 06 -->
-
                 <h3>
-
                     6. Website Analytics
-
                 </h3>
-
 
                 <p>
 
@@ -423,14 +436,9 @@
 
 
 
-                <!-- 07 -->
-
                 <h3>
-
                     7. Cookies
-
                 </h3>
-
 
                 <p>
 
@@ -443,14 +451,9 @@
 
 
 
-                <!-- 08 -->
-
                 <h3>
-
                     8. Data Security
-
                 </h3>
-
 
                 <p>
 
@@ -464,14 +467,9 @@
 
 
 
-                <!-- 09 -->
-
                 <h3>
-
                     9. Data Retention
-
                 </h3>
-
 
                 <p>
 
@@ -486,14 +484,9 @@
 
 
 
-                <!-- 10 -->
-
                 <h3>
-
                     10. Your Choices
-
                 </h3>
-
 
                 <p>
 
@@ -507,14 +500,9 @@
 
 
 
-                <!-- 11 -->
-
                 <h3>
-
                     11. External Links
-
                 </h3>
-
 
                 <p>
 
@@ -528,14 +516,9 @@
 
 
 
-                <!-- 12 -->
-
                 <h3>
-
                     12. Policy Updates
-
                 </h3>
-
 
                 <p>
 
@@ -547,31 +530,31 @@
 
                 </p>
 
-            </div>
+
+            </article>
 
 
 
-            <!-- =================================================
-                 PRIVACY CARD
-            ================================================= -->
+            <!-- PRIVACY PRINCIPLES -->
 
-            <div class="mission-card">
+            <article class="mission">
 
 
-                <span class="card-label">
-
+                <div class="section-label">
                     PRIVACY PRINCIPLES
+                </div>
 
-                </span>
 
-
-                <h3>
+                <h2>
 
                     Privacy.
                     Security.
-                    Transparency.
 
-                </h3>
+                    <span class="gradient-text">
+                        Transparency.
+                    </span>
+
+                </h2>
 
 
                 <p>
@@ -583,40 +566,33 @@
                 </p>
 
 
-                <div class="mission-line"></div>
+                <div class="tags">
 
-
-                <div class="mission-values">
-
-                    <span>
-                        Transparency
+                    <span class="tag">
+                        TRANSPARENCY
                     </span>
 
-                    <span>
-                        Security
+                    <span class="tag">
+                        SECURITY
                     </span>
 
-                    <span>
-                        Responsibility
+                    <span class="tag">
+                        RESPONSIBILITY
                     </span>
 
                 </div>
 
 
-                <div class="mission-line"></div>
-
-
                 <p>
 
                     Last updated:
-
                     <strong>
                         August 2026
                     </strong>
 
                 </p>
 
-            </div>
+            </article>
 
         </div>
 
@@ -630,56 +606,59 @@
      SECURITY NOTICE
 ===================================================== -->
 
-<section class="section nexus-section">
+<section>
 
-    <div class="section-container">
-
-
-        <div class="nexus-badge">
-
-            SECURITY NOTICE
-
-        </div>
+    <div class="container">
 
 
-        <h2>
-
-            Never share
-
-            <span>
-                sensitive credentials.
-            </span>
-
-        </h2>
+        <div class="mission">
 
 
-        <p>
-
-            Do not submit passwords, OTPs, banking
-            credentials, private keys, recovery codes
-            or other highly sensitive information
-            through this website.
-
-        </p>
+            <div class="section-label">
+                SECURITY NOTICE
+            </div>
 
 
-        <div class="nexus-pillars">
+            <h2>
 
-            <span>
-                No Passwords
-            </span>
+                Never share
 
-            <span>
-                No OTPs
-            </span>
+                <span class="gradient-text">
+                    sensitive credentials.
+                </span>
 
-            <span>
-                No Banking Data
-            </span>
+            </h2>
 
-            <span>
-                No Private Keys
-            </span>
+
+            <p>
+
+                Do not submit passwords, OTPs, banking
+                credentials, private keys, recovery codes
+                or other highly sensitive information
+                through this website.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    NO PASSWORDS
+                </span>
+
+                <span class="tag">
+                    NO OTPs
+                </span>
+
+                <span class="tag">
+                    NO BANKING DATA
+                </span>
+
+                <span class="tag">
+                    NO PRIVATE KEYS
+                </span>
+
+            </div>
 
         </div>
 
@@ -693,28 +672,29 @@
      CONTACT CTA
 ===================================================== -->
 
-<section class="section">
+<section>
 
-    <div class="section-container">
+    <div class="container">
 
 
-        <div class="mission-card"
+        <div class="mission"
              style="text-align:center;">
 
 
-            <span class="card-label">
-
+            <div class="section-label">
                 QUESTIONS?
+            </div>
 
-            </span>
 
-
-            <h3>
+            <h2>
 
                 Need professional
-                communication?
 
-            </h3>
+                <span class="gradient-text">
+                    communication?
+                </span>
+
+            </h2>
 
 
             <p>
@@ -725,28 +705,26 @@
             </p>
 
 
-            <div class="hero-actions"
+            <div class="btn-group"
                  style="justify-content:center;">
 
 
-                <a
-                    href="contact.html"
-                    class="btn btn-primary">
+                <a href="contact.html"
+                   class="btn btn-primary">
 
                     <i class="fas fa-envelope"></i>
 
-                    Contact
+                    &nbsp; Contact
 
                 </a>
 
 
-                <a
-                    href="disclaimer.html"
-                    class="btn btn-secondary">
+                <a href="disclaimer.html"
+                   class="btn btn-outline">
 
                     <i class="fas fa-file-lines"></i>
 
-                    Disclaimer
+                    &nbsp; Disclaimer
 
                 </a>
 
@@ -764,118 +742,110 @@
      FOOTER
 ===================================================== -->
 
-<footer class="site-footer">
+<footer>
 
-    <div class="footer-container">
-
-
-        <div class="footer-brand">
+    <div class="container footer-content">
 
 
-            <div class="brand-logo">
-                MM
+        <div>
+
+            <div class="footer-brand">
+                MANOJ MEENA
             </div>
 
 
-            <div>
-
-                <strong>
-                    MANOJ MEENA
-                </strong>
+            <p>
+                Founder &amp; CEO — MK Global Nexus
+            </p>
 
 
-                <p>
-                    Founder &amp; CEO,
-                    MK Global Nexus
-                </p>
-
-            </div>
+            <p>
+                Intelligence • Technology • Innovation
+            </p>
 
         </div>
 
 
-
-        <div class="footer-social">
+        <div class="social-links">
 
 
             <a
                 href="https://github.com/manojmeenacyber"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub">
+                rel="noopener noreferrer">
 
                 <i class="fab fa-github"></i>
+                GitHub
 
             </a>
 
 
             <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/manojmeenacyber"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn">
+                rel="noopener noreferrer">
 
                 <i class="fab fa-linkedin-in"></i>
+                LinkedIn
+
+            </a>
+
+
+            <a
+                href="https://x.com/manojmeenacyber"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="fab fa-x-twitter"></i>
+                X
+
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/manojmeenacyber"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <i class="fab fa-instagram"></i>
+                Instagram
 
             </a>
 
         </div>
 
 
+        <div>
 
-        <div class="footer-links">
+            <p>
 
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="expertise.html">
-                Expertise
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="nexus.html">
-                MK Global Nexus
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a href="privacy.html">
-                Privacy
-            </a>
-
-            <a href="disclaimer.html">
-                Disclaimer
-            </a>
-
-        </div>
-
-
-
-        <div class="footer-bottom">
-
-            <span>
-
-                © 2026 Manoj Meena.
+                ©
+                <span data-current-year></span>
+                Manoj Meena.
                 All rights reserved.
 
-            </span>
+            </p>
 
 
-            <span>
+            <div class="social-links">
 
-                Truth • Intelligence • Technology
+                <a href="index.html">
+                    Home
+                </a>
 
-            </span>
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
 
         </div>
 
@@ -885,11 +855,9 @@
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- ROOT JAVASCRIPT -->
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 
 
 </body>
