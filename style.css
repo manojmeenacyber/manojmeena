@@ -2653,3 +2653,87 @@ img[alt="Image unavailable"] {
     }
 
 }
+/* =========================================================
+   FINAL HTML COMPATIBILITY PATCH
+   Manoj Meena Personal Brand Website
+   ========================================================= */
+
+/* New HTML hero structure */
+.hero > .container {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(350px, 0.75fr);
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* New hero eyebrow */
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* New HTML pages using hero visual */
+.hero-visual {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* New HTML future cards */
+.future-card {
+    min-width: 0;
+}
+
+
+/* Mobile compatibility */
+@media (max-width: 900px) {
+
+    .hero > .container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .hero-visual {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* Small mobile */
+@media (max-width: 650px) {
+
+    .hero > .container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+}
