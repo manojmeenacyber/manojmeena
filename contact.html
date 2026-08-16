@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
 
@@ -9,7 +9,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Contact Manoj Meena — Founder & CEO, MK Global Nexus. Professional enquiries, technology collaboration, cyber intelligence, digital investigation and research.">
+          content="Contact Manoj Meena and MK Global Nexus for professional collaboration, cyber intelligence, digital investigation, AI, cybersecurity and technology initiatives.">
 
     <meta name="author"
           content="Manoj Meena">
@@ -17,16 +17,40 @@
     <meta name="robots"
           content="index, follow">
 
+    <meta name="theme-color"
+          content="#07111f">
+
     <title>
-        Contact Manoj Meena | MK Global Nexus
+        Contact | Manoj Meena — MK Global Nexus
     </title>
 
-    <link rel="stylesheet"
-          href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
 
 </head>
 
@@ -44,11 +68,14 @@
 
 
         <a href="index.html"
-           class="brand">
+           class="brand"
+           aria-label="Manoj Meena Home">
+
 
             <div class="brand-logo">
                 MM
             </div>
+
 
             <div class="brand-text">
 
@@ -65,9 +92,11 @@
         </a>
 
 
+
         <button
             class="menu-toggle"
             id="menuToggle"
+            type="button"
             aria-label="Open navigation menu"
             aria-expanded="false">
 
@@ -76,31 +105,41 @@
         </button>
 
 
-        <nav class="main-nav"
-             id="mainNav">
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main navigation">
+
 
             <a href="index.html">
                 Home
             </a>
 
+
             <a href="about.html">
                 About
             </a>
+
 
             <a href="expertise.html">
                 Expertise
             </a>
 
+
             <a href="projects.html">
                 Projects
             </a>
+
 
             <a href="nexus.html">
                 MK Global Nexus
             </a>
 
-            <a href="contact.html"
-               class="nav-contact">
+
+            <a
+                href="contact.html"
+                class="nav-contact">
 
                 Contact
 
@@ -115,7 +154,14 @@
 
 
 <!-- =====================================================
-     HERO
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     CONTACT HERO
 ===================================================== -->
 
 <section class="hero-section">
@@ -130,17 +176,17 @@
 
                 <span class="status-indicator"></span>
 
-                PROFESSIONAL CONTACT
+                CONTACT • CONNECT • COLLABORATE
 
             </div>
 
 
             <h1>
 
-                Let's
+                Let's build
 
                 <span>
-                    Connect.
+                    something meaningful.
                 </span>
 
             </h1>
@@ -148,19 +194,20 @@
 
             <h2>
 
-                Ideas.
-                Research.
-                Technology.
-                Collaboration.
+                Professional collaboration,
+                research and technology.
 
             </h2>
 
 
             <p class="hero-description">
 
-                For professional communication, research,
-                technology initiatives, media enquiries,
-                collaborations and meaningful conversations.
+                For professional inquiries,
+                collaboration, research,
+                technology projects and
+                MK Global Nexus initiatives,
+                you can connect through the
+                channels below.
 
             </p>
 
@@ -169,25 +216,52 @@
 
 
                 <a
-                    href="mailto:manojmeenacyber@gmail.com"
+                    href="mailto:mkglobalnexus@gmail.com"
                     class="btn btn-primary">
 
                     <i class="fas fa-envelope"></i>
 
-                    Email Me
+                    Email MK Global Nexus
 
                 </a>
 
 
                 <a
-                    href="projects.html"
+                    href="https://www.linkedin.com/in/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-secondary">
 
-                    <i class="fas fa-code"></i>
+                    <i class="fab fa-linkedin-in"></i>
 
-                    View Projects
+                    LinkedIn
 
                 </a>
+
+            </div>
+
+
+            <div class="hero-tags">
+
+                <span>
+                    COLLABORATION
+                </span>
+
+                <span>
+                    CYBER INTELLIGENCE
+                </span>
+
+                <span>
+                    AI
+                </span>
+
+                <span>
+                    CYBER SECURITY
+                </span>
+
+                <span>
+                    RESEARCH
+                </span>
 
             </div>
 
@@ -195,43 +269,98 @@
 
 
 
-        <!-- PROFILE -->
+        <!-- CONTACT VISUAL -->
 
         <div class="hero-profile">
 
-            <div class="profile-frame">
 
-                <img
-                    src="assets/images/profile.jpg"
-                    alt="Manoj Meena — Founder & CEO, MK Global Nexus"
-                    class="profile-image">
+            <div class="profile-frame"
+                 style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:360px;
+                    background:
+                    radial-gradient(
+                        circle at center,
+                        rgba(0,217,255,.18),
+                        transparent 58%
+                    );
+                 ">
+
+
+                <div style="
+                    text-align:center;
+                    padding:30px;
+                ">
+
+
+                    <div style="
+                        width:110px;
+                        height:110px;
+                        margin:0 auto 25px;
+                        border:1px solid rgba(0,217,255,.45);
+                        border-radius:30px;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:rgba(0,217,255,.08);
+                    ">
+
+                        <i
+                            class="fas fa-comments"
+                            style="
+                                font-size:50px;
+                                color:var(--accent);
+                            ">
+                        </i>
+
+                    </div>
+
+
+                    <h3 style="
+                        margin:0 0 10px;
+                        font-size:25px;
+                    ">
+
+                        CONNECT
+
+                    </h3>
+
+
+                    <p style="
+                        margin:0;
+                        opacity:.75;
+                    ">
+
+                        Professional • Direct • Responsible
+
+                    </p>
+
+                </div>
 
             </div>
 
 
             <div class="profile-card">
 
+
                 <div class="profile-status">
 
                     <span class="online-dot"></span>
 
-                    Available for Professional Enquiries
+                    PROFESSIONAL CONTACT
 
                 </div>
 
 
                 <strong>
-
                     Manoj Meena
-
                 </strong>
 
 
                 <p>
-
-                    Founder &amp; CEO,
-                    MK Global Nexus
-
+                    Founder &amp; CEO — MK Global Nexus
                 </p>
 
             </div>
@@ -245,328 +374,7 @@
 
 
 <!-- =====================================================
-     CONTACT SECTION
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-container">
-
-
-        <div class="section-heading">
-
-            <span class="section-number">
-                01 / CONTACT
-            </span>
-
-
-            <h2>
-
-                Choose the right
-
-                <span>
-                    channel.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                For professional enquiries,
-                collaboration and technology-related
-                communication.
-
-            </p>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-
-            <!-- =================================================
-                 CONTACT INFORMATION
-            ================================================= -->
-
-            <div class="contact-info">
-
-
-                <p class="large-text">
-
-                    I welcome meaningful professional
-                    conversations around technology,
-                    cyber intelligence, digital
-                    investigations, research and innovation.
-
-                </p>
-
-
-                <div class="contact-items">
-
-
-                    <!-- EMAIL -->
-
-                    <a
-                        href="mailto:manojmeenacyber@gmail.com"
-                        class="contact-item">
-
-
-                        <div class="contact-icon">
-
-                            <i class="fas fa-envelope"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                PROFESSIONAL EMAIL
-                            </span>
-
-
-                            <strong>
-                                manojmeenacyber@gmail.com
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- GITHUB -->
-
-                    <a
-                        href="https://github.com/manojmeenacyber"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-item">
-
-
-                        <div class="contact-icon">
-
-                            <i class="fab fa-github"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                PROFESSIONAL PROJECTS
-                            </span>
-
-
-                            <strong>
-                                GitHub
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- LINKEDIN -->
-
-                    <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-item">
-
-
-                        <div class="contact-icon">
-
-                            <i class="fab fa-linkedin-in"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                PROFESSIONAL NETWORK
-                            </span>
-
-
-                            <strong>
-                                LinkedIn
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-
-
-                    <!-- COMPANY -->
-
-                    <a
-                        href="nexus.html"
-                        class="contact-item">
-
-
-                        <div class="contact-icon">
-
-                            <i class="fas fa-building"></i>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                COMPANY / ECOSYSTEM
-                            </span>
-
-
-                            <strong>
-                                MK Global Nexus
-                            </strong>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 CONTACT FORM
-            ================================================= -->
-
-            <form
-                class="contact-form"
-                id="contactForm">
-
-
-                <!-- NAME -->
-
-                <div class="form-group">
-
-                    <label for="name">
-
-                        Your Name
-
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        autocomplete="name"
-                        required>
-
-                </div>
-
-
-
-                <!-- EMAIL -->
-
-                <div class="form-group">
-
-                    <label for="email">
-
-                        Email Address
-
-                    </label>
-
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        required>
-
-                </div>
-
-
-
-                <!-- SUBJECT -->
-
-                <div class="form-group">
-
-                    <label for="subject">
-
-                        Subject
-
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="What would you like to discuss?"
-                        required>
-
-                </div>
-
-
-
-                <!-- MESSAGE -->
-
-                <div class="form-group">
-
-                    <label for="message">
-
-                        Message
-
-                    </label>
-
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="7"
-                        placeholder="Write your message here..."
-                        required></textarea>
-
-                </div>
-
-
-
-                <!-- SUBMIT -->
-
-                <button
-                    class="btn btn-primary form-submit"
-                    type="submit">
-
-                    <i class="fas fa-paper-plane"></i>
-
-                    Send Message
-
-                </button>
-
-
-                <p
-                    id="formStatus"
-                    class="form-status"
-                    aria-live="polite">
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PROFESSIONAL AREAS
+     PERSONAL CONTACT
 ===================================================== -->
 
 <section class="section about-section">
@@ -577,27 +385,606 @@
         <div class="section-heading">
 
             <span class="section-number">
-                02 / COLLABORATION
+                01 / PERSONAL PROFESSIONAL PROFILE
             </span>
 
 
             <h2>
 
-                Areas for
+                Connect with
 
                 <span>
-                    collaboration.
+                    Manoj Meena.
                 </span>
 
             </h2>
 
+
+            <p>
+
+                Professional social profiles and
+                public contact information.
+
+            </p>
+
         </div>
+
+
+
+        <div class="projects-grid">
+
+
+            <!-- LINKEDIN -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        PROFESSIONAL NETWORK
+                    </span>
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+
+                <p>
+
+                    Connect with Manoj Meena
+                    for professional networking,
+                    technology, research and
+                    collaboration.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        PROFESSIONAL
+                    </span>
+
+                    <span>
+                        NETWORK
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="https://www.linkedin.com/in/manojmeenacyber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Open LinkedIn
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GITHUB -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        DEVELOPMENT
+                    </span>
+
+                    <i class="fab fa-github"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fab fa-github"></i>
+
+                </div>
+
+
+                <h3>
+                    GitHub
+                </h3>
+
+
+                <p>
+
+                    Explore technology projects,
+                    experiments, research tools
+                    and development work.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        CODE
+                    </span>
+
+                    <span>
+                        PROJECTS
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="https://github.com/manojmeenacyber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Open GitHub
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- FACEBOOK -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        SOCIAL PROFILE
+                    </span>
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </div>
+
+
+                <h3>
+                    Facebook
+                </h3>
+
+
+                <p>
+
+                    Follow Manoj Meena's public
+                    professional presence and
+                    technology-related updates.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        MANOJ MEENA
+                    </span>
+
+                    <span>
+                        PUBLIC PROFILE
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="https://www.facebook.com/manojmeenacyber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Open Facebook
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- X -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        SOCIAL NETWORK
+                    </span>
+
+                    <i class="fab fa-x-twitter"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fab fa-x-twitter"></i>
+
+                </div>
+
+
+                <h3>
+                    X
+                </h3>
+
+
+                <p>
+
+                    Follow Manoj Meena on X for
+                    technology, cybersecurity,
+                    intelligence and awareness
+                    related updates.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        X
+                    </span>
+
+                    <span>
+                        UPDATES
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="https://x.com/manojmeenacyber"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Open X
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PERSONAL EMAIL -->
+
+            <article class="project-card">
+
+
+                <div class="project-top">
+
+                    <span>
+                        PROFESSIONAL EMAIL
+                    </span>
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+
+                <div class="project-icon">
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+
+                <h3>
+                    Professional Email
+                </h3>
+
+
+                <p>
+
+                    For direct professional
+                    communication with Manoj Meena.
+
+                </p>
+
+
+                <div class="project-tags">
+
+                    <span>
+                        DIRECT
+                    </span>
+
+                    <span>
+                        PROFESSIONAL
+                    </span>
+
+                </div>
+
+
+                <div class="project-actions">
+
+                    <a
+                        href="mailto:manojmeenacyber@gmail.com"
+                        class="btn btn-primary">
+
+                        Send Email
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMPANY CONTACT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                02 / MK GLOBAL NEXUS
+            </span>
+
+
+            <h2>
+
+                Connect with
+
+                <span>
+                    the company.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                For business inquiries, technology
+                initiatives, collaboration and
+                MK Global Nexus projects.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+            <!-- COMPANY INFORMATION -->
+
+            <div class="about-content">
+
+
+                <p class="large-text">
+
+                    MK Global Nexus
+
+                </p>
+
+
+                <p>
+
+                    A technology and intelligence
+                    initiative focused on cyber
+                    intelligence, digital investigation,
+                    OSINT, AI, cybersecurity and
+                    public awareness.
+
+                </p>
+
+
+                <div style="
+                    display:grid;
+                    gap:18px;
+                    margin-top:30px;
+                ">
+
+
+                    <a
+                        href="mailto:mkglobalnexus@gmail.com"
+                        class="text-link">
+
+                        <i class="fas fa-envelope"></i>
+
+                        mkglobalnexus@gmail.com
+
+                    </a>
+
+
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-link">
+
+                        <i class="fas fa-globe"></i>
+
+                        MK Global Nexus Website
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMPANY CARD -->
+
+            <div class="mission-card">
+
+
+                <span class="card-label">
+                    COMPANY PRESENCE
+                </span>
+
+
+                <h3>
+                    MK Global Nexus
+                </h3>
+
+
+                <p>
+
+                    Intelligence • Technology •
+                    Research • Innovation
+
+                </p>
+
+
+                <div class="mission-line"></div>
+
+
+                <div class="mission-values">
+
+
+                    <a
+                        href="https://www.facebook.com/mkglobalnexus"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                        Facebook
+
+                    </a>
+
+
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="fas fa-globe"></i>
+
+                        Website
+
+                    </a>
+
+
+                    <a
+                        href="mailto:mkglobalnexus@gmail.com">
+
+                        <i class="fas fa-envelope"></i>
+
+                        Email
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COLLABORATION
+===================================================== -->
+
+<section class="section about-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                03 / COLLABORATION
+            </span>
+
+
+            <h2>
+
+                What can we
+
+                <span>
+                    work on?
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Professional conversations are
+                welcome around relevant areas
+                of expertise and research.
+
+            </p>
+
+        </div>
+
 
 
         <div class="intelligence-grid">
 
-
-            <!-- CYBER -->
 
             <article>
 
@@ -615,45 +1002,41 @@
 
                 <p>
 
-                    Cybersecurity research,
-                    awareness and technology
-                    discussions.
+                    Cybersecurity awareness,
+                    defensive research and
+                    technology initiatives.
 
                 </p>
 
             </article>
 
 
-
-            <!-- DIGITAL INVESTIGATION -->
 
             <article>
 
                 <div class="intelligence-icon">
 
-                    <i class="fas fa-user-secret"></i>
+                    <i class="fas fa-magnifying-glass"></i>
 
                 </div>
 
 
                 <h3>
-                    Digital Investigations
+                    OSINT &amp; Research
                 </h3>
 
 
                 <p>
 
-                    Digital fraud, OSINT research
-                    and investigation-related
-                    technology.
+                    Open-source intelligence,
+                    digital research and
+                    information analysis.
 
                 </p>
 
             </article>
 
 
-
-            <!-- AI -->
 
             <article>
 
@@ -671,9 +1054,9 @@
 
                 <p>
 
-                    AI-assisted research,
-                    automation and innovative
-                    technology projects.
+                    Artificial intelligence,
+                    automation and responsible
+                    technology innovation.
 
                 </p>
 
@@ -681,27 +1064,25 @@
 
 
 
-            <!-- MEDIA -->
-
             <article>
 
                 <div class="intelligence-icon">
 
-                    <i class="fas fa-newspaper"></i>
+                    <i class="fas fa-handshake"></i>
 
                 </div>
 
 
                 <h3>
-                    Media &amp; Research
+                    Collaboration
                 </h3>
 
 
                 <p>
 
-                    Investigative research,
-                    technology stories and
-                    public awareness.
+                    Research, projects,
+                    professional partnerships
+                    and knowledge exchange.
 
                 </p>
 
@@ -716,59 +1097,87 @@
 
 
 <!-- =====================================================
-     SECURITY NOTICE
+     CONTACT POLICY
 ===================================================== -->
 
-<section class="section nexus-section">
+<section class="section">
 
     <div class="section-container">
 
 
-        <div class="nexus-badge">
-
-            SECURITY NOTICE
-
-        </div>
+        <div class="mission-card"
+             style="text-align:center;">
 
 
-        <h2>
-
-            Protect your
-
-            <span>
-                sensitive information.
+            <span class="card-label">
+                PROFESSIONAL CONTACT
             </span>
 
-        </h2>
+
+            <h3>
+                Direct. Professional. Responsible.
+            </h3>
 
 
-        <p>
+            <p>
 
-            Please do not submit passwords, OTPs,
-            banking credentials, private keys,
-            recovery codes or other highly sensitive
-            information through this website form.
+                Please use the appropriate public
+                contact channel for professional
+                communication. Account login,
+                recovery and private security
+                information is never published here.
 
-        </p>
+            </p>
 
 
-        <div class="nexus-pillars">
+            <div class="mission-values"
+                 style="justify-content:center;">
 
-            <span>
-                No Passwords
-            </span>
+                <span>
+                    Privacy
+                </span>
 
-            <span>
-                No OTPs
-            </span>
+                <span>
+                    Security
+                </span>
 
-            <span>
-                No Banking Credentials
-            </span>
+                <span>
+                    Professionalism
+                </span>
 
-            <span>
-                Use Secure Channels
-            </span>
+                <span>
+                    Responsible Communication
+                </span>
+
+            </div>
+
+
+            <div class="hero-actions"
+                 style="justify-content:center;">
+
+
+                <a
+                    href="mailto:mkglobalnexus@gmail.com"
+                    class="btn btn-primary">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Contact MK Global Nexus
+
+                </a>
+
+
+                <a
+                    href="mailto:manojmeenacyber@gmail.com"
+                    class="btn btn-secondary">
+
+                    <i class="fas fa-user"></i>
+
+                    Contact Manoj Meena
+
+                </a>
+
+            </div>
 
         </div>
 
@@ -782,70 +1191,68 @@
      FINAL CTA
 ===================================================== -->
 
-<section class="section">
+<section class="section nexus-section">
 
     <div class="section-container">
 
 
-        <div class="mission-card"
-             style="text-align:center;">
+        <div class="nexus-badge">
+            MK GLOBAL NEXUS
+        </div>
 
 
-            <span class="card-label">
+        <h2>
 
-                MK GLOBAL NEXUS
+            Let's connect.
 
+            <span>
+                Let's create impact.
             </span>
 
-
-            <h3>
-
-                Intelligence Meets Technology.
-
-            </h3>
+        </h2>
 
 
-            <p>
+        <p>
 
-                Explore the professional ecosystem
-                behind the projects, research and
-                technology initiatives.
+            Explore the work, research and
+            technology behind the ecosystem.
 
-            </p>
-
-
-            <div class="hero-actions"
-                 style="justify-content:center;">
+        </p>
 
 
-                <a
-                    href="nexus.html"
-                    class="btn btn-primary">
-
-                    <i class="fas fa-globe"></i>
-
-                    Explore MK Global Nexus
-
-                </a>
+        <div class="hero-actions"
+             style="justify-content:center;">
 
 
-                <a
-                    href="about.html"
-                    class="btn btn-secondary">
+            <a
+                href="projects.html"
+                class="btn btn-primary">
 
-                    <i class="fas fa-user"></i>
+                <i class="fas fa-layer-group"></i>
 
-                    About Manoj Meena
+                Explore Projects
 
-                </a>
+            </a>
 
-            </div>
+
+            <a
+                href="nexus.html"
+                class="btn btn-secondary">
+
+                <i class="fas fa-globe"></i>
+
+                MK Global Nexus
+
+            </a>
 
         </div>
 
     </div>
 
 </section>
+
+
+</main>
 
 
 
@@ -884,9 +1291,18 @@
 
 
 
-        <!-- SOCIAL -->
-
         <div class="footer-social">
+
+
+            <a
+                href="https://www.linkedin.com/in/manojmeenacyber"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+
+                <i class="fab fa-linkedin-in"></i>
+
+            </a>
 
 
             <a
@@ -901,12 +1317,23 @@
 
 
             <a
-                href="https://www.linkedin.com/"
+                href="https://x.com/manojmeenacyber"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn">
+                aria-label="X">
 
-                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-x-twitter"></i>
+
+            </a>
+
+
+            <a
+                href="https://www.facebook.com/manojmeenacyber"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook">
+
+                <i class="fab fa-facebook-f"></i>
 
             </a>
 
@@ -914,37 +1341,43 @@
 
 
 
-        <!-- LINKS -->
-
         <div class="footer-links">
+
 
             <a href="index.html">
                 Home
             </a>
 
+
             <a href="about.html">
                 About
             </a>
+
 
             <a href="expertise.html">
                 Expertise
             </a>
 
+
             <a href="projects.html">
                 Projects
             </a>
+
 
             <a href="nexus.html">
                 MK Global Nexus
             </a>
 
+
             <a href="contact.html">
                 Contact
             </a>
 
+
             <a href="privacy.html">
                 Privacy
             </a>
+
 
             <a href="disclaimer.html">
                 Disclaimer
@@ -954,13 +1387,17 @@
 
 
 
-        <!-- COPYRIGHT -->
-
         <div class="footer-bottom">
+
 
             <span>
 
-                © 2026 Manoj Meena.
+                ©
+                <span data-current-year>
+                    2026
+                </span>
+
+                Manoj Meena.
                 All rights reserved.
 
             </span>
@@ -980,9 +1417,7 @@
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- JAVASCRIPT -->
 
 <script src="js/script.js"></script>
 
