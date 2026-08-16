@@ -3,26 +3,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       MANOJ MEENA — PERSONAL BRAND WEBSITE
-       Main JavaScript
+       01. MOBILE NAVIGATION
        ===================================================== */
-
-    /* ================= MOBILE NAVIGATION ================= */
 
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.querySelector(".nav-links");
 
     if (hamburger && navLinks) {
 
-        hamburger.setAttribute("aria-expanded", "false");
-        hamburger.setAttribute("aria-label", "Open navigation menu");
-
         hamburger.addEventListener("click", (event) => {
+
             event.stopPropagation();
 
-            const isOpen = navLinks.classList.toggle("active");
-
-            hamburger.classList.toggle("active", isOpen);
+            const isOpen =
+                navLinks.classList.toggle("active");
 
             hamburger.setAttribute(
                 "aria-expanded",
@@ -35,31 +29,36 @@ document.addEventListener("DOMContentLoaded", () => {
                     ? "Close navigation menu"
                     : "Open navigation menu"
             );
+
         });
+
 
         /* Close menu after clicking a link */
 
-        navLinks.querySelectorAll("a").forEach((link) => {
+        navLinks
+            .querySelectorAll("a")
+            .forEach((link) => {
 
-            link.addEventListener("click", () => {
+                link.addEventListener("click", () => {
 
-                navLinks.classList.remove("active");
-                hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
 
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                    hamburger.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-                hamburger.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
+                    hamburger.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                });
+
             });
 
-        });
 
-        /* Close when clicking outside */
+        /* Close menu when clicking outside */
 
         document.addEventListener("click", (event) => {
 
@@ -69,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ) {
 
                 navLinks.classList.remove("active");
-                hamburger.classList.remove("active");
 
                 hamburger.setAttribute(
                     "aria-expanded",
@@ -80,62 +78,126 @@ document.addEventListener("DOMContentLoaded", () => {
                     "aria-label",
                     "Open navigation menu"
                 );
+
             }
+
+        });
+
+
+        /* Close mobile menu when pressing Escape */
+
+        document.addEventListener("keydown", (event) => {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            navLinks.classList.remove("active");
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            hamburger.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
 
         });
 
     }
 
 
-    /* ================= ACTIVE NAVIGATION ================= */
+    /* =====================================================
+       02. ACTIVE NAVIGATION
+       ===================================================== */
 
     const currentPath =
         window.location.pathname
             .split("/")
             .pop()
-            .toLowerCase() || "index.html";
+            .toLowerCase();
 
-    if (navLinks) {
 
-        navLinks.querySelectorAll("a").forEach((link) => {
+    const currentPage =
+        currentPath === ""
+            ? "index.html"
+            : currentPath;
 
-            const href = link.getAttribute("href");
 
-            if (!href) return;
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach((link) => {
 
-            const cleanHref =
-                href.split("#")[0]
-                    .split("?")[0]
+            const href =
+                link.getAttribute("href");
+
+            if (!href) {
+                return;
+            }
+
+
+            /*
+             * Ignore external URLs and hash links.
+             */
+
+            if (
+                href.startsWith("http://") ||
+                href.startsWith("https://") ||
+                href.startsWith("#") ||
+                href.startsWith("mailto:")
+            ) {
+                return;
+            }
+
+
+            const linkPage =
+                href
                     .split("/")
                     .pop()
-                    .toLowerCase() || "index.html";
+                    .toLowerCase();
+
 
             link.classList.remove("active");
 
-            if (cleanHref === currentPath) {
+
+            if (
+                linkPage === currentPage ||
+                (
+                    currentPage === "index.html" &&
+                    linkPage === ""
+                )
+            ) {
+
                 link.classList.add("active");
+
             }
 
         });
 
-    }
 
-
-    /* ================= CURRENT YEAR ================= */
+    /* =====================================================
+       03. CURRENT YEAR
+       ===================================================== */
 
     const currentYear =
         new Date().getFullYear();
+
 
     document
         .querySelectorAll("[data-current-year]")
         .forEach((element) => {
 
-            element.textContent = currentYear;
+            element.textContent =
+                currentYear;
 
         });
 
 
-    /* ================= SMOOTH SCROLL ================= */
+    /* =====================================================
+       04. SMOOTH SCROLL
+       ===================================================== */
 
     document
         .querySelectorAll('a[href^="#"]')
@@ -146,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const targetId =
                     link.getAttribute("href");
 
+
                 if (
                     !targetId ||
                     targetId === "#"
@@ -153,16 +216,38 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
+
                 const target =
                     document.querySelector(targetId);
 
-                if (!target) return;
+
+                if (!target) {
+                    return;
+                }
+
 
                 event.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+
+                const navbar =
+                    document.querySelector(".navbar");
+
+
+                const offset =
+                    navbar
+                        ? navbar.offsetHeight + 15
+                        : 0;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.pageYOffset -
+                    offset;
+
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
                 });
 
             });
@@ -170,24 +255,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* ================= SCROLL REVEAL ================= */
+    /* =====================================================
+       05. SCROLL REVEAL
+       ===================================================== */
 
     const revealElements =
         document.querySelectorAll(
-            ".card, " +
-            ".project-card, " +
-            ".channel-card, " +
-            ".contact-card, " +
-            ".future-card, " +
-            ".mission, " +
-            ".expertise-card, " +
-            ".roadmap-item"
+            ".reveal, .future-card, .card, .project-card, .contact-card, .channel-card, .mission"
         );
 
+
     if (
-        revealElements.length > 0 &&
+        revealElements.length &&
         "IntersectionObserver" in window
     ) {
+
+        /*
+         * Only apply the hidden state when
+         * IntersectionObserver is available.
+         */
+
+        revealElements.forEach((element) => {
+
+            element.classList.add(
+                "reveal-hidden"
+            );
+
+        });
+
 
         const revealObserver =
             new IntersectionObserver(
@@ -199,7 +294,16 @@ document.addEventListener("DOMContentLoaded", () => {
                             return;
                         }
 
-                        entry.target.classList.add("visible");
+
+                        entry.target.classList.remove(
+                            "reveal-hidden"
+                        );
+
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
 
                         observer.unobserve(
                             entry.target
@@ -209,49 +313,87 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 },
                 {
-                    threshold: 0.12,
+                    threshold: 0.10,
                     rootMargin: "0px 0px -40px 0px"
                 }
             );
 
+
         revealElements.forEach((element) => {
 
-            element.classList.add("reveal");
-
             revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        /*
+         * Fallback for older browsers.
+         */
+
+        revealElements.forEach((element) => {
+
+            element.classList.remove(
+                "reveal-hidden"
+            );
+
+            element.classList.add(
+                "visible"
+            );
 
         });
 
     }
 
 
-    /* ================= BACK TO TOP ================= */
+    /* =====================================================
+       06. BACK TO TOP
+       ===================================================== */
 
-    const backToTop =
-        document.createElement("button");
+    let backToTop =
+        document.getElementById("backToTop");
 
-    backToTop.type = "button";
-    backToTop.id = "backToTop";
-    backToTop.innerHTML = "↑";
 
-    backToTop.setAttribute(
-        "aria-label",
-        "Back to top"
-    );
+    if (!backToTop) {
 
-    document.body.appendChild(backToTop);
+        backToTop =
+            document.createElement("button");
+
+        backToTop.type =
+            "button";
+
+        backToTop.id =
+            "backToTop";
+
+        backToTop.innerHTML =
+            "↑";
+
+        backToTop.setAttribute(
+            "aria-label",
+            "Back to top"
+        );
+
+        document.body.appendChild(
+            backToTop
+        );
+
+    }
 
 
     const updateBackToTop =
         () => {
 
-            if (window.scrollY > 500) {
+            if (
+                window.scrollY > 500
+            ) {
 
-                backToTop.classList.add("show");
+                backToTop.style.display =
+                    "grid";
 
             } else {
 
-                backToTop.classList.remove("show");
+                backToTop.style.display =
+                    "none";
 
             }
 
@@ -267,6 +409,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    updateBackToTop();
+
+
     backToTop.addEventListener(
         "click",
         () => {
@@ -280,7 +425,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* ================= EXTERNAL LINKS ================= */
+    /* =====================================================
+       07. EXTERNAL LINKS
+       ===================================================== */
 
     document
         .querySelectorAll('a[href^="http"]')
@@ -289,15 +436,27 @@ document.addEventListener("DOMContentLoaded", () => {
             const href =
                 link.getAttribute("href");
 
-            if (!href) return;
+
+            if (!href) {
+                return;
+            }
+
+
+            /*
+             * Open external links safely.
+             */
 
             try {
 
-                const url =
-                    new URL(href);
+                const linkUrl =
+                    new URL(
+                        href,
+                        window.location.href
+                    );
+
 
                 if (
-                    url.hostname !==
+                    linkUrl.hostname !==
                     window.location.hostname
                 ) {
 
@@ -315,17 +474,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } catch (error) {
 
-                console.warn(
-                    "Invalid external URL:",
-                    href
-                );
+                /*
+                 * Ignore malformed URLs.
+                 */
 
             }
 
         });
 
 
-    /* ================= IMAGE FALLBACK ================= */
+    /* =====================================================
+       08. IMAGE ERROR HANDLING
+       ===================================================== */
 
     document
         .querySelectorAll("img")
@@ -350,52 +510,112 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* ================= KEYBOARD ESCAPE ================= */
+    /* =====================================================
+       09. NAVBAR SCROLL EFFECT
+       ===================================================== */
 
-    document.addEventListener(
-        "keydown",
-        (event) => {
+    const navbar =
+        document.querySelector(".navbar");
 
-            if (
-                event.key === "Escape" &&
-                navLinks &&
-                hamburger
-            ) {
 
-                navLinks.classList.remove("active");
-                hamburger.classList.remove("active");
+    const updateNavbar =
+        () => {
 
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    "false"
+            if (!navbar) {
+                return;
+            }
+
+
+            if (window.scrollY > 20) {
+
+                navbar.classList.add(
+                    "navbar-scrolled"
+                );
+
+            } else {
+
+                navbar.classList.remove(
+                    "navbar-scrolled"
                 );
 
             }
 
+        };
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavbar,
+        {
+            passive: true
         }
     );
 
 
-    /* ================= PAGE READY ================= */
-
-    document.body.classList.add("page-loaded");
+    updateNavbar();
 
 
-    /* ================= BRAND CONSOLE ================= */
+    /* =====================================================
+       10. PREVENT EMPTY # LINKS
+       ===================================================== */
+
+    document
+        .querySelectorAll('a[href="#"]')
+        .forEach((link) => {
+
+            link.addEventListener(
+                "click",
+                (event) => {
+
+                    event.preventDefault();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       11. PAGE LOAD
+       ===================================================== */
+
+    document.documentElement.classList.add(
+        "js-ready"
+    );
+
+
+    /* =====================================================
+       12. CONSOLE BRANDING
+       ===================================================== */
 
     console.log(
         "%c MANOJ MEENA ",
-        "color:#00d9ff;font-size:20px;font-weight:800;"
+        [
+            "color:#00d9ff",
+            "font-size:20px",
+            "font-weight:900",
+            "letter-spacing:2px"
+        ].join(";")
     );
 
+
     console.log(
-        "%c Founder & CEO — MK Global Nexus ",
-        "color:#ffffff;font-size:13px;font-weight:700;"
+        "%c MK GLOBAL NEXUS ",
+        [
+            "color:#ffffff",
+            "font-size:13px",
+            "font-weight:800",
+            "letter-spacing:1px"
+        ].join(";")
     );
+
 
     console.log(
         "%c Cyber Intelligence • Digital Investigations ",
-        "color:#00d9ff;font-size:12px;"
+        [
+            "color:#8fa8bf",
+            "font-size:11px"
+        ].join(";")
     );
 
 });
