@@ -2737,3 +2737,86 @@ img[alt="Image unavailable"] {
     }
 
 }
+/* =====================================================
+   MANOJ MEENA — SOCIAL BRAND ICONS
+===================================================== */
+
+.social-card .card-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 27px;
+    margin-bottom: 22px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.social-card:hover .card-icon {
+    transform: translateY(-4px);
+}
+
+
+/* LinkedIn */
+
+.social-linkedin {
+    color: #0a66c2;
+    background: rgba(10, 102, 194, 0.12);
+    border: 1px solid rgba(10, 102, 194, 0.3);
+}
+
+
+/* GitHub */
+
+.social-github {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* X */
+
+.social-x {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Instagram */
+
+.social-instagram {
+    color: #e1306c;
+    background: rgba(225, 48, 108, 0.12);
+    border: 1px solid rgba(225, 48, 108, 0.3);
+}
+
+
+/* Facebook */
+
+.social-facebook {
+    color: #1877f2;
+    background: rgba(24, 119, 242, 0.12);
+    border: 1px solid rgba(24, 119, 242, 0.3);
+}
+
+
+/* YouTube */
+
+.social-youtube {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.10);
+    border: 1px solid rgba(255, 0, 0, 0.28);
+}
+
+
+/* Telegram */
+
+.social-telegram {
+    color: #229ed9;
+    background: rgba(34, 158, 217, 0.12);
+    border: 1px solid rgba(34, 158, 217, 0.3);
+}
