@@ -3812,3 +3812,144 @@ footer::before {
     0%, 100% { text-shadow: 0 0 35px rgba(0, 217, 255, 0.3); }
     50% { text-shadow: 0 0 55px rgba(0, 217, 255, 0.6); }
 }
+/* =========================================================
+   DESIGN ENHANCEMENTS V2
+========================================================= */
+
+/* 01. DARK/LIGHT MODE VARIABLES */
+:root {
+    --bg: #020817;
+    --bg-soft: #061225;
+    --bg-card: rgba(8, 24, 44, 0.72);
+    --text: #f5f9ff;
+    --text-soft: #c7d5e5;
+    --text-muted: #8fa7bb;
+}
+
+[data-theme="light"] {
+    --bg: #f5f9ff;
+    --bg-soft: #e8f0f8;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --text: #0a1628;
+    --text-soft: #2a3b50;
+    --text-muted: #5a6b80;
+    --border: rgba(0, 100, 180, 0.2);
+    --border-strong: rgba(0, 100, 180, 0.4);
+}
+
+/* Light mode background */
+[data-theme="light"] body {
+    background: #f5f9ff;
+    color: #0a1628;
+}
+
+[data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: rgba(0, 100, 180, 0.15);
+}
+
+[data-theme="light"] .future-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 100, 180, 0.2);
+}
+
+[data-theme="light"] footer {
+    background: #e8f0f8;
+}
+
+/* 02. THEME TOGGLE BUTTON */
+.theme-toggle {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    background: rgba(0, 217, 255, 0.05);
+    color: var(--cyan);
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 217, 255, 0.15);
+    transform: rotate(15deg);
+}
+
+/* 03. LOADING SCREEN */
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    background: #020817;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+    background: rgba(0, 217, 255, 0.08);
+    color: #00d9ff;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    animation: loadingPulse 1.5s ease infinite;
+}
+
+@keyframes loadingPulse {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(0, 217, 255, 0.5);
+        transform: scale(1.05);
+    }
+}
+
+.loading-text {
+    color: #8fa7bb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: loadingText 1.5s ease infinite;
+}
+
+@keyframes loadingText {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* 04. TYPING ANIMATION */
+.typing-text {
+    color: var(--cyan);
+    font-weight: 700;
+    border-right: 2px solid var(--cyan);
+    padding-right: 5px;
+    animation: cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { border-color: var(--cyan); }
+    50% { border-color: transparent; }
+}
