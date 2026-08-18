@@ -43,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
              */
             navLinks.classList.toggle("open", open);
 
+            /*
+             * Add active class to hamburger for animation
+             */
+            hamburger.classList.toggle("active", open);
+
             hamburger.setAttribute(
                 "aria-expanded",
                 String(open)
@@ -557,6 +562,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Back to top"
         );
 
+        backToTop.style.display =
+            "none";
+
         document.body.appendChild(
             backToTop
         );
@@ -574,10 +582,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 backToTop.style.display =
                     "grid";
 
+                backToTop.classList.add(
+                    "visible"
+                );
+
             } else {
 
                 backToTop.style.display =
                     "none";
+
+                backToTop.classList.remove(
+                    "visible"
+                );
 
             }
 
@@ -819,6 +835,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
 
+
+            /*
+             * Remove keyboard focus class on blur
+             */
+            element.addEventListener(
+                "blur",
+                () => {
+
+                    element.classList.remove(
+                        "keyboard-focus"
+                    );
+
+                }
+            );
+
         });
 
 
@@ -833,6 +864,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.classList.add(
         "page-ready"
+    );
+
+
+    /*
+     * Trigger initial animations after DOM ready
+     */
+    requestAnimationFrame(
+        () => {
+
+            document.body.classList.add(
+                "page-loaded"
+            );
+
+        }
     );
 
 
