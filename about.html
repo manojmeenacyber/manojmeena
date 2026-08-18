@@ -39,7 +39,95 @@
         content="#020817"
     >
 
-    <!-- Google Font -->
+
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
+
+    <link
+        rel="canonical"
+        href="https://manojmeena.com/about.html"
+    >
+
+
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
+    <meta
+        property="og:type"
+        content="profile"
+    >
+
+    <meta
+        property="og:title"
+        content="About Manoj Meena | Cyber Intelligence & Digital Investigations"
+    >
+
+    <meta
+        property="og:description"
+        content="Manoj Meena — Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator and Founder & CEO of MK Global Nexus."
+    >
+
+    <meta
+        property="og:url"
+        content="https://manojmeena.com/about.html"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Manoj Meena"
+    >
+
+    <meta
+        property="og:image"
+        content="https://manojmeena.com/assets/images/manoj-meena.jpg"
+    >
+
+    <meta
+        property="profile:first_name"
+        content="Manoj"
+    >
+
+    <meta
+        property="profile:last_name"
+        content="Meena"
+    >
+
+    <meta
+        property="profile:username"
+        content="manojmeenacyber"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="About Manoj Meena | Cyber Intelligence"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator and Founder & CEO of MK Global Nexus."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://manojmeena.com/assets/images/manoj-meena.jpg"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -57,26 +145,78 @@
         rel="stylesheet"
     >
 
-    <!-- Font Awesome -->
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     >
 
-    <!-- ROOT CSS -->
+
+    <!-- =====================================================
+         WEBSITE CSS
+         ROOT FILE
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="style.css"
     >
 
-    <!-- Favicon -->
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
 
     <link
         rel="icon"
         href="favicon/favicon.ico"
     >
+
+
+    <!-- =====================================================
+         PERSON STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "About Manoj Meena",
+        "url": "https://manojmeena.com/about.html",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Manoj Meena",
+            "url": "https://manojmeena.com/",
+            "jobTitle": "Founder & CEO, MK Global Nexus",
+            "description": "Cyber Crime Analyst, Digital Fraud Investigator, AI & Cyber Security Innovator, Investigative Journalist and Healthcare Professional.",
+            "image": "https://manojmeena.com/assets/images/manoj-meena.jpg",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "MK Global Nexus",
+                "url": "https://mkglobalnexus.free.nf",
+                "email": "mkglobalnexus@gmail.com",
+                "sameAs": [
+                    "https://www.facebook.com/mkglobalnexus",
+                    "https://t.me/MKGLOBALNEXUS"
+                ]
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/manojmeenacyber",
+                "https://github.com/manojmeenacyber",
+                "https://x.com/manojmeenacyber",
+                "https://www.instagram.com/manojmeenacyber",
+                "https://www.facebook.com/manojmeenacyber",
+                "https://www.youtube.com/@MKCyberHawk",
+                "https://youtube.com/@mkxglobalnews",
+                "https://t.me/manojmeenacyber"
+            ]
+        }
+    }
+    </script>
 
 </head>
 
@@ -91,9 +231,6 @@
 <header class="navbar">
 
     <div class="container nav-container">
-
-
-        <!-- BRAND -->
 
         <div class="logo">
 
@@ -120,11 +257,12 @@
         </div>
 
 
-        <!-- NAVIGATION -->
-
         <nav>
 
-            <ul class="nav-links">
+            <ul
+                class="nav-links"
+                id="main-navigation"
+            >
 
                 <li>
                     <a href="index.html">
@@ -189,6 +327,7 @@
                 type="button"
                 aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="main-navigation"
             >
 
                 <span></span>
@@ -242,15 +381,7 @@
 
     <div class="container">
 
-
-        <div
-            style="
-                display:grid;
-                grid-template-columns:minmax(0,1.1fr) minmax(300px,.7fr);
-                gap:50px;
-                align-items:center;
-            "
-        >
+        <div class="about-profile-grid">
 
 
             <!-- CONTENT -->
@@ -262,14 +393,7 @@
                 </span>
 
 
-                <h2
-                    style="
-                        font-size:clamp(36px,5vw,62px);
-                        line-height:1.08;
-                        letter-spacing:-2.5px;
-                        margin-bottom:22px;
-                    "
-                >
+                <h2 class="about-heading">
 
                     One identity.
 
@@ -282,14 +406,7 @@
                 </h2>
 
 
-                <p
-                    style="
-                        color:#b4c8da;
-                        font-size:18px;
-                        line-height:1.9;
-                        margin-bottom:18px;
-                    "
-                >
+                <p class="about-lead">
 
                     I work at the intersection of
                     cyber intelligence, digital
@@ -301,13 +418,7 @@
                 </p>
 
 
-                <p
-                    style="
-                        color:#8199ad;
-                        font-size:15px;
-                        line-height:1.9;
-                    "
-                >
+                <p class="about-text">
 
                     My professional work focuses on
                     understanding digital threats,
@@ -350,7 +461,7 @@
             </div>
 
 
-            <!-- PROFILE -->
+            <!-- PROFILE IMAGE -->
 
             <div class="hero-visual">
 
@@ -395,11 +506,10 @@
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <span>
-                01 / PROFESSIONAL IDENTITY
+                02 / PROFESSIONAL IDENTITY
             </span>
 
             <h2>
@@ -412,14 +522,7 @@
 
             </h2>
 
-            <p
-                style="
-                    margin-top:18px;
-                    color:#8fa7bb;
-                    max-width:720px;
-                    font-size:16px;
-                "
-            >
+            <p>
 
                 A multidisciplinary professional
                 identity combining intelligence,
@@ -603,16 +706,7 @@
 
     <div class="container">
 
-
-        <div
-            style="
-                display:grid;
-                grid-template-columns:
-                    minmax(0,1.2fr)
-                    minmax(0,.8fr);
-                gap:20px;
-            "
-        >
+        <div class="mission-vision-grid">
 
 
             <!-- MISSION -->
@@ -620,17 +714,10 @@
             <article class="mission reveal">
 
                 <span class="eyebrow">
-                    02 / MISSION
+                    03 / MISSION
                 </span>
 
-                <h2
-                    style="
-                        margin-bottom:22px;
-                        font-size:clamp(30px,4vw,50px);
-                        line-height:1.1;
-                        letter-spacing:-2px;
-                    "
-                >
+                <h2 class="mission-heading">
 
                     Research the problem.
 
@@ -669,14 +756,7 @@
                 </span>
 
 
-                <h2
-                    style="
-                        margin-bottom:22px;
-                        font-size:clamp(30px,4vw,50px);
-                        line-height:1.1;
-                        letter-spacing:-2px;
-                    "
-                >
+                <h2 class="mission-heading">
 
                     जागरूक नागरिक,
 
@@ -714,11 +794,10 @@
 
     <div class="container">
 
-
         <div class="section-heading">
 
             <span>
-                03 / AREAS OF WORK
+                04 / AREAS OF WORK
             </span>
 
             <h2>
@@ -731,13 +810,7 @@
 
             </h2>
 
-            <p
-                style="
-                    margin-top:18px;
-                    color:#8fa7bb;
-                    max-width:720px;
-                "
-            >
+            <p>
 
                 Research, analysis, investigation
                 and innovation across multiple
@@ -753,7 +826,7 @@
 
             <article class="future-card reveal">
 
-                <div class="future-icon">
+                <div class="future-icon future-icon-text">
                     CY
                 </div>
 
@@ -774,7 +847,7 @@
 
             <article class="future-card reveal">
 
-                <div class="future-icon">
+                <div class="future-icon future-icon-text">
                     DF
                 </div>
 
@@ -795,7 +868,7 @@
 
             <article class="future-card reveal">
 
-                <div class="future-icon">
+                <div class="future-icon future-icon-text">
                     OS
                 </div>
 
@@ -816,7 +889,7 @@
 
             <article class="future-card reveal">
 
-                <div class="future-icon">
+                <div class="future-icon future-icon-text">
                     AI
                 </div>
 
@@ -855,7 +928,7 @@
             <div>
 
                 <span class="eyebrow">
-                    04 / MK GLOBAL NEXUS
+                    05 / MK GLOBAL NEXUS
                 </span>
 
 
@@ -936,14 +1009,7 @@
             </p>
 
 
-            <div
-                style="
-                    display:flex;
-                    justify-content:center;
-                    flex-wrap:wrap;
-                    gap:12px;
-                "
-            >
+            <div class="hero-actions" style="justify-content:center;">
 
                 <a
                     href="contact.html"
@@ -986,6 +1052,8 @@
     <div class="container footer-content">
 
 
+        <!-- BRAND -->
+
         <div class="footer-col">
 
             <h4>
@@ -1015,6 +1083,8 @@
 
         </div>
 
+
+        <!-- NAVIGATION -->
 
         <div class="footer-col">
 
@@ -1077,35 +1147,62 @@
         </div>
 
 
+        <!-- COMPANY -->
+
         <div class="footer-col">
 
             <h4>
-                Professional
+                MK Global Nexus
             </h4>
 
-            <p>
+            <ul>
 
-                Cyber Intelligence
-                <br>
+                <li>
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fas fa-globe"></i>
+                        Company Website
+                    </a>
+                </li>
 
-                Digital Investigations
-                <br>
+                <li>
+                    <a href="mailto:mkglobalnexus@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Company Email
+                    </a>
+                </li>
 
-                OSINT
-                <br>
+                <li>
+                    <a
+                        href="https://www.facebook.com/mkglobalnexus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-facebook-f"></i>
+                        Company Facebook
+                    </a>
+                </li>
 
-                AI &amp; Cyber Security
-                <br>
+                <li>
+                    <a
+                        href="https://t.me/MKGLOBALNEXUS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-telegram-plane"></i>
+                        Company Telegram
+                    </a>
+                </li>
 
-                Investigative Journalism
-                <br>
-
-                Healthcare
-
-            </p>
+            </ul>
 
         </div>
 
+
+        <!-- SOCIAL -->
 
         <div class="footer-col">
 
@@ -1115,6 +1212,18 @@
 
 
             <div class="footer-social">
+
+                <a
+                    href="https://www.linkedin.com/in/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
 
                 <a
                     href="https://github.com/manojmeenacyber"
@@ -1129,23 +1238,76 @@
 
 
                 <a
-                    href="channels.html"
-                    aria-label="Channels"
+                    href="https://x.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
                 >
 
-                    <i class="fas fa-share-nodes"></i>
+                    <i class="fab fa-x-twitter"></i>
 
                 </a>
 
 
                 <a
-                    href="mailto:manojmeenacyber@gmail.com"
-                    aria-label="Email"
+                    href="https://www.instagram.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
                 >
 
-                    <i class="fas fa-envelope"></i>
+                    <i class="fab fa-instagram"></i>
 
                 </a>
+
+
+                <a
+                    href="https://www.facebook.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.youtube.com/@MKCyberHawk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MK CyberHawk YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <a
+                    href="https://youtube.com/@mkxglobalnews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MKX Global News YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <a
+                    href="https://t.me/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram"
+                >
+
+                    <i class="fab fa-telegram-plane"></i>
+
+                </a>
+
 
             </div>
 
@@ -1160,8 +1322,49 @@
 
         </div>
 
+
+        <!-- LEGAL -->
+
+        <div class="footer-col">
+
+            <h4>
+                Legal
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="disclaimer.html">
+                        Disclaimer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sitemap.xml">
+                        Sitemap
+                    </a>
+                </li>
+
+                <li>
+                    <a href="robots.txt">
+                        Robots.txt
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
 
+
+    <!-- FOOTER BOTTOM -->
 
     <div class="container footer-bottom">
 
@@ -1201,9 +1404,13 @@
 </footer>
 
 
-<!-- ROOT JAVASCRIPT -->
+<!-- =====================================================
+     JAVASCRIPT
+     ROOT FILE
+===================================================== -->
 
 <script src="script.js"></script>
+
 
 </body>
 
