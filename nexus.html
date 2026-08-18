@@ -10,9 +10,18 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>
+        MK Global Nexus | Intelligence, Research, Technology & Innovation | Manoj Meena
+    </title>
+
     <meta
         name="description"
-        content="MK Global Nexus — Intelligence, Research, Technology and Innovation by Manoj Meena."
+        content="MK Global Nexus — A technology and intelligence ecosystem focused on cyber intelligence, digital investigation, OSINT research, artificial intelligence, cybersecurity and responsible innovation. Founded by Manoj Meena."
+    >
+
+    <meta
+        name="keywords"
+        content="MK Global Nexus, Manoj Meena, Cyber Intelligence, Digital Investigation, OSINT, Artificial Intelligence, Cyber Security, Research, Technology Innovation, Digital Fraud Awareness"
     >
 
     <meta
@@ -22,20 +31,88 @@
 
     <meta
         name="robots"
-        content="index, follow"
+        content="index, follow, max-image-preview:large"
     >
 
     <meta
         name="theme-color"
-        content="#050b18"
+        content="#020817"
     >
 
-    <title>
-        MK Global Nexus | Manoj Meena
-    </title>
+
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
+
+    <link
+        rel="canonical"
+        href="https://manojmeena.com/nexus.html"
+    >
 
 
-    <!-- GOOGLE FONT -->
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="MK Global Nexus | Intelligence, Research & Technology"
+    >
+
+    <meta
+        property="og:description"
+        content="MK Global Nexus — Technology and intelligence ecosystem focused on cyber intelligence, digital investigation, OSINT, AI and cybersecurity. Founded by Manoj Meena."
+    >
+
+    <meta
+        property="og:url"
+        content="https://manojmeena.com/nexus.html"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Manoj Meena"
+    >
+
+    <meta
+        property="og:image"
+        content="https://manojmeena.com/assets/images/manoj-meena.jpg"
+    >
+
+
+    <!-- =====================================================
+         TWITTER / X
+    ====================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="MK Global Nexus | Intelligence & Technology"
+    >
+
+    <meta
+        name="twitter:description"
+        content="MK Global Nexus — Cyber intelligence, digital investigation, OSINT, AI and cybersecurity ecosystem by Manoj Meena."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://manojmeena.com/assets/images/manoj-meena.jpg"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -54,15 +131,20 @@
     >
 
 
-    <!-- FONT AWESOME -->
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     >
 
 
-    <!-- ROOT CSS -->
+    <!-- =====================================================
+         WEBSITE CSS
+         ROOT FILE
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -70,12 +152,39 @@
     >
 
 
-    <!-- FAVICON -->
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
 
     <link
         rel="icon"
         href="favicon/favicon.ico"
     >
+
+
+    <!-- =====================================================
+         ORGANIZATION STRUCTURED DATA
+    ====================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MK Global Nexus",
+        "url": "https://mkglobalnexus.free.nf",
+        "email": "mkglobalnexus@gmail.com",
+        "founder": {
+            "@type": "Person",
+            "name": "Manoj Meena",
+            "url": "https://manojmeena.com/"
+        },
+        "description": "Technology and intelligence ecosystem focused on cyber intelligence, digital investigation, OSINT, AI and cybersecurity.",
+        "sameAs": [
+            "https://www.facebook.com/mkglobalnexus",
+            "https://t.me/MKGLOBALNEXUS"
+        ]
+    }
+    </script>
 
 </head>
 
@@ -84,103 +193,122 @@
 
 
 <!-- =====================================================
-     HEADER
+     NAVIGATION
 ===================================================== -->
 
-<header class="site-header">
+<header class="navbar">
 
-    <div class="container navbar">
+    <div class="container nav-container">
 
-
-        <!-- BRAND -->
-
-        <a
-            href="index.html"
-            class="brand"
-            aria-label="Manoj Meena Home"
-        >
-
-            <div class="brand-mark">
-                MM
-            </div>
-
-            <div class="brand-info">
-
-                <strong>
-                    MANOJ MEENA
-                </strong>
-
-                <span>
-                    INTELLIGENCE • TECHNOLOGY
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- MOBILE MENU -->
-
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-
-            <i class="fas fa-bars"></i>
-
-        </button>
-
-
-        <!-- NAVIGATION -->
-
-        <nav
-            class="main-nav"
-            aria-label="Main navigation"
-        >
+        <div class="logo">
 
             <a href="index.html">
-                Home
+
+                <span class="logo-mark">
+                    MM
+                </span>
+
+                <span class="logo-text">
+
+                    <strong>
+                        MANOJ MEENA
+                    </strong>
+
+                    <small>
+                        INTELLIGENCE • TECHNOLOGY
+                    </small>
+
+                </span>
+
             </a>
 
-            <a href="about.html">
-                About
-            </a>
+        </div>
 
-            <a href="expertise.html">
-                Expertise
-            </a>
 
-            <a href="projects.html">
-                Projects
-            </a>
+        <nav>
 
-            <a
-                href="nexus.html"
-                class="active"
+            <ul
+                class="nav-links"
+                id="main-navigation"
             >
-                MK Global Nexus
-            </a>
 
-            <a href="future-vision.html">
-                Future Vision
-            </a>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-            <a href="channels.html">
-                Channels
-            </a>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-            <a href="contact.html">
-                Contact
-            </a>
+                <li>
+                    <a href="expertise.html">
+                        Expertise
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="nexus.html"
+                        class="active"
+                    >
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-contact"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
 
         </nav>
 
     </div>
 
 </header>
-
 
 
 <!-- =====================================================
@@ -191,219 +319,78 @@
 
 
 <!-- =====================================================
-     HERO
+     PAGE HEADER
 ===================================================== -->
 
-<section class="hero">
+<section class="page-header">
 
     <div class="container">
 
-        <div class="hero-content">
+        <span class="eyebrow">
+            MK GLOBAL NEXUS
+        </span>
 
+        <h1>
 
-            <div class="eyebrow">
-                MK GLOBAL NEXUS
-            </div>
+            Intelligence.
 
+            <span style="color:#00d9ff;">
+                Connected.
+            </span>
 
-            <h1>
+        </h1>
 
-                Intelligence.
+        <p>
 
-                <span>
-                    Connected.
-                </span>
+            MK Global Nexus is a technology and
+            intelligence ecosystem focused on
+            cyber intelligence, digital investigation,
+            OSINT research, artificial intelligence,
+            cybersecurity and responsible innovation.
 
-            </h1>
-
-
-            <h2>
-                Research.
-                Technology.
-                Intelligence.
-                Innovation.
-            </h2>
-
-
-            <p>
-
-                MK Global Nexus is a technology and
-                intelligence ecosystem focused on
-                cyber intelligence, digital investigation,
-                OSINT research, artificial intelligence,
-                cybersecurity and responsible innovation.
-
-            </p>
-
-
-            <div class="btn-group">
-
-
-                <a
-                    href="https://mkglobalnexus.free.nf"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <i class="fas fa-globe"></i>
-
-                    &nbsp;
-
-                    Official Website
-
-                </a>
-
-
-                <a
-                    href="projects.html"
-                    class="btn btn-outline"
-                >
-
-                    <i class="fas fa-layer-group"></i>
-
-                    &nbsp;
-
-                    Explore Projects
-
-                </a>
-
-
-                <a
-                    href="contact.html"
-                    class="btn btn-outline"
-                >
-
-                    <i class="fas fa-envelope"></i>
-
-                    &nbsp;
-
-                    Connect
-
-                </a>
-
-            </div>
-
-
-            <div class="tags">
-
-                <span class="tag">
-                    CYBER INTELLIGENCE
-                </span>
-
-                <span class="tag">
-                    OSINT
-                </span>
-
-                <span class="tag">
-                    DIGITAL INVESTIGATION
-                </span>
-
-                <span class="tag">
-                    AI
-                </span>
-
-                <span class="tag">
-                    CYBER SECURITY
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- NEXUS VISUAL -->
+        </p>
 
         <div
-            class="hero-image"
-            style="
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                min-height:430px;
-            "
+            class="hero-actions"
+            style="justify-content:center;"
         >
 
-            <div
-                style="
-                    text-align:center;
-                    padding:30px;
-                    width:100%;
-                "
+            <a
+                href="https://mkglobalnexus.free.nf"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
             >
 
+                <i class="fas fa-globe"></i>
 
-                <div
-                    style="
-                        width:120px;
-                        height:120px;
-                        margin:0 auto 28px;
-                        border:1px solid rgba(0,217,255,.45);
-                        border-radius:30px;
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        background:rgba(0,217,255,.07);
-                        box-shadow:0 0 50px rgba(0,217,255,.14);
-                    "
-                >
+                Official Website
 
-                    <i
-                        class="fas fa-network-wired"
-                        style="
-                            font-size:55px;
-                            color:#00d9ff;
-                        "
-                    ></i>
-
-                </div>
+            </a>
 
 
-                <h3
-                    style="
-                        font-size:27px;
-                        margin-bottom:10px;
-                    "
-                >
+            <a
+                href="projects.html"
+                class="btn btn-secondary"
+            >
 
-                    MK GLOBAL NEXUS
+                <i class="fas fa-layer-group"></i>
 
-                </h3>
+                Explore Projects
 
-
-                <p
-                    style="
-                        color:#96a4b9;
-                        margin:0;
-                    "
-                >
-
-                    Intelligence • Research • Innovation
-
-                </p>
+            </a>
 
 
-                <div
-                    class="tags"
-                    style="
-                        justify-content:center;
-                    "
-                >
+            <a
+                href="contact.html"
+                class="btn btn-secondary"
+            >
 
-                    <span class="tag">
-                        INTELLIGENCE
-                    </span>
+                <i class="fas fa-envelope"></i>
 
-                    <span class="tag">
-                        TECHNOLOGY
-                    </span>
+                Connect
 
-                </div>
-
-
-            </div>
+            </a>
 
         </div>
 
@@ -412,60 +399,57 @@
 </section>
 
 
-
 <!-- =====================================================
-     THE NEXUS
+     NEXUS CORE
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            01 / THE NEXUS
+            <span>
+                01 / THE NEXUS
+            </span>
+
+            <h2>
+
+                One platform.
+
+                <strong>
+                    Multiple intelligence domains.
+                </strong>
+
+            </h2>
+
+            <p>
+
+                MK Global Nexus brings together
+                research, technology and intelligence
+                under one professional ecosystem.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            One platform.
-
-            <span class="gradient-text">
-                Multiple intelligence domains.
-            </span>
-
-        </h2>
-
-
-        <p class="section-description">
-
-            MK Global Nexus brings together
-            research, technology and intelligence
-            under one professional ecosystem.
-
-        </p>
-
-
-
-        <div class="grid">
+        <div class="future-grid">
 
 
             <!-- RESEARCH -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-book-open"></i>
 
                 </div>
 
-
                 <h3>
                     Research
                 </h3>
-
 
                 <p>
 
@@ -479,22 +463,19 @@
             </article>
 
 
-
             <!-- TECHNOLOGY -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-microchip"></i>
 
                 </div>
 
-
                 <h3>
                     Technology
                 </h3>
-
 
                 <p>
 
@@ -508,22 +489,19 @@
             </article>
 
 
-
             <!-- INTELLIGENCE -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-shield-halved"></i>
 
                 </div>
 
-
                 <h3>
                     Intelligence
                 </h3>
-
 
                 <p>
 
@@ -536,63 +514,6 @@
 
             </article>
 
-
-        </div>
-
-
-
-        <!-- VISION -->
-
-        <div
-            class="mission"
-            style="margin-top:30px;"
-        >
-
-            <div class="section-label">
-                NEXUS VISION
-            </div>
-
-
-            <h2>
-
-                Connect knowledge.
-
-                <span class="gradient-text">
-                    Build intelligence.
-                </span>
-
-            </h2>
-
-
-            <p>
-
-                Bringing people, information,
-                research and technology together
-                to create better digital awareness.
-
-            </p>
-
-
-            <div class="tags">
-
-                <span class="tag">
-                    RESEARCH
-                </span>
-
-                <span class="tag">
-                    INTELLIGENCE
-                </span>
-
-                <span class="tag">
-                    TECHNOLOGY
-                </span>
-
-                <span class="tag">
-                    INNOVATION
-                </span>
-
-            </div>
-
         </div>
 
     </div>
@@ -600,60 +521,57 @@
 </section>
 
 
-
 <!-- =====================================================
      INTELLIGENCE DOMAINS
 ===================================================== -->
 
-<section>
+<section class="section section-dark">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            02 / INTELLIGENCE DOMAINS
+            <span>
+                02 / INTELLIGENCE DOMAINS
+            </span>
+
+            <h2>
+
+                The core
+
+                <strong>
+                    ecosystem.
+                </strong>
+
+            </h2>
+
+            <p>
+
+                The Nexus is structured around
+                interconnected areas of research,
+                investigation and technology.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            The core
-
-            <span class="gradient-text">
-                ecosystem.
-            </span>
-
-        </h2>
-
-
-        <p class="section-description">
-
-            The Nexus is structured around
-            interconnected areas of research,
-            investigation and technology.
-
-        </p>
-
-
-
-        <div class="grid">
+        <div class="future-grid">
 
 
             <!-- CYBER INTELLIGENCE -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-shield-halved"></i>
 
                 </div>
 
-
                 <h3>
                     Cyber Intelligence
                 </h3>
-
 
                 <p>
 
@@ -664,38 +582,22 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        THREATS
-                    </span>
-
-                    <span class="tag">
-                        INTELLIGENCE
-                    </span>
-
-                </div>
-
             </article>
-
 
 
             <!-- DIGITAL INVESTIGATION -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-fingerprint"></i>
 
                 </div>
 
-
                 <h3>
                     Digital Investigation
                 </h3>
-
 
                 <p>
 
@@ -705,38 +607,22 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        INVESTIGATION
-                    </span>
-
-                    <span class="tag">
-                        ANALYSIS
-                    </span>
-
-                </div>
-
             </article>
-
 
 
             <!-- OSINT -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-magnifying-glass"></i>
 
                 </div>
 
-
                 <h3>
                     OSINT Research
                 </h3>
-
 
                 <p>
 
@@ -746,38 +632,22 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        OSINT
-                    </span>
-
-                    <span class="tag">
-                        RESEARCH
-                    </span>
-
-                </div>
-
             </article>
-
 
 
             <!-- AI -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-robot"></i>
 
                 </div>
 
-
                 <h3>
                     AI &amp; Security
                 </h3>
-
 
                 <p>
 
@@ -788,38 +658,22 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        AI
-                    </span>
-
-                    <span class="tag">
-                        AUTOMATION
-                    </span>
-
-                </div>
-
             </article>
-
 
 
             <!-- FRAUD -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-user-shield"></i>
 
                 </div>
 
-
                 <h3>
                     Fraud Prevention
                 </h3>
-
 
                 <p>
 
@@ -829,38 +683,22 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        FRAUD
-                    </span>
-
-                    <span class="tag">
-                        PREVENTION
-                    </span>
-
-                </div>
-
             </article>
-
 
 
             <!-- JOURNALISM -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-newspaper"></i>
 
                 </div>
 
-
                 <h3>
                     Investigative Research
                 </h3>
-
 
                 <p>
 
@@ -871,21 +709,7 @@
 
                 </p>
 
-
-                <div class="tags">
-
-                    <span class="tag">
-                        RESEARCH
-                    </span>
-
-                    <span class="tag">
-                        AWARENESS
-                    </span>
-
-                </div>
-
             </article>
-
 
         </div>
 
@@ -894,58 +718,57 @@
 </section>
 
 
-
 <!-- =====================================================
      ABOUT MK GLOBAL NEXUS
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            03 / ABOUT MK GLOBAL NEXUS
+            <span>
+                03 / ABOUT MK GLOBAL NEXUS
+            </span>
+
+            <h2>
+
+                Intelligence built around
+
+                <strong>
+                    responsible innovation.
+                </strong>
+
+            </h2>
+
+            <p>
+
+                MK Global Nexus is being developed as
+                a broader technology and intelligence
+                ecosystem.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Intelligence built around
-
-            <span class="gradient-text">
-                responsible innovation.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <!-- KNOWLEDGE -->
 
-            MK Global Nexus is being developed as
-            a broader technology and intelligence
-            ecosystem.
+            <article class="future-card reveal">
 
-        </p>
-
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-database"></i>
 
                 </div>
 
-
                 <h3>
                     Knowledge
                 </h3>
-
 
                 <p>
 
@@ -958,20 +781,19 @@
             </article>
 
 
+            <!-- WORKFLOWS -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-diagram-project"></i>
 
                 </div>
 
-
                 <h3>
                     Workflows
                 </h3>
-
 
                 <p>
 
@@ -984,20 +806,19 @@
             </article>
 
 
+            <!-- INNOVATION -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-lightbulb"></i>
 
                 </div>
 
-
                 <h3>
                     Innovation
                 </h3>
-
 
                 <p>
 
@@ -1009,7 +830,6 @@
 
             </article>
 
-
         </div>
 
     </div>
@@ -1017,60 +837,59 @@
 </section>
 
 
-
 <!-- =====================================================
      FUTURE DIRECTION
 ===================================================== -->
 
-<section>
+<section class="section section-dark">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            04 / FUTURE DIRECTION
+            <span>
+                04 / FUTURE DIRECTION
+            </span>
+
+            <h2>
+
+                Research →
+
+                Intelligence →
+
+                <strong>
+                    Innovation
+                </strong>
+
+            </h2>
+
+            <p>
+
+                A continuously evolving ecosystem built
+                around learning, experimentation and
+                responsible technology development.
+
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Research →
-
-            Intelligence →
-
-            <span class="gradient-text">
-                Innovation
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <!-- TECHNOLOGY -->
 
-            A continuously evolving ecosystem built
-            around learning, experimentation and
-            responsible technology development.
+            <article class="future-card reveal">
 
-        </p>
-
-
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-code"></i>
 
                 </div>
 
-
                 <h3>
                     Useful Technology
                 </h3>
-
 
                 <p>
 
@@ -1083,20 +902,19 @@
             </article>
 
 
+            <!-- WORKFLOWS -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-diagram-project"></i>
 
                 </div>
 
-
                 <h3>
                     Better Workflows
                 </h3>
-
 
                 <p>
 
@@ -1109,20 +927,19 @@
             </article>
 
 
+            <!-- AWARENESS -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-shield-halved"></i>
 
                 </div>
 
-
                 <h3>
                     Cyber Awareness
                 </h3>
-
 
                 <p>
 
@@ -1135,20 +952,19 @@
             </article>
 
 
+            <!-- AI -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
 
                     <i class="fas fa-robot"></i>
 
                 </div>
 
-
                 <h3>
                     Responsible AI
                 </h3>
-
 
                 <p>
 
@@ -1160,56 +976,47 @@
 
             </article>
 
-
         </div>
 
 
-        <div
-            class="mission"
-            style="margin-top:30px;"
-        >
+        <!-- NEXUS PRINCIPLE -->
 
-            <div class="section-label">
+        <div class="future-cta reveal" style="margin-top: 3rem;">
+
+            <span class="eyebrow">
                 NEXUS PRINCIPLE
-            </div>
-
+            </span>
 
             <h2>
-
-                Intelligence must
-
-                <span class="gradient-text">
-                    serve a purpose.
-                </span>
-
+                Intelligence must serve a purpose.
             </h2>
 
-
             <p>
-
                 MK Global Nexus promotes lawful,
                 ethical and responsible use of
                 information, technology and
                 intelligence capabilities.
-
             </p>
 
+            <div class="hero-focus" style="justify-content:center;">
 
-            <div class="tags">
-
-                <span class="tag">
+                <span>
+                    <i class="fas fa-check-circle"></i>
                     LAWFUL
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-check-circle"></i>
                     ETHICAL
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-check-circle"></i>
                     RESPONSIBLE
                 </span>
 
-                <span class="tag">
+                <span>
+                    <i class="fas fa-check-circle"></i>
                     INNOVATION
                 </span>
 
@@ -1222,52 +1029,36 @@
 </section>
 
 
-
 <!-- =====================================================
-     CONNECT
+     CONNECT WITH THE NEXUS
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="future-cta reveal">
 
-        <div
-            class="mission"
-            style="text-align:center;"
-        >
-
-            <div class="section-label">
+            <span class="eyebrow">
                 05 / CONNECT WITH THE NEXUS
-            </div>
-
+            </span>
 
             <h2>
-
-                Explore.
-
-                <span class="gradient-text">
-                    Connect.
-                </span>
-
+                Explore. Connect. Collaborate.
             </h2>
 
-
             <p>
-
                 Follow MK Global Nexus for
                 technology, intelligence,
                 cybersecurity research and
                 digital awareness.
-
             </p>
 
 
             <div
-                class="btn-group"
+                class="hero-actions"
                 style="justify-content:center;"
             >
-
 
                 <a
                     href="https://mkglobalnexus.free.nf"
@@ -1278,8 +1069,6 @@
 
                     <i class="fas fa-globe"></i>
 
-                    &nbsp;
-
                     Official Website
 
                 </a>
@@ -1287,59 +1076,42 @@
 
                 <a
                     href="mailto:mkglobalnexus@gmail.com"
-                    class="btn btn-outline"
+                    class="btn btn-secondary"
                 >
 
                     <i class="fas fa-envelope"></i>
 
-                    &nbsp;
-
-                    Email
+                    Company Email
 
                 </a>
 
 
                 <a
-                    href="contact.html"
-                    class="btn btn-outline"
+                    href="https://www.facebook.com/mkglobalnexus"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
 
-                    <i class="fas fa-paper-plane"></i>
+                    <i class="fab fa-facebook-f"></i>
 
-                    &nbsp;
-
-                    Contact
+                    Facebook
 
                 </a>
 
 
-            </div>
+                <a
+                    href="https://t.me/MKGLOBALNEXUS"
+                    class="btn btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
 
+                    <i class="fab fa-telegram-plane"></i>
 
-            <div
-                class="tags"
-                style="justify-content:center;"
-            >
+                    Telegram
 
-                <span class="tag">
-                    MK GLOBAL NEXUS
-                </span>
-
-                <span class="tag">
-                    INTELLIGENCE
-                </span>
-
-                <span class="tag">
-                    RESEARCH
-                </span>
-
-                <span class="tag">
-                    TECHNOLOGY
-                </span>
-
-                <span class="tag">
-                    INNOVATION
-                </span>
+                </a>
 
             </div>
 
@@ -1353,21 +1125,268 @@
 </main>
 
 
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
 
 <footer>
 
-    <div class="container">
+    <div class="container footer-content">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-col">
+
+            <h4>
+                Manoj Meena
+            </h4>
+
+            <p>
+
+                Cyber Crime Analyst ·
+                Digital Fraud Investigator
+
+                <br>
+
+                AI &amp; Cyber Security Innovator
+
+            </p>
+
+            <p class="footer-company">
+
+                Founder &amp; CEO,
+
+                <strong>
+                    MK Global Nexus
+                </strong>
+
+            </p>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="footer-col">
+
+            <h4>
+                Navigate
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="expertise.html">
+                        Expertise
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="nexus.html">
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-col">
+
+            <h4>
+                MK Global Nexus
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fas fa-globe"></i>
+                        Company Website
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mailto:mkglobalnexus@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Company Email
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.facebook.com/mkglobalnexus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-facebook-f"></i>
+                        Company Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://t.me/MKGLOBALNEXUS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-telegram-plane"></i>
+                        Company Telegram
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="footer-col">
+
+            <h4>
+                Professional
+            </h4>
+
+            <p>
+
+                Cyber Intelligence
+                <br>
+
+                Digital Investigations
+                <br>
+
+                AI &amp; Cyber Security
+                <br>
+
+                Investigative Research
+                <br>
+
+                Public Awareness
+
+            </p>
+
+        </div>
+
+
+        <!-- LEGAL -->
+
+        <div class="footer-col">
+
+            <h4>
+                Legal
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="disclaimer.html">
+                        Disclaimer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sitemap.xml">
+                        Sitemap
+                    </a>
+                </li>
+
+                <li>
+                    <a href="robots.txt">
+                        Robots.txt
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
 
         <p>
-            © 2026 Manoj Meena • MK Global Nexus
+
+            &copy;
+
+            <span data-current-year>
+                2026
+            </span>
+
+            Manoj Meena.
+
+            All Rights Reserved.
+
         </p>
 
-        <p>
-            Intelligence • Research • Technology • Innovation
+
+        <p class="footer-meta">
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="disclaimer.html">
+                Disclaimer
+            </a>
+
+            <a href="sitemap.xml">
+                Sitemap
+            </a>
+
         </p>
 
     </div>
@@ -1375,46 +1394,12 @@
 </footer>
 
 
-
 <!-- =====================================================
-     MOBILE MENU SCRIPT
+     JAVASCRIPT
+     ROOT FILE
 ===================================================== -->
 
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuToggle =
-        document.querySelector(".menu-toggle");
-
-    const mainNav =
-        document.querySelector(".main-nav");
-
-
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener(
-            "click",
-            function () {
-
-                mainNav.classList.toggle("open");
-
-                const expanded =
-                    mainNav.classList.contains("open");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    expanded
-                );
-
-            }
-        );
-
-    }
-
-});
-
-</script>
+<script src="script.js"></script>
 
 
 </body>
