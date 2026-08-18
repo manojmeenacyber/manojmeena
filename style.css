@@ -3538,3 +3538,277 @@ html.js-ready .visible {
     }
 
 }
+/* =========================================================
+   DESIGN ENHANCEMENTS
+========================================================= */
+
+/* 01. SCROLL PROGRESS BAR */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    z-index: 9999;
+    background: linear-gradient(90deg, #00d9ff, #1677ff);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    transition: width 0.1s ease;
+}
+
+/* 02. ANIMATED GRADIENT TEXT */
+.animated-gradient {
+    background: linear-gradient(135deg, #00d9ff, #1677ff, #00d9ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 03. CARD 3D TILT EFFECT */
+.future-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.future-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(0, 217, 255, 0.5);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(0, 217, 255, 0.15);
+}
+
+/* 04. CARD SHINE EFFECT */
+.future-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(0, 217, 255, 0.05) 50%,
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.future-card:hover::after {
+    opacity: 1;
+    animation: shine 1.5s ease;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* 05. BUTTON RIPPLE EFFECT */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* 06. BUTTON SHINE */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 60%
+    );
+    animation: btnShine 3s ease infinite;
+}
+
+@keyframes btnShine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* 07. NAVBAR ENHANCEMENT */
+.navbar {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-scrolled {
+    background: rgba(2, 8, 23, 0.97);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border-bottom-color: rgba(0, 217, 255, 0.2);
+}
+
+/* 08. NAV LINK ANIMATED UNDERLINE */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 11px;
+    width: 0;
+    height: 2px;
+    border-radius: 10px;
+    background: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: calc(100% - 22px);
+}
+
+.nav-links a.active::after {
+    width: calc(100% - 22px);
+}
+
+/* 09. HERO IMAGE GLOWING BORDER */
+.hero-image-frame {
+    position: relative;
+    animation: borderGlow 3s ease infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            0 0 50px rgba(0, 217, 255, 0.15);
+    }
+    50% {
+        box-shadow: 
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            0 0 70px rgba(0, 217, 255, 0.3);
+    }
+}
+
+/* 10. ICON ANIMATION */
+.future-icon {
+    transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
+}
+
+.future-card:hover .future-icon {
+    transform: scale(1.1) rotate(-5deg);
+    background: rgba(0, 217, 255, 0.15);
+    color: #ffffff;
+}
+
+/* 11. HERO FOCUS TAGS ENHANCEMENT */
+.hero-focus span {
+    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.hero-focus span:hover {
+    border-color: rgba(0, 217, 255, 0.4);
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--cyan);
+}
+
+/* 12. SECTION HEADING ANIMATION */
+.section-heading h2 strong {
+    display: inline-block;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* 13. MISSION PANEL ENHANCEMENT */
+.mission {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mission:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 217, 255, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* 14. FOOTER ENHANCEMENT */
+footer {
+    background: linear-gradient(180deg, #010611, #020817);
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), transparent);
+}
+
+/* 15. BACK TO TOP ENHANCEMENT */
+#backToTop {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3);
+}
+
+/* 16. SMOOTH SCROLL REVEAL */
+.reveal-visible {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* 17. GRADIENT BORDER CARDS */
+.future-card {
+    border: 1px solid transparent;
+    background-image: 
+        linear-gradient(rgba(9, 29, 50, 0.76), rgba(4, 15, 28, 0.78)),
+        linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(22, 119, 255, 0.1));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* 18. TEXT GLOW */
+.hero h1 span {
+    text-shadow: 0 0 35px rgba(0, 217, 255, 0.4);
+    animation: textGlow 2s ease infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 35px rgba(0, 217, 255, 0.3); }
+    50% { text-shadow: 0 0 55px rgba(0, 217, 255, 0.6); }
+}
