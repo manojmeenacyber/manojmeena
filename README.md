@@ -33,6 +33,8 @@ Founder & CEO, MK Global Nexus
 - Google Fonts — Inter
 - Responsive Web Design
 - SEO-friendly HTML structure
+- Schema.org Structured Data
+- Open Graph & Twitter Cards
 
 ---
 
@@ -48,6 +50,7 @@ Founder & CEO, MK Global Nexus
 8. **Contact** — Professional communication and collaboration
 9. **Privacy Policy** — Website privacy information
 10. **Disclaimer** — Responsible use and informational disclaimer
+11. **404** — Page not found with quick navigation
 
 ---
 
@@ -63,7 +66,7 @@ https://manojmeena.com
 
 ### GitHub
 
-https://github.com/manojmeena/manojmeena
+https://github.com/manojmeenacyber/manojmeena
 
 ### Vercel
 
@@ -81,9 +84,26 @@ https://manojmeena.com
 
 manojmeenacyber@gmail.com
 
+**Company Email:**
+
+mkglobalnexus@gmail.com
+
 **Company:**
 
 MK Global Nexus
+
+---
+
+## Social Channels
+
+- **LinkedIn:** https://www.linkedin.com/in/manojmeenacyber
+- **GitHub:** https://github.com/manojmeenacyber
+- **X:** https://x.com/manojmeenacyber
+- **Instagram:** https://www.instagram.com/manojmeenacyber
+- **Facebook:** https://www.facebook.com/manojmeenacyber
+- **YouTube (MK CyberHawk):** https://www.youtube.com/@MKCyberHawk
+- **YouTube (MKX Global News):** https://youtube.com/@mkxglobalnews
+- **Telegram:** https://t.me/manojmeenacyber
 
 ---
 
@@ -122,17 +142,30 @@ Its purpose is to provide a central online presence where visitors, professional
 
 **MK Global Nexus** is the company and technology ecosystem associated with my work across cybersecurity, digital investigation, artificial intelligence, fraud awareness and technology innovation.
 
+**Official Links:**
+
+- **Website:** https://mkglobalnexus.free.nf
+- **Email:** mkglobalnexus@gmail.com
+- **Facebook:** https://www.facebook.com/mkglobalnexus
+- **Telegram:** https://t.me/MKGLOBALNEXUS
+
 ---
 
-## License
+## Features
 
-**All Rights Reserved — Manoj Meena**
-
-The website content, branding, original materials and intellectual property may not be reproduced, copied, modified or redistributed without appropriate permission.
+- ✅ Fully Responsive Design (Mobile, Tablet, Desktop)
+- ✅ SEO Optimized with Meta Tags
+- ✅ Schema.org Structured Data
+- ✅ Open Graph & Twitter Cards
+- ✅ Dark Technology Theme
+- ✅ Mobile Navigation with Hamburger Menu
+- ✅ Scroll Reveal Animations
+- ✅ Back to Top Button
+- ✅ Accessibility Features
+- ✅ Print-Friendly Styles
+- ✅ Reduced Motion Support
+- ✅ External Link Security
 
 ---
 
-## © Copyright
-
-© 2026 **Manoj Meena**  
-All Rights Reserved.
+## File Structure
