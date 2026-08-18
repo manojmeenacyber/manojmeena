@@ -981,4 +981,149 @@ const addAnimatedGradient = () => {
 };
 
 addAnimatedGradient();
+ /* =====================================================
+   18. LOADING SCREEN
+===================================================== */
+
+const createLoadingScreen = () => {
+    const loadingHTML = `
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <div class="loading-logo">MM</div>
+                <div class="loading-text">Loading...</div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML("afterbegin", loadingHTML);
+    
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            const loadingScreen = document.getElementById("loadingScreen");
+            if (loadingScreen) {
+                loadingScreen.classList.add("hidden");
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }
+        }, 800);
+    });
+    
+    // Fallback if load event already fired
+    setTimeout(() => {
+        const loadingScreen = document.getElementById("loadingScreen");
+        if (loadingScreen && document.readyState === "complete") {
+            loadingScreen.classList.add("hidden");
+            setTimeout(() => loadingScreen.remove(), 500);
+        }
+    }, 2000);
+};
+
+createLoadingScreen();
+
+
+/* =====================================================
+   19. DARK/LIGHT MODE TOGGLE
+===================================================== */
+
+const initThemeToggle = () => {
+    const navbar = document.querySelector(".nav-container");
+    if (!navbar) return;
+    
+    // Create toggle button
+    const toggleBtn = document.createElement("button");
+    toggleBtn.className = "theme-toggle";
+    toggleBtn.type = "button";
+    toggleBtn.setAttribute("aria-label", "Toggle theme");
+    toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    
+    // Insert before hamburger
+    const hamburger = document.getElementById("hamburger");
+    if (hamburger) {
+        navbar.querySelector("nav").insertBefore(toggleBtn, hamburger);
+    } else {
+        navbar.appendChild(toggleBtn);
+    }
+    
+    // Check saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    // Toggle theme
+    toggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        
+        if (currentTheme === "light") {
+            document.documentElement.removeAttribute("data-theme");
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem("theme", "light");
+        }
+    });
+};
+
+initThemeToggle();
+
+
+/* =====================================================
+   20. TYPING ANIMATION
+===================================================== */
+
+const initTypingAnimation = () => {
+    const heroH2 = document.querySelector(".hero h2");
+    if (!heroH2) return;
+    
+    const phrases = [
+        "Cyber Crime Analyst",
+        "Digital Fraud Investigator",
+        "AI & Cyber Security Innovator",
+        "Investigative Journalist",
+        "Founder & CEO, MK Global Nexus"
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+    
+    const originalHTML = heroH2.innerHTML;
+    
+    const typeEffect = () => {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            charIndex--;
+            typingSpeed = 40;
+        } else {
+            charIndex++;
+            typingSpeed = 80;
+        }
+        
+        const displayText = currentPhrase.substring(0, charIndex);
+        
+        heroH2.innerHTML = `<span class="typing-text">${displayText}</span>`;
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 1500;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 500;
+        }
+        
+        setTimeout(typeEffect, typingSpeed);
+    };
+    
+    // Start typing after loading
+    setTimeout(typeEffect, 1500);
+};
+
+initTypingAnimation();   
 });
