@@ -914,5 +914,71 @@ document.addEventListener("DOMContentLoaded", () => {
             "font-size:11px"
         ].join(";")
     );
+/* =====================================================
+   15. SCROLL PROGRESS BAR
+===================================================== */
 
+const createScrollProgress = () => {
+    const progressBar = document.createElement("div");
+    progressBar.className = "scroll-progress";
+    document.body.prepend(progressBar);
+    
+    const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = progress + "%";
+    };
+    
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+};
+
+createScrollProgress();
+
+
+/* =====================================================
+   16. CARD 3D TILT EFFECT
+===================================================== */
+
+const initTiltEffect = () => {
+    const cards = document.querySelectorAll(".future-card");
+    
+    cards.forEach((card) => {
+        card.addEventListener("mousemove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+        });
+    });
+};
+
+initTiltEffect();
+
+
+/* =====================================================
+   17. ANIMATED GRADIENT TEXT
+===================================================== */
+
+const addAnimatedGradient = () => {
+    const headings = document.querySelectorAll(".hero h1 span, .section-heading h2 strong");
+    
+    headings.forEach((heading) => {
+        heading.classList.add("animated-gradient");
+    });
+};
+
+addAnimatedGradient();
 });
