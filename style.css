@@ -3188,7 +3188,282 @@ img[alt="Image unavailable"] {
     }
 
 }
+/* =========================================================
+   30A. NAVBAR SCROLLED STATE
+========================================================= */
 
+.navbar-scrolled {
+
+    background:
+        rgba(2, 8, 23, 0.95);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        0 1px 0 rgba(0, 217, 255, 0.08);
+
+    border-bottom-color:
+        rgba(0, 217, 255, 0.18);
+
+}
+
+
+/* =========================================================
+   30B. HAMBURGER ACTIVE STATE (ANIMATED X)
+========================================================= */
+
+.hamburger span {
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+}
+
+
+.hamburger.active span:nth-child(1) {
+
+    transform:
+        translateY(6px)
+        rotate(45deg);
+
+}
+
+
+.hamburger.active span:nth-child(2) {
+
+    opacity: 0;
+
+    transform:
+        translateX(-10px);
+
+}
+
+
+.hamburger.active span:nth-child(3) {
+
+    transform:
+        translateY(-6px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================================
+   30C. IMAGE ERROR STATE
+========================================================= */
+
+.image-error {
+
+    display: grid;
+
+    place-items: center;
+
+    min-height: 200px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0a1728,
+            #050e1a
+        );
+
+    border:
+        1px dashed rgba(0, 217, 255, 0.25);
+
+    border-radius: 12px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-align: center;
+
+}
+
+
+.image-error::before {
+
+    content: "⚠";
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 28px;
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================================
+   30D. KEYBOARD FOCUS VISIBLE
+========================================================= */
+
+.keyboard-focus {
+
+    outline:
+        2px solid var(--cyan) !important;
+
+    outline-offset: 3px !important;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 217, 255, 0.15) !important;
+
+}
+
+
+/* =========================================================
+   30E. PAGE READY / LOADED STATES
+========================================================= */
+
+body {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease;
+
+}
+
+
+body.page-ready {
+
+    opacity: 1;
+
+}
+
+
+body.page-loaded .hero-content > * {
+
+    animation:
+        heroFadeUp 0.7s ease forwards;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(1) {
+
+    animation-delay: 0.1s;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(2) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(3) {
+
+    animation-delay: 0.3s;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(4) {
+
+    animation-delay: 0.4s;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(5) {
+
+    animation-delay: 0.5s;
+
+}
+
+
+body.page-loaded .hero-content > *:nth-child(6) {
+
+    animation-delay: 0.6s;
+
+}
+
+
+@keyframes heroFadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   30F. BACK TO TOP VISIBLE STATE
+========================================================= */
+
+#backToTop {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+#backToTop.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================================================
+   30G. JS READY STATE
+========================================================= */
+
+html.js-ready .reveal-hidden {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+}
+
+
+html.js-ready .reveal-visible,
+html.js-ready .visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+}
 
 /* =========================================================
    31. ACCESSIBILITY
