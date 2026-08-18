@@ -699,7 +699,54 @@ p {
 
 
 /* =========================================================
-   09. HERO VISUAL
+   08A. HERO ROLE & DESCRIPTION
+   ========================================================= */
+
+.hero-role {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    color: #b8cde0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
+
+}
+
+
+.hero-role b {
+
+    color: var(--cyan);
+
+    font-weight: 700;
+
+}
+
+
+.hero-description {
+
+    color: var(--text-muted);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   09. HERO VISUAL & IMAGE FRAME
    ========================================================= */
 
 .hero-visual {
@@ -715,9 +762,171 @@ p {
 }
 
 
-.hero-visual .mission {
+.hero-image-frame {
+
+    position: relative;
 
     width: 100%;
+
+    max-width: 420px;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 217, 255, 0.10),
+            rgba(22, 119, 255, 0.05)
+        );
+
+    border:
+        1px solid var(--border-strong);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(0, 217, 255, 0.10);
+
+}
+
+
+.hero-image-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.6s ease;
+
+}
+
+
+.hero-image-frame:hover img {
+
+    transform: scale(1.03);
+
+}
+
+
+.image-glow {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 217, 255, 0.12),
+            transparent 60%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+.image-badge {
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    z-index: 2;
+
+    padding: 16px 20px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(2, 10, 24, 0.88);
+
+    border:
+        1px solid rgba(0, 217, 255, 0.25);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+
+}
+
+
+.image-badge small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+}
+
+
+.status-dot {
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px rgba(0, 217, 255, 0.80);
+
+    animation:
+        pulse 2s ease-in-out infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 
 }
 
@@ -743,9 +952,11 @@ p {
 
     align-items: center;
 
-    min-height: 28px;
+    gap: 6px;
 
-    padding: 5px 10px;
+    min-height: 30px;
+
+    padding: 5px 12px;
 
     border:
         1px solid rgba(0, 217, 255, 0.14);
@@ -762,6 +973,83 @@ p {
     font-weight: 800;
 
     letter-spacing: 0.08em;
+
+}
+
+
+/* =========================================================
+   10A. IDENTITY STRIP
+   ========================================================= */
+
+.identity-strip {
+
+    padding: 28px 0;
+
+    border-top:
+        1px solid rgba(0, 217, 255, 0.08);
+
+    border-bottom:
+        1px solid rgba(0, 217, 255, 0.08);
+
+    background:
+        rgba(3, 13, 27, 0.55);
+
+}
+
+
+.identity-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+
+}
+
+
+.identity-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 10px;
+
+}
+
+
+.identity-item strong {
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+
+}
+
+
+.identity-item span {
+
+    margin-top: 4px;
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
 
 }
 
@@ -869,6 +1157,61 @@ p {
         8px 13px;
 
     font-size: 10px;
+
+}
+
+
+/* =========================================================
+   11A. TEXT LINK
+   ========================================================= */
+
+.text-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    transition:
+        gap var(--transition),
+        color var(--transition);
+
+}
+
+
+.text-link i {
+
+    font-size: 12px;
+
+    transition:
+        transform var(--transition);
+
+}
+
+
+.text-link:hover {
+
+    color: var(--cyan-soft);
+
+    gap: 12px;
+
+}
+
+
+.text-link:hover i {
+
+    transform: translateX(3px);
 
 }
 
@@ -1014,6 +1357,78 @@ p {
 .mission p {
 
     color: var(--text-muted);
+
+}
+
+
+/* =========================================================
+   13A. NEXUS PREVIEW BOX
+   ========================================================= */
+
+.nexus-preview {
+
+    padding: 80px 0;
+
+}
+
+
+.nexus-box {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 50px;
+
+    border:
+        1px solid var(--border-strong);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(0, 217, 255, 0.08),
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(10, 29, 51, 0.80),
+            rgba(4, 15, 29, 0.78)
+        );
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.nexus-box h2 {
+
+    margin-bottom: 15px;
+
+    font-size:
+        clamp(30px, 4vw, 46px);
+
+    font-weight: 900;
+
+    letter-spacing: -0.03em;
+
+}
+
+
+.nexus-box p {
+
+    max-width: 600px;
+
+    margin-bottom: 0;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
 
 }
 
@@ -2052,7 +2467,92 @@ img[alt="Image unavailable"] {
 
 
 /* =========================================================
-   27. RESPONSIVE — TABLET
+   27. SOCIAL BRAND ICONS
+   ========================================================= */
+
+.social-card .card-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 27px;
+    margin-bottom: 22px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.social-card:hover .card-icon {
+    transform: translateY(-4px);
+}
+
+
+/* LinkedIn */
+
+.social-linkedin {
+    color: #0a66c2;
+    background: rgba(10, 102, 194, 0.12);
+    border: 1px solid rgba(10, 102, 194, 0.3);
+}
+
+
+/* GitHub */
+
+.social-github {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* X */
+
+.social-x {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Instagram */
+
+.social-instagram {
+    color: #e1306c;
+    background: rgba(225, 48, 108, 0.12);
+    border: 1px solid rgba(225, 48, 108, 0.3);
+}
+
+
+/* Facebook */
+
+.social-facebook {
+    color: #1877f2;
+    background: rgba(24, 119, 242, 0.12);
+    border: 1px solid rgba(24, 119, 242, 0.3);
+}
+
+
+/* YouTube */
+
+.social-youtube {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.10);
+    border: 1px solid rgba(255, 0, 0, 0.28);
+}
+
+
+/* Telegram */
+
+.social-telegram {
+    color: #229ed9;
+    background: rgba(34, 158, 217, 0.12);
+    border: 1px solid rgba(34, 158, 217, 0.3);
+}
+
+
+/* =========================================================
+   28. RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
@@ -2133,11 +2633,28 @@ img[alt="Image unavailable"] {
 
     }
 
+
+    .identity-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .nexus-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
 }
 
 
 /* =========================================================
-   28. RESPONSIVE — MOBILE
+   29. RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 780px) {
@@ -2389,6 +2906,15 @@ img[alt="Image unavailable"] {
     }
 
 
+    .hero-image-frame {
+
+        max-width: 360px;
+
+        margin-inline: auto;
+
+    }
+
+
     .section {
 
         padding:
@@ -2454,6 +2980,36 @@ img[alt="Image unavailable"] {
     }
 
 
+    .identity-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .identity-item {
+
+        flex-direction: row;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        text-align: left;
+
+    }
+
+
+    .nexus-box {
+
+        padding: 30px 25px;
+
+    }
+
+
     .footer-content {
 
         grid-template-columns:
@@ -2503,7 +3059,7 @@ img[alt="Image unavailable"] {
 
 
 /* =========================================================
-   29. SMALL MOBILE
+   30. SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 430px) {
@@ -2546,9 +3102,42 @@ img[alt="Image unavailable"] {
     }
 
 
+    .hero-role {
+
+        font-size: 11px;
+
+    }
+
+
     .hero-focus span {
 
         font-size: 8px;
+
+        padding: 5px 10px;
+
+    }
+
+
+    .hero-image-frame {
+
+        max-width: 300px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .image-badge {
+
+        left: 12px;
+
+        right: 12px;
+
+        bottom: 12px;
+
+        padding: 12px 15px;
+
+        font-size: 10px;
 
     }
 
@@ -2577,11 +3166,32 @@ img[alt="Image unavailable"] {
 
     }
 
+
+    .identity-item strong {
+
+        font-size: 12px;
+
+    }
+
+
+    .identity-item span {
+
+        font-size: 10px;
+
+    }
+
+
+    .nexus-box {
+
+        padding: 25px 20px;
+
+    }
+
 }
 
 
 /* =========================================================
-   30. ACCESSIBILITY
+   31. ACCESSIBILITY
 ========================================================= */
 
 :focus-visible {
@@ -2619,7 +3229,7 @@ img[alt="Image unavailable"] {
 
 
 /* =========================================================
-   31. PRINT
+   32. PRINT
 ========================================================= */
 
 @media print {
@@ -2652,171 +3262,4 @@ img[alt="Image unavailable"] {
 
     }
 
-}
-/* =========================================================
-   FINAL HTML COMPATIBILITY PATCH
-   Manoj Meena Personal Brand Website
-   ========================================================= */
-
-/* New HTML hero structure */
-.hero > .container {
-    position: relative;
-    z-index: 2;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.25fr)
-        minmax(350px, 0.75fr);
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-
-/* New hero eyebrow */
-.eyebrow {
-    display: inline-block;
-
-    margin-bottom: 13px;
-
-    color: var(--cyan);
-
-    font-size: 11px;
-
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-
-/* New HTML pages using hero visual */
-.hero-visual {
-    min-width: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* New HTML future cards */
-.future-card {
-    min-width: 0;
-}
-
-
-/* Mobile compatibility */
-@media (max-width: 900px) {
-
-    .hero > .container {
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-    }
-
-    .hero-visual {
-        justify-content: flex-start;
-    }
-
-}
-
-
-/* Small mobile */
-@media (max-width: 650px) {
-
-    .hero > .container {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-}
-/* =====================================================
-   MANOJ MEENA — SOCIAL BRAND ICONS
-===================================================== */
-
-.social-card .card-icon {
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    font-size: 27px;
-    margin-bottom: 22px;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.social-card:hover .card-icon {
-    transform: translateY(-4px);
-}
-
-
-/* LinkedIn */
-
-.social-linkedin {
-    color: #0a66c2;
-    background: rgba(10, 102, 194, 0.12);
-    border: 1px solid rgba(10, 102, 194, 0.3);
-}
-
-
-/* GitHub */
-
-.social-github {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-/* X */
-
-.social-x {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-
-/* Instagram */
-
-.social-instagram {
-    color: #e1306c;
-    background: rgba(225, 48, 108, 0.12);
-    border: 1px solid rgba(225, 48, 108, 0.3);
-}
-
-
-/* Facebook */
-
-.social-facebook {
-    color: #1877f2;
-    background: rgba(24, 119, 242, 0.12);
-    border: 1px solid rgba(24, 119, 242, 0.3);
-}
-
-
-/* YouTube */
-
-.social-youtube {
-    color: #ff0000;
-    background: rgba(255, 0, 0, 0.10);
-    border: 1px solid rgba(255, 0, 0, 0.28);
-}
-
-
-/* Telegram */
-
-.social-telegram {
-    color: #229ed9;
-    background: rgba(34, 158, 217, 0.12);
-    border: 1px solid rgba(34, 158, 217, 0.3);
 }
