@@ -143,7 +143,7 @@
 
     <!-- =====================================================
          WEBSITE CSS
-         CSS FILE IS INSIDE /css/
+         ROOT FILE
     ====================================================== -->
 
     <link
@@ -163,7 +163,7 @@
 
 
     <!-- =====================================================
-         PERSON STRUCTURED DATA
+         PERSON & ORGANIZATION STRUCTURED DATA
     ====================================================== -->
 
     <script type="application/ld+json">
@@ -177,10 +177,23 @@
         "image": "https://manojmeena.com/assets/images/manoj-meena.jpg",
         "worksFor": {
             "@type": "Organization",
-            "name": "MK Global Nexus"
+            "name": "MK Global Nexus",
+            "url": "https://mkglobalnexus.free.nf",
+            "email": "mkglobalnexus@gmail.com",
+            "sameAs": [
+                "https://www.facebook.com/mkglobalnexus",
+                "https://t.me/MKGLOBALNEXUS"
+            ]
         },
         "sameAs": [
-            "https://github.com/manojmeenacyber"
+            "https://www.linkedin.com/in/manojmeenacyber",
+            "https://github.com/manojmeenacyber",
+            "https://x.com/manojmeenacyber",
+            "https://www.instagram.com/manojmeenacyber",
+            "https://www.facebook.com/manojmeenacyber",
+            "https://www.youtube.com/@MKCyberHawk",
+            "https://youtube.com/@mkxglobalnews",
+            "https://t.me/manojmeenacyber"
         ]
     }
     </script>
@@ -226,7 +239,10 @@
 
         <nav>
 
-            <ul class="nav-links">
+            <ul
+                class="nav-links"
+                id="main-navigation"
+            >
 
                 <li>
                     <a
@@ -777,6 +793,31 @@
 
                 </p>
 
+
+                <div class="hero-focus" style="margin-top: 1.5rem;">
+
+                    <span>
+                        <i class="fas fa-globe"></i>
+                        Website
+                    </span>
+
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </span>
+
+                    <span>
+                        <i class="fab fa-facebook-f"></i>
+                        Facebook
+                    </span>
+
+                    <span>
+                        <i class="fab fa-telegram-plane"></i>
+                        Telegram
+                    </span>
+
+                </div>
+
             </div>
 
 
@@ -955,6 +996,59 @@
         <div class="footer-col">
 
             <h4>
+                MK Global Nexus
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fas fa-globe"></i>
+                        Company Website
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mailto:mkglobalnexus@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Company Email
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.facebook.com/mkglobalnexus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-facebook-f"></i>
+                        Company Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://t.me/MKGLOBALNEXUS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-telegram-plane"></i>
+                        Company Telegram
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
                 Professional
             </h4>
 
@@ -988,6 +1082,22 @@
 
             <div class="footer-social">
 
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/in/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+                <!-- GITHUB -->
+
                 <a
                     href="https://github.com/manojmeenacyber"
                     target="_blank"
@@ -1000,24 +1110,89 @@
                 </a>
 
 
+                <!-- X -->
+
                 <a
-                    href="channels.html"
-                    aria-label="Social channels"
+                    href="https://x.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
                 >
 
-                    <i class="fas fa-share-nodes"></i>
+                    <i class="fab fa-x-twitter"></i>
 
                 </a>
 
 
+                <!-- INSTAGRAM -->
+
                 <a
-                    href="mailto:manojmeenacyber@gmail.com"
-                    aria-label="Email Manoj Meena"
+                    href="https://www.instagram.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
                 >
 
-                    <i class="fas fa-envelope"></i>
+                    <i class="fab fa-instagram"></i>
 
                 </a>
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://www.facebook.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <!-- YOUTUBE — MK CYBERHAWK -->
+
+                <a
+                    href="https://www.youtube.com/@MKCyberHawk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MK CyberHawk YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <!-- YOUTUBE — MKX GLOBAL NEWS -->
+
+                <a
+                    href="https://youtube.com/@mkxglobalnews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MKX Global News YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <!-- TELEGRAM -->
+
+                <a
+                    href="https://t.me/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram"
+                >
+
+                    <i class="fab fa-telegram-plane"></i>
+
+                </a>
+
 
             </div>
 
@@ -1075,10 +1250,10 @@
 
 <!-- =====================================================
      JAVASCRIPT
-     JS FILE IS INSIDE /js/
+     ROOT FILE
 ===================================================== -->
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 
 
 </body>
