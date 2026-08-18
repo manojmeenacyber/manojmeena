@@ -5,57 +5,96 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Page not found — Manoj Meena | MK Global Nexus.">
-
-    <meta name="author"
-          content="Manoj Meena">
-
-    <meta name="robots"
-          content="noindex, follow">
-
-    <meta name="theme-color"
-          content="#050b18">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>
         404 — Page Not Found | Manoj Meena
     </title>
 
+    <meta
+        name="description"
+        content="Page not found — Manoj Meena | MK Global Nexus. Explore the main areas of the website."
+    >
 
-    <!-- GOOGLE FONT -->
+    <meta
+        name="author"
+        content="Manoj Meena"
+    >
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <meta
+        name="robots"
+        content="noindex, follow"
+    >
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <meta
+        name="theme-color"
+        content="#020817"
+    >
+
+
+    <!-- =====================================================
+         CANONICAL
+    ====================================================== -->
+
+    <link
+        rel="canonical"
+        href="https://manojmeena.com/404.html"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
 
-    <!-- FONT AWESOME -->
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
 
 
-    <!-- ROOT CSS -->
+    <!-- =====================================================
+         WEBSITE CSS
+         ROOT FILE
+    ====================================================== -->
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 
-    <!-- FAVICON -->
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
 
-    <link rel="icon"
-          href="favicon/favicon.ico">
+    <link
+        rel="icon"
+        href="favicon/favicon.ico"
+    >
 
 </head>
 
@@ -64,83 +103,113 @@
 
 
 <!-- =====================================================
-     HEADER
+     NAVIGATION
 ===================================================== -->
 
-<header class="site-header">
+<header class="navbar">
 
-    <div class="container navbar">
+    <div class="container nav-container">
 
-
-        <a href="index.html"
-           class="brand"
-           aria-label="Manoj Meena Home">
-
-            <div class="brand-mark">
-                MM
-            </div>
-
-
-            <div class="brand-info">
-
-                <strong>
-                    MANOJ MEENA
-                </strong>
-
-                <span>
-                    INTELLIGENCE • TECHNOLOGY
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
-
-            <i class="fas fa-bars"></i>
-
-        </button>
-
-
-        <nav class="main-nav"
-             aria-label="Main navigation">
+        <div class="logo">
 
             <a href="index.html">
-                Home
+
+                <span class="logo-mark">
+                    MM
+                </span>
+
+                <span class="logo-text">
+
+                    <strong>
+                        MANOJ MEENA
+                    </strong>
+
+                    <small>
+                        INTELLIGENCE • TECHNOLOGY
+                    </small>
+
+                </span>
+
             </a>
 
-            <a href="about.html">
-                About
-            </a>
+        </div>
 
-            <a href="expertise.html">
-                Expertise
-            </a>
 
-            <a href="projects.html">
-                Projects
-            </a>
+        <nav>
 
-            <a href="nexus.html">
-                MK Global Nexus
-            </a>
+            <ul
+                class="nav-links"
+                id="main-navigation"
+            >
 
-            <a href="future-vision.html">
-                Future Vision
-            </a>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-            <a href="channels.html">
-                Channels
-            </a>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-            <a href="contact.html">
-                Contact
-            </a>
+                <li>
+                    <a href="expertise.html">
+                        Expertise
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="nexus.html">
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-contact"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
 
         </nav>
 
@@ -149,154 +218,64 @@
 </header>
 
 
-
 <!-- =====================================================
-     404 CONTENT
+     MAIN
 ===================================================== -->
 
 <main>
 
 
-<section class="hero"
-         style="min-height:72vh;">
+<!-- =====================================================
+     404 CONTENT
+===================================================== -->
+
+<section class="page-header">
 
     <div class="container">
 
+        <span class="eyebrow">
+            ERROR 404
+        </span>
 
-        <div class="hero-content">
+        <h1>
+            Page
+            <span style="color:#00d9ff;">
+                Not Found.
+            </span>
+        </h1>
 
+        <p>
+            The requested page could not be found.
+            The page may have been moved, renamed,
+            removed or the URL may be incorrect.
+        </p>
 
-            <div class="eyebrow">
-                ERROR 404
-            </div>
+        <div
+            class="hero-actions"
+            style="justify-content:center; margin-top: 30px;"
+        >
 
+            <a
+                href="index.html"
+                class="btn btn-primary"
+            >
 
-            <h1>
+                <i class="fas fa-house"></i>
 
-                Page
+                Return Home
 
-                <span>
-                    Not Found.
-                </span>
+            </a>
 
-            </h1>
+            <a
+                href="contact.html"
+                class="btn btn-secondary"
+            >
 
+                <i class="fas fa-envelope"></i>
 
-            <h2>
+                Contact
 
-                The requested page could not be found.
-
-            </h2>
-
-
-            <p>
-
-                The page may have been moved, renamed,
-                removed or the URL may be incorrect.
-
-            </p>
-
-
-            <div class="btn-group">
-
-
-                <a href="index.html"
-                   class="btn btn-primary">
-
-                    <i class="fas fa-house"></i>
-
-                    &nbsp; Return Home
-
-                </a>
-
-
-                <a href="contact.html"
-                   class="btn btn-outline">
-
-                    <i class="fas fa-envelope"></i>
-
-                    &nbsp; Contact
-
-                </a>
-
-            </div>
-
-
-            <div class="tags">
-
-                <span class="tag">
-                    MK GLOBAL NEXUS
-                </span>
-
-                <span class="tag">
-                    MANOJ MEENA
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="hero-image">
-
-            <div style="
-                text-align:center;
-                width:100%;
-                padding:35px;
-            ">
-
-
-                <div style="
-                    width:150px;
-                    height:150px;
-                    margin:0 auto 25px;
-                    border-radius:35px;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    background:rgba(0,217,255,.07);
-                    border:1px solid rgba(0,217,255,.32);
-                    box-shadow:0 0 55px rgba(0,217,255,.12);
-                ">
-
-                    <span style="
-                        font-size:58px;
-                        font-weight:900;
-                        color:#00d9ff;
-                    ">
-
-                        404
-
-                    </span>
-
-                </div>
-
-
-                <h3>
-
-                    LOST IN THE NEXUS
-
-                </h3>
-
-
-                <p>
-
-                    Let's get you back on track.
-
-                </p>
-
-
-                <div class="tags"
-                     style="justify-content:center;">
-
-                    <span class="tag">
-                        PAGE NOT FOUND
-                    </span>
-
-                </div>
-
-            </div>
+            </a>
 
         </div>
 
@@ -305,48 +284,47 @@
 </section>
 
 
-
 <!-- =====================================================
      QUICK NAVIGATION
 ===================================================== -->
 
-<section>
+<section class="section">
 
     <div class="container">
 
+        <div class="section-heading">
 
-        <div class="section-label">
-            QUICK NAVIGATION
+            <span>
+                QUICK NAVIGATION
+            </span>
+
+            <h2>
+                Explore the
+                <strong>
+                    Nexus.
+                </strong>
+            </h2>
+
+            <p>
+                You can continue exploring the main areas
+                of the Manoj Meena and MK Global Nexus
+                website.
+            </p>
+
         </div>
 
 
-        <h2 class="section-title">
-
-            Explore the
-
-            <span class="gradient-text">
-                Nexus.
-            </span>
-
-        </h2>
+        <div class="future-grid">
 
 
-        <p class="section-description">
+            <!-- ABOUT -->
 
-            You can continue exploring the main areas
-            of the Manoj Meena and MK Global Nexus
-            website.
+            <article class="future-card reveal">
 
-        </p>
+                <div class="future-icon">
 
-
-        <div class="grid">
-
-
-            <article class="card">
-
-                <div class="card-icon">
                     <i class="fas fa-user"></i>
+
                 </div>
 
                 <h3>
@@ -358,8 +336,10 @@
                     professional background and mission.
                 </p>
 
-                <a href="about.html"
-                   class="btn btn-outline">
+                <a
+                    href="about.html"
+                    class="btn btn-secondary btn-small"
+                >
 
                     View About
 
@@ -370,11 +350,14 @@
             </article>
 
 
+            <!-- PROJECTS -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
+
                     <i class="fas fa-layer-group"></i>
+
                 </div>
 
                 <h3>
@@ -386,8 +369,10 @@
                     technology initiatives and research.
                 </p>
 
-                <a href="projects.html"
-                   class="btn btn-outline">
+                <a
+                    href="projects.html"
+                    class="btn btn-secondary btn-small"
+                >
 
                     View Projects
 
@@ -398,11 +383,14 @@
             </article>
 
 
+            <!-- MK GLOBAL NEXUS -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
+
                     <i class="fas fa-network-wired"></i>
+
                 </div>
 
                 <h3>
@@ -414,8 +402,10 @@
                     technology and innovation ecosystem.
                 </p>
 
-                <a href="nexus.html"
-                   class="btn btn-outline">
+                <a
+                    href="nexus.html"
+                    class="btn btn-secondary btn-small"
+                >
 
                     Explore Nexus
 
@@ -426,11 +416,14 @@
             </article>
 
 
+            <!-- CONTACT -->
 
-            <article class="card">
+            <article class="future-card reveal">
 
-                <div class="card-icon">
+                <div class="future-icon">
+
                     <i class="fas fa-envelope"></i>
+
                 </div>
 
                 <h3>
@@ -442,8 +435,10 @@
                     research or collaboration enquiries.
                 </p>
 
-                <a href="contact.html"
-                   class="btn btn-outline">
+                <a
+                    href="contact.html"
+                    class="btn btn-secondary btn-small"
+                >
 
                     Contact
 
@@ -460,8 +455,56 @@
 </section>
 
 
-</main>
+<!-- =====================================================
+     LOST IN THE NEXUS
+===================================================== -->
 
+<section class="section section-dark">
+
+    <div class="container">
+
+        <div class="future-cta reveal">
+
+            <span class="eyebrow">
+                LOST IN THE NEXUS
+            </span>
+
+            <h2>
+                Let's get you
+                <span style="color:#00d9ff;">
+                    back on track.
+                </span>
+            </h2>
+
+            <p>
+                The page you are looking for might have
+                been moved or no longer exists. Use the
+                navigation above or explore the main
+                sections below.
+            </p>
+
+            <div class="hero-focus" style="justify-content:center;">
+
+                <span>
+                    <i class="fas fa-check-circle"></i>
+                    MANOJ MEENA
+                </span>
+
+                <span>
+                    <i class="fas fa-check-circle"></i>
+                    MK GLOBAL NEXUS
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
 
 
 <!-- =====================================================
@@ -473,108 +516,362 @@
     <div class="container footer-content">
 
 
-        <div>
+        <!-- BRAND -->
 
-            <div class="footer-brand">
-                MANOJ MEENA
+        <div class="footer-col">
+
+            <h4>
+                Manoj Meena
+            </h4>
+
+            <p>
+
+                Cyber Crime Analyst ·
+                Digital Fraud Investigator
+
+                <br>
+
+                AI &amp; Cyber Security Innovator
+
+            </p>
+
+            <p class="footer-company">
+
+                Founder &amp; CEO,
+
+                <strong>
+                    MK Global Nexus
+                </strong>
+
+            </p>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="footer-col">
+
+            <h4>
+                Navigate
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="expertise.html">
+                        Expertise
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="nexus.html">
+                        MK Global Nexus
+                    </a>
+                </li>
+
+                <li>
+                    <a href="future-vision.html">
+                        Future Vision
+                    </a>
+                </li>
+
+                <li>
+                    <a href="channels.html">
+                        Channels
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-col">
+
+            <h4>
+                MK Global Nexus
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a
+                        href="https://mkglobalnexus.free.nf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fas fa-globe"></i>
+                        Company Website
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mailto:mkglobalnexus@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Company Email
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.facebook.com/mkglobalnexus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-facebook-f"></i>
+                        Company Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://t.me/MKGLOBALNEXUS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fab fa-telegram-plane"></i>
+                        Company Telegram
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="footer-col">
+
+            <h4>
+                Connect
+            </h4>
+
+
+            <div class="footer-social">
+
+                <a
+                    href="https://www.linkedin.com/in/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a
+                    href="https://github.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="https://x.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                >
+
+                    <i class="fab fa-x-twitter"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.facebook.com/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                >
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.youtube.com/@MKCyberHawk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MK CyberHawk YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <a
+                    href="https://youtube.com/@mkxglobalnews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MKX Global News YouTube"
+                >
+
+                    <i class="fab fa-youtube"></i>
+
+                </a>
+
+
+                <a
+                    href="https://t.me/manojmeenacyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram"
+                >
+
+                    <i class="fab fa-telegram-plane"></i>
+
+                </a>
+
+
             </div>
 
 
             <p>
-                Founder &amp; CEO — MK Global Nexus
-            </p>
 
+                <i class="fas fa-envelope"></i>
 
-            <p>
-                Intelligence • Technology • Innovation
+                manojmeenacyber@gmail.com
+
             </p>
 
         </div>
 
 
-        <div class="social-links">
+        <!-- LEGAL -->
 
+        <div class="footer-col">
 
-            <a
-                href="https://github.com/manojmeenacyber"
-                target="_blank"
-                rel="noopener noreferrer">
+            <h4>
+                Legal
+            </h4>
 
-                <i class="fab fa-github"></i>
-                GitHub
+            <ul>
 
-            </a>
+                <li>
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+                </li>
 
+                <li>
+                    <a href="disclaimer.html">
+                        Disclaimer
+                    </a>
+                </li>
 
-            <a
-                href="https://www.linkedin.com/in/manojmeenacyber"
-                target="_blank"
-                rel="noopener noreferrer">
+                <li>
+                    <a href="sitemap.xml">
+                        Sitemap
+                    </a>
+                </li>
 
-                <i class="fab fa-linkedin-in"></i>
-                LinkedIn
+                <li>
+                    <a href="robots.txt">
+                        Robots.txt
+                    </a>
+                </li>
 
-            </a>
-
-
-            <a
-                href="https://x.com/manojmeenacyber"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <i class="fab fa-x-twitter"></i>
-                X
-
-            </a>
-
-
-            <a
-                href="https://www.instagram.com/manojmeenacyber"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <i class="fab fa-instagram"></i>
-                Instagram
-
-            </a>
+            </ul>
 
         </div>
 
-
-        <div>
-
-            <p>
-
-                ©
-                <span data-current-year></span>
-                Manoj Meena.
-                All rights reserved.
-
-            </p>
+    </div>
 
 
-            <div class="social-links">
+    <!-- FOOTER BOTTOM -->
 
-                <a href="privacy.html">
-                    Privacy
-                </a>
+    <div class="container footer-bottom">
+
+        <p>
+
+            &copy;
+
+            <span data-current-year>
+                2026
+            </span>
+
+            Manoj Meena.
+
+            All Rights Reserved.
+
+        </p>
 
 
-                <a href="disclaimer.html">
-                    Disclaimer
-                </a>
+        <p class="footer-meta">
 
-            </div>
+            <a href="privacy.html">
+                Privacy
+            </a>
 
-        </div>
+            <a href="disclaimer.html">
+                Disclaimer
+            </a>
+
+            <a href="sitemap.xml">
+                Sitemap
+            </a>
+
+        </p>
 
     </div>
 
 </footer>
 
 
-
-<!-- ROOT JAVASCRIPT -->
+<!-- =====================================================
+     JAVASCRIPT
+     ROOT FILE
+===================================================== -->
 
 <script src="script.js"></script>
 
